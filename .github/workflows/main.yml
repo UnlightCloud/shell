@@ -9,7 +9,9 @@ jobs:
   client-data:
     name: Client Data
     runs-on: ubuntu-latest
-    container: ghcr.io/unlightcloud/castle
+    container:
+      image: ghcr.io/unlightcloud/castle
+      options: --user root
     services:
       mysql:
         image: mysql:8.0
