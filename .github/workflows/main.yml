@@ -85,3 +85,34 @@ jobs:
         with:
           name: version
           path: lib/Version.as
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: generate
+    container:
+      image: ghcr.io/unlightcloud/flex-sdk
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Constant Data
+        uses: actions/download-artifact@v4
+        with:
+          name: constant-data
+          path: src/model/utils/
+      - name: Download Font Loader
+        uses: actions/download-artifact@v4
+        with:
+          name: font-loader
+          path: src/
+      - name: Download Version
+        uses: actions/download-artifact@v4
+        with:
+          name: version
+          path: lib/
+      - name: Build
+        run: mxmlc ./src/Unlight.mxml
+      - name: Upload SWF
+        uses: actions/upload-artifact@v4
+        with:
+          name: Unlight
+          path: src/Unlight.swf
