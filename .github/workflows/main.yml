@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  RUBY_VERSION: 3.2.2
+
 jobs:
   client-data:
     name: Client Data
@@ -47,3 +50,38 @@ jobs:
         with:
           name: client-data
           path: data/export
+  generate:
+    name: Generate
+    runs-on: ubuntu-latest
+    needs: client-data
+    steps:
+      - name: Download Client Data
+        uses: actions/download-artifact@v4
+        with:
+          name: client-data
+          path: data/export
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - name: Constant Data
+        run: ruby scripts/create_const_data.rb
+      - name: Font Loader
+        run: ruby scripts/create_font_loader.rb
+      - name: Refresh Version
+        run: ruby scripts/refresh_version.rb
+      - name: Upload Constant Data
+        uses: actions/upload-artifact@v4
+        with:
+          name: constant-data
+          path: src/model/utils/ConstData.as
+      - name: Upload Font Loader
+        uses: actions/upload-artifact@v4
+        with:
+          name: font-loader
+          path: src/FontLoader.as
+      - name: Upload Version
+        uses: actions/upload-artifact@v4
+        with:
+          name: version
+          path: lib/Version.as
