@@ -19,25 +19,25 @@ jobs:
           MYSQL_DATABASE: unlight_db
           MYSQL_ROOT_PASSWORD: unlight
         ports:
-          - 3306
+          - 3306:3306
         options: --health-cmd "mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 10
       memcached:
         image: memcached:alpine
         ports:
-          - 11211
+          - 11211:11211
     steps:
       - run: cd /opt/unlight && bundle exec rake db:migrate
         env:
-          MEMCACHED_HOST: "127.0.0.1:${{ job.services.memcached.ports['11211'] }}"
-          DATABASE_URL: "mysql2://unlight:unlight@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/unlight_db?encoding=utf8"
+          MEMCACHED_HOST: "memcached:11211"
+          DATABASE_URL: "mysql2://unlight:unlight@mysql:3306/unlight_db?encoding=utf8"
       - run: cd /opt/unlight && bundle exec rake data:import
         env:
-          MEMCACHED_HOST: "127.0.0.1:${{ job.services.memcached.ports['11211'] }}"
-          DATABASE_URL: "mysql2://unlight:unlight@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/unlight_db?encoding=utf8"
+          MEMCACHED_HOST: "memcached:11211"
+          DATABASE_URL: "mysql2://unlight:unlight@mysql:3306/unlight_db?encoding=utf8"
       - run: cd /opt/unlight && bundle exec rake data:generate_client_data
         env:
-          MEMCACHED_HOST: "127.0.0.1:${{ job.services.memcached.ports['11211'] }}"
-          DATABASE_URL: "mysql2://unlight:unlight@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/unlight_db?encoding=utf8"
+          MEMCACHED_HOST: "memcached:11211"
+          DATABASE_URL: "mysql2://unlight:unlight@mysql:3306/unlight_db?encoding=utf8"
       - name: Upload Client Data
         uses: actions/upload-artifact@v2
         with:
