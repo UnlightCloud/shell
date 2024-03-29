@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  client-data:
+    name: Client Data
+    runs-on: ubuntu-latest
+    container: ghcr.io/unlightcloud/castle
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_USER: unlight
+          MYSQL_PASSWORD: unlight
+          MYSQL_DATABASE: unlight_db
+          MYSQL_ROOT_PASSWORD: unlight
+        ports:
+          - 3306
+        options: --health-cmd "mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 10
+      memcached:
+        image: memcached:alpine
+        ports:
+          - 11211
+    steps:
+      - run: bundle exec rake db:migrate
+      - run: bundle exec rake data:import
+      - run: bundle exec rake data:generate_client_data
+      - name: Upload Client Data
+        uses: actions/upload-artifact@v2
+        with:
+          name: client-data
+          path: tmp/export
