@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://ns.adobe.com/air/application/2.7">
+    <id>me.aotoki.Unlight</id>
+    <versionNumber>0.1</versionNumber>
+    <filename>Unlight</filename>
+    <initialWindow>
+        <content>Unlight.swf</content>
+        <visible>true</visible>
+        <width>780</width>
+        <height>680</height>
+    </initialWindow>
+</application>
