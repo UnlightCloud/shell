@@ -1,6 +1,5 @@
 package model.utils
  {
-    import flash.external.ExternalInterface;
     import flash.utils.getQualifiedClassName;
     import flash.utils.ByteArray;
     import flash.net.SharedObject;
@@ -8,7 +7,7 @@ package model.utils
     import model.utils.logs.*;
     /**
      * クライアントのログクラス
-     * 
+     *
      */
 
 
@@ -50,14 +49,14 @@ package model.utils
 //        private static const  _VANISH_ITEM_STR:String      = "__DATA__:__NAME__の期限がきました";
 //        private static const  _VANISH_CARD_STR:String      = "__DATA__:__NAME__が__NUM__枚消滅しました";
 
-//         private static const  __COLOR_SET:Array = [ ]; /* of int */ 
+//         private static const  __COLOR_SET:Array = [ ]; /* of int */
 
         // 実際のデータの配列
         private static var __uid:String;
         private static var __inited:Boolean =  false;
 
         protected static const MAX_NUM:int = 20; // 保存する数一つのLOGのMAX保存数
-        protected static var __tmp:Array = []; /* of ClientLog */ 
+        protected static var __tmp:Array = []; /* of ClientLog */
 
 
         // 日付の配列
@@ -104,7 +103,7 @@ package model.utils
 
         public static function read(type:int, offset:int, num:int ):Array
         {
-            var ret:Array=[]; /* of String */ 
+            var ret:Array=[]; /* of String */
             for(var i:int = offset; i < num; i++){
                 if (type == 0)
                 {

@@ -169,7 +169,6 @@ package model
         public function set name(str:String):void
         {
             _name = str;
-            ExternalInterface.call("setUnlightAvatarName", _name);
         }
 
         /**
@@ -270,8 +269,8 @@ package model
         public function getInviteID():String
         {
             var ret:String = "";
-            var i1:int = id % 10; // 
-            var i2:int = id % 3;  // 
+            var i1:int = id % 10; //
+            var i2:int = id % 3;  //
 
             var top:String = Const.INVITE_IDX[ i2 * 10 + i1];
             var r:Array = [];
@@ -342,7 +341,7 @@ package model
             return invite_id;
         }
 
-        
+
 
 
         /**
