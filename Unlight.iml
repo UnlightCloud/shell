@@ -4,6 +4,14 @@
     <configurations>
       <configuration name="Unlight" main-class="Unlight" output-file="Unlight.swf" output-folder="$MODULE_DIR$/bin-debug" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="50.2">
+          <entries>
+            <entry library-name="as3crypto" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="lib" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="apache-flex-sdk-4.16.1-bin-air-50.2" />
         </dependencies>
         <compiler-options>
@@ -18,6 +26,14 @@
       </configuration>
       <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug" css-to-compile="$MODULE_DIR$/data/css/UL.css">
         <dependencies>
+          <entries>
+            <entry library-name="as3crypto" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="lib" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="apache-flex-sdk-4.16.1-bin-air-50.2" />
         </dependencies>
         <compiler-options>
@@ -25,6 +41,7 @@
             <entry key="compiler.debug.swf" value="false" />
             <entry key="compiler.locale" value="zh_TW" />
           </map>
+          <option name="additionalConfigFilePath" value="$MODULE_DIR$/Unlight-config.xml" />
         </compiler-options>
         <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Unlight-descriptor.xml" package-file-name="Unlight">
           <files-to-package>
@@ -44,5 +61,7 @@
     </content>
     <orderEntry type="jdk" jdkName="apache-flex-sdk-4.16.1-bin-air-50.2" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="as3crypto" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

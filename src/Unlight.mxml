@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns="*"
                 layout="absolute"
-                creationComplete = "init()">
+                creationComplete="init()">
 
   <mx:Style source = "../data/css/UL.css"/>
   <!-- スクリプト -->
