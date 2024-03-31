@@ -6,7 +6,6 @@
 
 package
  {
-    import flash.external.ExternalInterface;
     import flash.utils.getQualifiedClassName;
 
     /**
@@ -96,20 +95,20 @@ package
             switch (level){
             case LV_FATAL:
             case LV_ERROR:
-                ExternalInterface.call('console.error', r);
+                trace(r);
                 break;
             case LV_WARN:
-                ExternalInterface.call('console.warn', r);
+                trace(r);
                 break;
             case LV_INFO:
-                ExternalInterface.call('console.info', r);
+                trace(r);
                 break;
             case LV_DEBUG:
-                ExternalInterface.call('console.debug', r);
+                trace(r);
                 break;
             case LV_TEST:
             default:
-                ExternalInterface.call('console.log', r);
+                trace(r);
             }
 
         }
