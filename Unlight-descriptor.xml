@@ -108,7 +108,7 @@
         <!--<softKeyboardBehavior></softKeyboardBehavior>-->
 
         <!-- Display Resolution for the app (either "standard" or "high"). Optional, OSX-only. Default "standard" -->
-        <!-- <requestedDisplayResolution></requestedDisplayResolution> -->
+        <requestedDisplayResolution>high</requestedDisplayResolution>
     </initialWindow>
 
     <!-- We recommend omitting the supportedProfiles element, which in turn permits your application to be deployed to all devices supported by AIR.
@@ -157,6 +157,9 @@
         <image732x412></image732x412>
         <image1024x1024></image1024x1024>
     </icon>-->
+    <icon>
+        <image128x128>icons/128x128.png</image128x128>
+    </icon>
 
     <!-- Whether the application handles the update when a user double-clicks an update version of the AIR file (true),
          or the default AIR application installer handles the update (false). Optional. Default false. -->

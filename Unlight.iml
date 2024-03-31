@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="Unlight">
+  <component name="FlexBuildConfigurationManager" active="Unlight Desktop">
     <configurations>
       <configuration name="Unlight" main-class="Unlight" output-file="Unlight.swf" output-folder="$MODULE_DIR$/bin-debug" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="50.2">
@@ -45,6 +45,7 @@
         <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Unlight-descriptor.xml" package-file-name="Unlight">
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/public" path-in-package="public" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/icons" path-in-package="icons" />
           </files-to-package>
         </packaging-air-desktop>
         <packaging-android />
