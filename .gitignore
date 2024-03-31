@@ -1,2 +1,4 @@
+.DS_Store
 src/FontLoader.as
 data/export
+bin*/
