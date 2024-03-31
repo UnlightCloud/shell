@@ -1,6 +1,5 @@
 <!-- Sandbox用リリースConfig！！ コピー禁止-->
 <flex-config>
-   <target-player>10.0.12</target-player>
 <compiler>
   <include-libraries>
     <library>../lib/as3crypto.swc</library>
@@ -49,7 +48,6 @@
     <name>CONFIG::LOT_OFF</name>
     <value>false</value>
   </define>
-
   <define>
     <name>CONFIG::SAND_BOX</name>
     <value>true</value>
@@ -182,8 +180,6 @@
     <name>CONFIG::WC_COMBINE_LIST_UNCHECK</name>
     <value>false</value>
   </define>
-
-  <debug>true</debug>
 </compiler>
 <default-background-color>0x000000</default-background-color>
 <default-size>

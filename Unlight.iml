@@ -24,7 +24,7 @@
         <packaging-android />
         <packaging-ios />
       </configuration>
-      <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug" css-to-compile="$MODULE_DIR$/data/css/UL.css">
+      <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies>
           <entries>
             <entry library-name="as3crypto" library-level="project">
@@ -38,7 +38,7 @@
         </dependencies>
         <compiler-options>
           <map>
-            <entry key="compiler.debug.swf" value="false" />
+            <entry key="compiler.debug.swf" value="true" />
             <entry key="compiler.locale" value="zh_TW" />
           </map>
         </compiler-options>
