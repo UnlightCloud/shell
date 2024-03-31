@@ -16,7 +16,7 @@
         <packaging-android />
         <packaging-ios />
       </configuration>
-      <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug">
+      <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug" css-to-compile="$MODULE_DIR$/data/css/UL.css">
         <dependencies>
           <sdk name="apache-flex-sdk-4.16.1-bin-air-50.2" />
         </dependencies>
@@ -26,7 +26,7 @@
             <entry key="compiler.locale" value="zh_TW" />
           </map>
         </compiler-options>
-        <packaging-air-desktop package-file-name="Unlight_Desktop">
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Unlight-descriptor.xml" package-file-name="Unlight">
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/public" path-in-package="public" />
           </files-to-package>
