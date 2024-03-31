@@ -1,5 +1,6 @@
 <!-- Sandbox用リリースConfig！！ コピー禁止-->
 <flex-config>
+  <target-player>10.0.0</target-player>
 <compiler>
   <include-libraries>
     <library>../lib/as3crypto.swc</library>
