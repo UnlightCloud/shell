@@ -8,6 +8,7 @@
         </dependencies>
         <compiler-options>
           <map>
+            <entry key="compiler.debug.swf" value="false" />
             <entry key="compiler.locale" value="zh_TW" />
           </map>
         </compiler-options>
@@ -21,6 +22,7 @@
         </dependencies>
         <compiler-options>
           <map>
+            <entry key="compiler.debug.swf" value="false" />
             <entry key="compiler.locale" value="zh_TW" />
           </map>
         </compiler-options>
