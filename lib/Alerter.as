@@ -11,7 +11,6 @@ package
     import mx.controls.Alert;
     import mx.events.CloseEvent;
     import sound.se.AlertSE;
-    import com.rails2u.bridge.JSProxy;
 
     public  class Alerter extends Alert
     {
@@ -84,7 +83,7 @@ package
 
         public static function reloadWindow(event:Event):void
         {
-            JSProxy.proxy.location.$reload();
+          // Not support browser anymore
         }
     }
 }
