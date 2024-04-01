@@ -902,16 +902,16 @@ public class RaidView extends Thread {
         _raidCodeCopyPanel.visible = false;
         setMouseEnabled = true;
         if (_raidInfo) {
-            Unlight.INS.topContainer.parent.addChild(_raidHelpSendPanel);
-            Unlight.INS.topContainer.mouseEnabled = false;
-            Unlight.INS.topContainer.mouseChildren = false;
+            UnlightLegacy.INS.topContainer.parent.addChild(_raidHelpSendPanel);
+            UnlightLegacy.INS.topContainer.mouseEnabled = false;
+            UnlightLegacy.INS.topContainer.mouseChildren = false;
             _raidHelpSendPanel.show(_player.id, _raidInfo.selectProfound.prfHash);
         }
     }
 
     private function helpSendPanelCloseFunc():void {
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         RemoveChild.apply(_raidHelpSendPanel);
     }
 
@@ -997,8 +997,8 @@ public class RaidView extends Thread {
 
         var pExec:ParallelExecutor = new ParallelExecutor();
 
-        pExec.addThread(new BeTweenAS3Thread(_raidContainer, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_frontContainer, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_raidContainer, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_frontContainer, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.addThread(_raidDeck.getHideThread());
         pExec.addThread(_avatar.getHideThread());
@@ -1080,7 +1080,7 @@ public class RaidView extends Thread {
     // 配置オブジェの読み込み
     private function loading():void {
         // By_K2
-        _stage.stage.frameRate = 24 * Unlight.SPEED;
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED;
 
         RaidHelpView.instance.isUpdate = false;
 
@@ -1426,7 +1426,7 @@ public class RaidView extends Thread {
 
     // By_K2
     public function feat_fps_up(e:Event):void {
-        _stage.stage.frameRate = 24 * Unlight.SPEED;
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED;
     }
 
 

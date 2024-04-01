@@ -316,14 +316,14 @@ public class DeckEditView extends Thread {
 
         var pExec:ParallelExecutor = new ParallelExecutor();
 //            _stage.addChildAt(_deckSetButton, 3);
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_sortArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_selectArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_dataArea[_deckEdit.substanceEditType(_editType)], {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_binderArea[_editType], {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_deckArea[_deckEdit.substanceEditType(_editType)], {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_sortArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_selectArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_dataArea[_deckEdit.substanceEditType(_editType)], {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_binderArea[_editType], {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_deckArea[_deckEdit.substanceEditType(_editType)], {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
 //             pExec.addThread(new BeTweenAS3Thread(_avatarView, {alpha:1.0}, null, 0.8/Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0 ,true));
         pExec.addThread(_avatarView.getShowThread(_avatarContainer, 0));           // アバター情報
 //            pExec.addThread(new BeTweenAS3Thread(_deckSetButton, {alpha:1.0}, null, 0.8/Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0 ,true));
@@ -931,25 +931,25 @@ public class DeckEditView extends Thread {
     private function hide2():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
 
-        pExec.addThread(new BeTweenAS3Thread(_dupeSendPanel, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_sortArea, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_selectArea, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_dataArea[_deckEdit.substanceEditType(_editType)], {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_binderArea[_editType], {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_deckArea[_deckEdit.substanceEditType(_editType)], {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_deckArea[InventorySet.TYPE_CHARA], {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_dupeSendPanel, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_sortArea, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_selectArea, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_dataArea[_deckEdit.substanceEditType(_editType)], {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_binderArea[_editType], {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_deckArea[_deckEdit.substanceEditType(_editType)], {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_deckArea[InventorySet.TYPE_CHARA], {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 //            pExec.addThread(new BeTweenAS3Thread(_deckSetButton, {alpha:0.0}, null, 0.8/Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0 ,false));
-        pExec.addThread(new BeTweenAS3Thread(_avatarView, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_avatarView, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.start();
         pExec.join();
 
         if (_ctrl.cardInvUpdating) {
-            Unlight.INS.loadingReset();
-            Unlight.INS.loadingStart();
+            UnlightLegacy.INS.loadingReset();
+            UnlightLegacy.INS.loadingStart();
             next(updateWait);
         } else {
             next(hide3);
@@ -964,7 +964,7 @@ public class DeckEditView extends Thread {
             next(updateWait);
         } else {
             log.writeLog(log.LV_DEBUG, this, "updateWait end");
-            Unlight.INS.loadingEnd();
+            UnlightLegacy.INS.loadingEnd();
             next(loadWait);
         }
     }
@@ -972,7 +972,7 @@ public class DeckEditView extends Thread {
     // ロードオブジェ待ち
     private function loadWait():void {
         log.writeLog(log.LV_DEBUG, this, "loadWait");
-        if (Unlight.INS.loadingDisable()) {
+        if (UnlightLegacy.INS.loadingDisable()) {
             log.writeLog(log.LV_DEBUG, this, "loadWait end");
             next(hide3);
         } else {

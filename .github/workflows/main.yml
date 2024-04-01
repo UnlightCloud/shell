@@ -113,13 +113,15 @@ jobs:
         with:
           name: version
           path: lib/
+      - name: Copy config
+        run: cp UnlightLegacy-config.xml src/UnlightLegacy-config.xml
       - name: Build
-        run: mxmlc ./src/Unlight.mxml
+        run: mxmlc -output Unlight.swf ./src/UnlightLegacy.mxml
       - name: Upload SWF
         uses: actions/upload-artifact@v4
         with:
           name: Unlight
-          path: src/Unlight.swf
+          path: Unlight.swf
   build-and-push-image:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest

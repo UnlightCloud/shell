@@ -447,7 +447,7 @@ public class SerialInputPanel extends TitleWindow {
 
     // ショップボタンを呼び出す
     public function show():void {
-        Unlight.INS.topContainer.parent.addChild(this);
+        UnlightLegacy.INS.topContainer.parent.addChild(this);
         TopView.enable(false);
     }
 

@@ -202,7 +202,7 @@ public class GameView extends Thread {
     // 配置オブジェの読み込み
     private function loading():void {
         // By_K2
-        _stage.stage.frameRate = 24 * Unlight.SPEED
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED
 
         // ふざけたバグのために一度ロビーを切断する
 //            LobbyCtrl.instance.exit();
@@ -678,7 +678,7 @@ public class GameView extends Thread {
 
     // By_K2
     public function feat_fps_up(e:Event):void {
-        _stage.stage.frameRate = 24 * Unlight.SPEED;
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED;
     }
 
 }

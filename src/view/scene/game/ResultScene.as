@@ -71,7 +71,7 @@ public class ResultScene extends BaseScene {
     private static const _FRAME_X:int = 0;                                    // 最終結果表示の枠組みX
     private static const _FRAME_Y:int = 5;                                    // 最終結果表示の枠組みY
 
-    protected static const _IMAGE_X:int = Unlight.WIDTH / 2;                                  // Win/Lose表示X
+    protected static const _IMAGE_X:int = UnlightLegacy.WIDTH / 2;                                  // Win/Lose表示X
     protected static const _IMAGE_Y:int = 250;                                  // Win/Lose表示Y
 
     private static const _CCC_X:int = 296;                                    // 取得決定カードX
@@ -114,7 +114,7 @@ public class ResultScene extends BaseScene {
     private static const _CCC_DIST_NUM_X:int = 315;                                // 取得カードの枚数X
     private static const _CCC_DIST_NUM_Y:int = 408;                                // 取得カードの枚数Y
 
-    private static const _RESULT_SCENE_SPEED:int = Unlight.SPEED + 4;              // アニメーション倍速
+    private static const _RESULT_SCENE_SPEED:int = UnlightLegacy.SPEED + 4;              // アニメーション倍速
 
     // private static const _CCC_DIST_X:int = 80;                                    // 取得決定カードX
     // private static const _CCC_DIST_Y:int = 408;                                    // 取得決定カードY
@@ -1151,8 +1151,8 @@ public class ResultScene extends BaseScene {
         pExec.addThread(new ClousureThread(function ():void {
             _resultButton.buttonEnabled = false
         }));
-        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 0.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_cccNum, {alpha: 0.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 0.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_cccNum, {alpha: 0.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         sExec.addThread(pExec);
 
         // LvUpを表示
@@ -1230,7 +1230,7 @@ class FadeThread extends Thread {
     protected override function run():void {
         _fs.visible = true;
 //        var thread:Thread = new TweenerThread(_fs, {alpha:0.5, transition:"easeOutSine", time:0.5, show:true});
-        var thread:Thread = new BeTweenAS3Thread(_fs, {alpha: 0.5}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var thread:Thread = new BeTweenAS3Thread(_fs, {alpha: 0.5}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
         thread.start();
         thread.join();
         next(waiting);
@@ -1258,7 +1258,7 @@ class FrameShowThread extends Thread {
     private function waiting():void {
         _fr.visible = false;
 //        var thread:Thread = new TweenerThread(_fr, {alpha:1, transition:"easeOutSine", time:1, show:true});
-        var thread:Thread = new BeTweenAS3Thread(_fr, {alpha: 1}, null, 1 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var thread:Thread = new BeTweenAS3Thread(_fr, {alpha: 1}, null, 1 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
         thread.start();
         thread.join();
     }
@@ -1279,7 +1279,7 @@ class ObjectShowThread extends Thread {
         _object.visible = false;
         _object.alpha = 0.0;
 //        var thread:Thread = new TweenerThread(_object, {alpha:1, transition:"easeOutSine", time:0.5, show:true});
-        var thread:Thread = new BeTweenAS3Thread(_object, {alpha: 1}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var thread:Thread = new BeTweenAS3Thread(_object, {alpha: 1}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
         thread.start();
         thread.join();
 
@@ -1302,7 +1302,7 @@ class ObjectHideThread extends Thread {
 
     protected override function run():void {
 //        var thread:Thread = new TweenerThread(_object, {alpha:0, transition:"easeOutSine", time:0.5, hide:true});
-        var thread:Thread = new BeTweenAS3Thread(_object, {alpha: 0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var thread:Thread = new BeTweenAS3Thread(_object, {alpha: 0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
         thread.start();
         thread.join();
 

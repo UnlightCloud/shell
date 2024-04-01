@@ -70,7 +70,7 @@ public class TitleView extends Thread {
         _stage = stage;
         _ctrl = TitleCtrl.instance;
 
-        _copyRight.text = "Copyright 2019 CPA All Rights Reserved. " + "ver" + Unlight.VERSION + "_d";
+        _copyRight.text = "Copyright 2019 CPA All Rights Reserved. " + "ver" + UnlightLegacy.VERSION + "_d";
         _copyRight.styleName = "FeatInfoLabel";
         _copyRight.width = 490;
         _copyRight.height = 30;
@@ -80,7 +80,7 @@ public class TitleView extends Thread {
         _copyRight.alpha = 0;
 
         _loginPanel = new LoginPanel();
-        Unlight.INS.addChild(_loginPanel); // 気持ち悪いが一時的処理
+        UnlightLegacy.INS.addChild(_loginPanel); // 気持ち悪いが一時的処理
 
         _newsPanel = new NewsPanel();
         _container.addChild(_newsPanel);
@@ -142,13 +142,13 @@ public class TitleView extends Thread {
         _logo.resetPosition();
         _loginPanel.panelEditable(true);
 
-        var loginTween:Thread = new BeTweenAS3Thread(_loginPanel, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
-        var newsTween:Thread = new BeTweenAS3Thread(_newsPanel, {alpha: 0.8}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
-        var bgTween:Thread = new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
-        var logoTween:Thread = new BeTweenAS3Thread(_logo, {alpha: 1.0}, null, 3.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
-        var logoBG1Tween:Thread = new BeTweenAS3Thread(_logo.BG1, {alpha: 0.7}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.8 / Unlight.SPEED, true);
-        var logoBG2Tween:Thread = new BeTweenAS3Thread(_logo.BG2, {alpha: 0.7}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.8 / Unlight.SPEED, true);
-        var crTween:Thread = new BeTweenAS3Thread(_copyRight, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var loginTween:Thread = new BeTweenAS3Thread(_loginPanel, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var newsTween:Thread = new BeTweenAS3Thread(_newsPanel, {alpha: 0.8}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var bgTween:Thread = new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var logoTween:Thread = new BeTweenAS3Thread(_logo, {alpha: 1.0}, null, 3.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
+        var logoBG1Tween:Thread = new BeTweenAS3Thread(_logo.BG1, {alpha: 0.7}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.8 / UnlightLegacy.SPEED, true);
+        var logoBG2Tween:Thread = new BeTweenAS3Thread(_logo.BG2, {alpha: 0.7}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.8 / UnlightLegacy.SPEED, true);
+        var crTween:Thread = new BeTweenAS3Thread(_copyRight, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true);
 
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(loginTween);
@@ -190,14 +190,14 @@ public class TitleView extends Thread {
         _stage.removeEventListener(Event.ENTER_FRAME, _ageha.mouseOverHandler);
         _ctrl.stopBGM();
 
-        var logoTween:Thread = new BeTweenAS3Thread(_logo, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, false);
-        var loginTween:Thread = new BeTweenAS3Thread(_loginPanel, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var newsTween:Thread = new BeTweenAS3Thread(_newsPanel, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var bgTween:Thread = new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var logoBG1Tween:Thread = new BeTweenAS3Thread(_logo.BG1, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var logoBG2Tween:Thread = new BeTweenAS3Thread(_logo.BG2, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var agehaTween:Thread = new BeTweenAS3Thread(_ageha, {y: -200}, null, 5.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
-        var crTween:Thread = new BeTweenAS3Thread(_copyRight, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var logoTween:Thread = new BeTweenAS3Thread(_logo, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, false);
+        var loginTween:Thread = new BeTweenAS3Thread(_loginPanel, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var newsTween:Thread = new BeTweenAS3Thread(_newsPanel, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var bgTween:Thread = new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var logoBG1Tween:Thread = new BeTweenAS3Thread(_logo.BG1, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var logoBG2Tween:Thread = new BeTweenAS3Thread(_logo.BG2, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var agehaTween:Thread = new BeTweenAS3Thread(_ageha, {y: -200}, null, 5.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var crTween:Thread = new BeTweenAS3Thread(_copyRight, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
 
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(loginTween);
@@ -216,7 +216,7 @@ public class TitleView extends Thread {
     // ロビー画面へ
     private function toLobby():void {
 
-        Unlight.INS.loadingStart();
+        UnlightLegacy.INS.loadingStart();
         _stage.removeChild(_container);
         log.writeLog(log.LV_INFO, this, "lobby start");
         _lobbyView.start();

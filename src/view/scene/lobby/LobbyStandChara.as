@@ -85,7 +85,7 @@ public class LobbyStandChara extends BaseScene {
     public function getBringOnThread():Thread {
         _isChanged = false;
         var pExec:ParallelExecutor = new ParallelExecutor();
-        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _PLAYER_X}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _PLAYER_X}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         return pExec;
     }
 
@@ -100,7 +100,7 @@ public class LobbyStandChara extends BaseScene {
 
     public function getBringOffThread():Thread {
         var pExec:ParallelExecutor = new ParallelExecutor();
-        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _START_X}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _START_X}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         return pExec;
     }
 
@@ -172,7 +172,7 @@ public class LobbyStandChara extends BaseScene {
     public function getClampsBringOnThread():Thread {
         _isChanged = true;
         var pExec:ParallelExecutor = new ParallelExecutor();
-        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _CLAMPS_X}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        if (_chara) pExec.addThread(new BeTweenAS3Thread(_chara, {x: _CLAMPS_X}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         return pExec;
     }
 

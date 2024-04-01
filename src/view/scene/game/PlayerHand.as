@@ -257,7 +257,7 @@ public class PlayerHand extends BaseHand {
             y: distFoeP.y,
             scaleX: 0.8,
             scaleY: 0.8
-        }, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_QUART, 0.2 / Unlight.SPEED, false);
+        }, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_QUART, 0.2 / UnlightLegacy.SPEED, false);
     }
 
 

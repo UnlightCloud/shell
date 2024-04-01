@@ -639,7 +639,7 @@ public class ActionCardClip extends BaseScene {
         arrowUpdate();
 //            if (up){i = 0;}else{i = 180;};
 //            new TweenerThread(this, { rotation: i, transition:"easeOutSine", time: 0.2, show: true}).start();
-        new BeTweenAS3Thread(this, {rotation: i}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true).start();
+        new BeTweenAS3Thread(this, {rotation: i}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true).start();
         SE.getRotateCardSEThread(0).start();
         var sExec:SerialExecutor = new SerialExecutor();
         sExec.addThread(new SleepThread(150));
@@ -656,7 +656,7 @@ public class ActionCardClip extends BaseScene {
         var sExec:SerialExecutor = new SerialExecutor();
         sExec.addThread(new ClousureThread(clickOff));
 //            sExec.addThread(new TweenerThread(this, { rotation: i, transition:"easeOutSine", time: 0.2, show: true}));
-        sExec.addThread(new BeTweenAS3Thread(this, {rotation: i}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        sExec.addThread(new BeTweenAS3Thread(this, {rotation: i}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         sExec.addThread(new ClousureThread(clickOn));
         sExec.addThread(new ClousureThread(updateActivity));
         sExec.start();

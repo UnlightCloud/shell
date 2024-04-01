@@ -124,7 +124,7 @@ public class RaidHelpPanel extends Thread {
         _helpText.visible = true;
         _helpText.addEventListener(MouseEvent.CLICK, clickHandler);
         _container.addChild(_helpText);
-        Unlight.INS.parent.addChild(_container);
+        UnlightLegacy.INS.parent.addChild(_container);
         next(move);
     }
 

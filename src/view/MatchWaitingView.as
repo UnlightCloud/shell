@@ -127,7 +127,7 @@ public class MatchWaitingView extends Thread {
             log.writeLog(log.LV_INFO, this, "duel exit 3"); //
             next(exit);
         } else {
-            Unlight.INS.dummyClick();  // 放置時間を計測しないための処置
+            UnlightLegacy.INS.dummyClick();  // 放置時間を計測しないための処置
             next(connect);
         }
     }

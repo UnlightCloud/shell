@@ -45,10 +45,10 @@ public class ConfirmPanel extends Panel {
         __caller = caller;
         __cancelMouseEnable = cancelMouseEnable;
 
-        Unlight.INS.topContainer.parent.addChild(__bgContainer);
-        Unlight.INS.topContainer.parent.addChild(__cp);
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.parent.addChild(__bgContainer);
+        UnlightLegacy.INS.topContainer.parent.addChild(__cp);
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
 
     }
 
@@ -89,8 +89,8 @@ public class ConfirmPanel extends Panel {
         if (cancel && __cancelMouseEnable) {
 
         } else {
-            Unlight.INS.topContainer.mouseEnabled = true;
-            Unlight.INS.topContainer.mouseChildren = true;
+            UnlightLegacy.INS.topContainer.mouseEnabled = true;
+            UnlightLegacy.INS.topContainer.mouseChildren = true;
         }
         __caller = null;
         __yesFunc = null;
@@ -103,7 +103,7 @@ public class ConfirmPanel extends Panel {
     private static function initPanel():void {
         __cp = new ConfirmPanel();
         __bg.graphics.beginFill(0x333333);
-        __bg.graphics.drawRect(0, 0, Unlight.WIDTH, Unlight.HEIGHT);
+        __bg.graphics.drawRect(0, 0, UnlightLegacy.WIDTH, UnlightLegacy.HEIGHT);
         __bg.graphics.endFill();
         __bg.alpha = 0.5;
         __bgContainer.addChild(__bg);
@@ -169,7 +169,7 @@ public class ConfirmPanel extends Panel {
 
         _yesButton.x = width / 2 - _yesButton.width - 5;
         _noButton.x = width / 2 + 5;
-        x = Unlight.WIDTH / 2 - width / 2
+        x = UnlightLegacy.WIDTH / 2 - width / 2
 
     }
 

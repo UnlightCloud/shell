@@ -194,7 +194,7 @@ public class AuthServer extends Server {
         connect(s.address, s.port);
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("AS[" + s.address + ":" + s.port.toString() + "]");
+            UnlightLegacy.INS.updateSeverInfo("AS[" + s.address + ":" + s.port.toString() + "]");
         }
 
     }
@@ -269,7 +269,7 @@ public class AuthServer extends Server {
         connect(s.address, s.port);
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("AS[" + s.address + ":" + s.port.toString() + "]");
+            UnlightLegacy.INS.updateSeverInfo("AS[" + s.address + ":" + s.port.toString() + "]");
         }
 
 
@@ -435,7 +435,7 @@ public class AuthServer extends Server {
             exit();
             //               Alerter.showWithSize('2重ログインです。他のブラウザやPCから同時にログインは出来ません', 'Error', 4, null, Alerter.reloadWindow, 110);
             Alerter.showWithSize(_TRANS_DOUBLE, 'Error', 4, null, Alerter.reloadWindow, 110);
-            Unlight.live = false; // 二度と通信出来なくする
+            UnlightLegacy.live = false; // 二度と通信出来なくする
             LobbyServer.instance.exit();
             QuestServer.instance.exit();
             DataServer.instance.exit();

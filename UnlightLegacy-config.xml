@@ -11,11 +11,11 @@
         </source-path>
         <define>
             <name>CONFIG::DEBUG</name>
-            <value>true</value>
+            <value>false</value>
         </define>
         <define>
             <name>CONFIG::RELEASE</name>
-            <value>false</value>
+            <value>true</value>
         </define>
         <define>
             <name>CONFIG::ACTION_CARD_CLICK</name>
@@ -51,7 +51,7 @@
         </define>
         <define>
             <name>CONFIG::SAND_BOX</name>
-            <value>true</value>
+            <value>false</value>
         </define>
         <define>
             <name>CONFIG::LOCALE_JP</name>

@@ -236,7 +236,7 @@ public class QuestView extends Thread {
 
     // 配置オブジェの表示
     private function show():void {
-        _stage.stage.frameRate = 24 * Unlight.SPEED;
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED;
 
         _stage.addChild(_questContainer);
 
@@ -447,7 +447,7 @@ public class QuestView extends Thread {
     private function hide():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
 
-        pExec.addThread(new BeTweenAS3Thread(_questContainer, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_questContainer, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
 //            pExec.addThread(_questSearchList.getHideThread());
 //          pExec.addThread(_questItemButton.getHideThread());
@@ -1052,7 +1052,7 @@ public class QuestView extends Thread {
 
     private function storyEndFade():void {
         var sExec:SerialExecutor = new SerialExecutor();
-        sExec.addThread(new BeTweenAS3Thread(_questStoryScene, {alpha: 0.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.4 / Unlight.SPEED, false));
+        sExec.addThread(new BeTweenAS3Thread(_questStoryScene, {alpha: 0.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.4 / UnlightLegacy.SPEED, false));
         sExec.addThread(_questStoryScene.getHideThread());
         sExec.start();
         sExec.join();
@@ -1092,10 +1092,10 @@ public class QuestView extends Thread {
 
         pExec.addThread(fbg.getShowThread(_container, 0));
         pExec.addThread(nbg.getShowThread(_container, 3));
-        pExec.addThread(new BeTweenAS3Thread(_fbg, {alpha: 0.0}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, false));
-        pExec.addThread(new BeTweenAS3Thread(_nbg, {alpha: 0.0}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, false));
-        pExec.addThread(new BeTweenAS3Thread(fbg, {alpha: 1.0}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, true));
-        pExec.addThread(new BeTweenAS3Thread(nbg, {alpha: 1.0}, null, 2.0 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, true));
+        pExec.addThread(new BeTweenAS3Thread(_fbg, {alpha: 0.0}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, false));
+        pExec.addThread(new BeTweenAS3Thread(_nbg, {alpha: 0.0}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, false));
+        pExec.addThread(new BeTweenAS3Thread(fbg, {alpha: 1.0}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, true));
+        pExec.addThread(new BeTweenAS3Thread(nbg, {alpha: 1.0}, null, 2.0 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 3, true));
 
         sExec.addThread(pExec);
         sExec.addThread(_fbg.getHideThread());
@@ -1199,7 +1199,7 @@ public class QuestView extends Thread {
 
     // By_K2
     public function feat_fps_up(e:Event):void {
-        _stage.stage.frameRate = 24 * Unlight.SPEED;
+        _stage.stage.frameRate = 24 * UnlightLegacy.SPEED;
     }
 }
 

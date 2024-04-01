@@ -109,7 +109,7 @@ public class QuestServer extends Server {
         port = Config.questServerInfo.port;
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "", "QS[" + address + ":" + port.toString() + "] ");
+            UnlightLegacy.INS.updateSeverInfo("", "", "QS[" + address + ":" + port.toString() + "] ");
         }
     }
 

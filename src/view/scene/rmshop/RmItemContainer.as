@@ -91,7 +91,7 @@ public class RmItemContainer extends BaseScene {
                 y.x = 110 * j;
             }
 
-            _rmTabContainerSet[i].x = (Unlight.WIDTH - x.length * 110) / 2
+            _rmTabContainerSet[i].x = (UnlightLegacy.WIDTH - x.length * 110) / 2
 
         }
 

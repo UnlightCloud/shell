@@ -131,7 +131,7 @@ import view.BaseHideThread;
 // 基本的なShowスレッド
 class ShowThread extends BaseShowThread {
     private var _ri:ResultRollImage;
-    private static const _RESULT_ROLL_SPEED:int = Unlight.SPEED + 5;
+    private static const _RESULT_ROLL_SPEED:int = UnlightLegacy.SPEED + 5;
 
     public function ShowThread(ri:ResultRollImage, stage:DisplayObjectContainer) {
         _ri = ri;

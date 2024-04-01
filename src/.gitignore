@@ -1,6 +1,3 @@
-/#Unlight-config.xml#
-/.#Unlight-config.xml
-/FontLoader.as
-/Unlight-config.xml
-/Unlight.swf
-*.DS_Store
+FontLoader.as
+Unlight*-config.xml
+Unlight*.swf

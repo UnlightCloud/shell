@@ -30,11 +30,11 @@ public class MoveArrow extends BaseScene {
 
     private static const _PLAYER_X:int = 162;
     private static const _PLAYER_Y:int = 260;
-    private static const _FOE_X:int = Unlight.WIDTH - _PLAYER_X;
+    private static const _FOE_X:int = UnlightLegacy.WIDTH - _PLAYER_X;
     private static const _FOE_Y:int = _PLAYER_Y;
 
     private static var _ARROW_DIST:int = 20;
-    private static var _ARROW_VANISH:int = Unlight.WIDTH / 2;
+    private static var _ARROW_VANISH:int = UnlightLegacy.WIDTH / 2;
 
     // 変数
     private var _id:int;

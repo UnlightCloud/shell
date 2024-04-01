@@ -305,9 +305,9 @@ public class AvatarClip extends BaseScene {
             sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0, x: i}, {
                 alpha: 0.0,
                 x: i + 200
-            }, 2.1 / Unlight.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, true));
+            }, 2.1 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, true));
         } else {
-            sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+            sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         }
         return sExec;
     }
@@ -318,7 +318,7 @@ public class AvatarClip extends BaseScene {
         // かならずパーツがすべて読み込めていることが前提！！！
         sExec.addThread(_avatar.getWaitEquipedPartsDataThread());
         sExec.addThread(new ShowThread(this, stage));
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.3 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.3 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
 
         return sExec;
     }
@@ -332,7 +332,7 @@ public class AvatarClip extends BaseScene {
     public function getPartsChangeHideThread(type:String = ""):Thread {
         var sExec:SerialExecutor = new SerialExecutor();
 //            sExec.addThread(new SleepThread(500));
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.3 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.3 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         sExec.addThread(super.getHideThread());
         return sExec;
     }

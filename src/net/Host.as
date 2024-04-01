@@ -258,7 +258,7 @@ public class Host extends EventDispatcher {
     public function sendCommand(data:ByteArray):void {
 //            log.writeLog(log.LV_INFO, "Host.as", "sendCommand: ",data);
         _heartBeatTimer.reset();
-        if (Unlight.live) {
+        if (UnlightLegacy.live) {
             _socket.send(data);
         }
         _heartBeatTimer.start();
@@ -269,7 +269,7 @@ public class Host extends EventDispatcher {
         if (!_useGameHeartBeat) {
             //  サーバと繋がっていれば一定間隔でイベントを送る
             if (_socket.connected) {
-                if (Unlight.INS.opetationCheck()) {
+                if (UnlightLegacy.INS.opetationCheck()) {
                     Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.reloadWindow, 110);
                     close();
                 } else {
@@ -283,7 +283,7 @@ public class Host extends EventDispatcher {
     private function gameHeartBeatHandler(event:Event):void {
         //  サーバと繋がっていれば一定間隔でイベントを送る
         if (_socket.connected) {
-            if (Unlight.INS.opetationCheck()) {
+            if (UnlightLegacy.INS.opetationCheck()) {
                 Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.reloadWindow, 110);
                 close();
             } else {

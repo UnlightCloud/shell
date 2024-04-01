@@ -90,9 +90,9 @@ public class RealMoneyShopView extends UIComponent {
         }
 
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
-        Unlight.INS.topContainer.parent.addChild(__shopView);
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.parent.addChild(__shopView);
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         __type = type;
         __shopView.setTab();
         __enable = true;

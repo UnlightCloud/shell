@@ -57,11 +57,11 @@ public class ItemListView extends UIComponent {
 
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(__itemView, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(__itemView, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(__itemView, {x: _X}, 0.2, Quad.easeOut)
         ).play();
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         __enable = true;
 
     }
@@ -79,8 +79,8 @@ public class ItemListView extends UIComponent {
                     BetweenAS3.removeFromParent(__itemView)
             ).play();
         }
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         __enable = false;
     }
 

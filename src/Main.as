@@ -19,7 +19,7 @@ import view.utils.*;
 public var mainView:MainView;
 private var _container:UIComponent;
 
-public static var INS:Unlight;
+public static var INS:UnlightLegacy;
 private static var GCW:GCWatcher;
 public static var RELOAD_COUNT:int = 0;
 

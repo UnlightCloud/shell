@@ -52,7 +52,7 @@ public class RaidServer extends Server {
         port = Config.raidServerInfo.port;
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "", "", "", "RS[" + address + ":" + port.toString() + "] ");
+            UnlightLegacy.INS.updateSeverInfo("", "", "", "", "RS[" + address + ":" + port.toString() + "] ");
         }
     }
 

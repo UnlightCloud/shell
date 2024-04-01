@@ -237,7 +237,7 @@ public class Player extends EventDispatcher {
      */
     public function loginSuccess(i:uint, session:String):void {
         state = STATE_LOGIN;
-        Unlight.RELOAD_COUNT++;
+        UnlightLegacy.RELOAD_COUNT++;
         id = i;
         _session = session;
         dispatchEvent(new Event(AUTH_SUCCESS));

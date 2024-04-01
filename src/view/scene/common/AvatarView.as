@@ -146,7 +146,7 @@ public class AvatarView extends BaseScene {
         _container.mouseEnabled = false;
 //             mouseChildren = false;
         alpha = 0;
-        _reloadCount = Unlight.RELOAD_COUNT;
+        _reloadCount = UnlightLegacy.RELOAD_COUNT;
     }
 
     private function setType(type:int):void {
@@ -155,8 +155,8 @@ public class AvatarView extends BaseScene {
     }
 
     private function reloadCheck():Boolean {
-        if (Unlight.RELOAD_COUNT != _reloadCount) {
-            _reloadCount = Unlight.RELOAD_COUNT;
+        if (UnlightLegacy.RELOAD_COUNT != _reloadCount) {
+            _reloadCount = UnlightLegacy.RELOAD_COUNT;
             return true;
         } else {
             return false;
@@ -353,7 +353,7 @@ public class AvatarView extends BaseScene {
         var sExec:SerialExecutor = new SerialExecutor();
         sExec.addThread(new ClousureThread(refreshType));
         sExec.addThread(super.getShowThread(stage, at));
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 1.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.2 / Unlight.SPEED, true));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 1.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.2 / UnlightLegacy.SPEED, true));
         return sExec;
     }
 
@@ -363,7 +363,7 @@ public class AvatarView extends BaseScene {
         var sExec:SerialExecutor = new SerialExecutor();
         sExec.addThread(new ClousureThread(refreshType));
         sExec.addThread(super.getShowThread(stage, at));
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.1 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.2 / Unlight.SPEED, false));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.1 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.2 / UnlightLegacy.SPEED, false));
         return sExec;
     }
 
@@ -443,7 +443,7 @@ class HideThread extends BaseHideThread {
     }
 
     protected override function run():void {
-        var thread:Thread = new BeTweenAS3Thread(_view, {alpha: 0.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        var thread:Thread = new BeTweenAS3Thread(_view, {alpha: 0.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
         thread.start();
         thread.join();
         next(exit)

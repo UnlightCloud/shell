@@ -12,7 +12,7 @@ public class SleepThread extends Thread {
 
     protected override function run():void {
         //sleep(_sleepTime);
-        sleep(_sleepTime / Unlight.SPEED);		// By_K2 (대기시간 1/2 로 조정)
+        sleep(_sleepTime / UnlightLegacy.SPEED);		// By_K2 (대기시간 1/2 로 조정)
     }
 
 }

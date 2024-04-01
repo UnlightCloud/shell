@@ -336,8 +336,8 @@ public class LotView extends Thread {
 
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(_avatarView.getShowThread(_container));
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
 
         pExec.start();
         pExec.join();
@@ -447,7 +447,7 @@ public class LotView extends Thread {
                 BetweenAS3.tween(c,
                         {x: _CARD_X, y: _CARD_Y_TOP},
                         null,
-                        0.5 / Unlight.SPEED,
+                        0.5 / UnlightLegacy.SPEED,
                         Sine.easeIn
                 ),
                 BetweenAS3.bezier(c, {
@@ -506,7 +506,7 @@ public class LotView extends Thread {
                     x: [_CARD_X + _CARD_BEZIER_DIFF, _CARD_X + _CARD_BEZIER_DIFF],
                     y: [_CARD_Y_BOTTOM, _CARD_Y_TOP]
                 }, 0.5)
-        ), delay, 0.5 / Unlight.SPEED);
+        ), delay, 0.5 / UnlightLegacy.SPEED);
     }
 
     // 最後の演出Tweenを作る外れは消える。
@@ -519,7 +519,7 @@ public class LotView extends Thread {
                             c,
                             {y: _CARD_Y_MIDDLE},
                             null,
-                            0.5 / Unlight.SPEED,
+                            0.5 / UnlightLegacy.SPEED,
                             Sine.easeIn
                     ),
                     BetweenAS3.delay(
@@ -540,11 +540,11 @@ public class LotView extends Thread {
                                         }
                                     }, null, 1, Quad.easeInOut)
                             ),
-                            0.1 / Unlight.SPEED, 0.55 / Unlight.SPEED),
+                            0.1 / UnlightLegacy.SPEED, 0.55 / UnlightLegacy.SPEED),
                     BetweenAS3.tween(c,
                             {alpha: 0.0},
                             null,
-                            0.5 / Unlight.SPEED,
+                            0.5 / UnlightLegacy.SPEED,
                             Sine.easeIn
                     ),
                     BetweenAS3.func(finishEvent)
@@ -553,7 +553,7 @@ public class LotView extends Thread {
             return BetweenAS3.tween(c,
                     {alpha: 0.0},
                     null,
-                    0.3 / Unlight.SPEED,
+                    0.3 / UnlightLegacy.SPEED,
                     Sine.easeIn
             );
 
@@ -921,9 +921,9 @@ public class LotView extends Thread {
     private function hide():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
 
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.start();
         pExec.join();

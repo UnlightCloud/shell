@@ -235,11 +235,11 @@ public class FriendListView extends UIComponent {
 
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(__friendView, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(__friendView, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(__friendView, {y: _Y}, 0.3, Quad.easeOut)
         ).play();
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         __friendView.setFriendTabOnlyEnable(false);
         __enable = true;
         __friendView.timerStart();
@@ -264,12 +264,12 @@ public class FriendListView extends UIComponent {
 
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(__friendView, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(__friendView, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(__friendView, {y: _Y}, 0.3, Quad.easeOut)
         ).play();
 //             Unlight.INS.topContainer.parent.addChild(__friendView);
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         __friendView.setFriendTabOnlyEnable(true);
         __enable = true;
         __friendView.timerStart();
@@ -307,8 +307,8 @@ public class FriendListView extends UIComponent {
                 BetweenAS3.tween(__friendView, {y: _START_Y}, null, 0.15, Sine.easeOut),
                 BetweenAS3.removeFromParent(__friendView)
         ).play()
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         __enable = false;
         // チャットのブロックリストをリセットする
         FriendLink.clearBlockNameList();

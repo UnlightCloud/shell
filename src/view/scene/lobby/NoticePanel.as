@@ -958,11 +958,11 @@ public class NoticePanel extends BaseScene {
             // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
             // Unlight.INS.topContainer.parent.addChild(__achievementView);
             BetweenAS3.serial(
-                    BetweenAS3.addChild(this, Unlight.INS.topContainer.parent),
+                    BetweenAS3.addChild(this, UnlightLegacy.INS.topContainer.parent),
                     BetweenAS3.to(this, {y: _Y}, 0.3, Quad.easeOut)
             ).play();
-            Unlight.INS.topContainer.mouseEnabled = false;
-            Unlight.INS.topContainer.mouseChildren = false;
+            UnlightLegacy.INS.topContainer.mouseEnabled = false;
+            UnlightLegacy.INS.topContainer.mouseChildren = false;
         } else {
             new WaitThread(100, throughNotice, []).start();
             y = -800;
@@ -991,8 +991,8 @@ public class NoticePanel extends BaseScene {
                     BetweenAS3.tween(this, {y: _START_Y}, null, 0.15, Sine.easeOut),
                     BetweenAS3.removeFromParent(this)
             ).play()
-            Unlight.INS.topContainer.mouseEnabled = true;
-            Unlight.INS.topContainer.mouseChildren = true;
+            UnlightLegacy.INS.topContainer.mouseEnabled = true;
+            UnlightLegacy.INS.topContainer.mouseChildren = true;
             _lastActivityMess = "";
             _lastActivityTitle = "";
             _lastActivityImage = "";

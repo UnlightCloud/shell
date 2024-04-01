@@ -208,9 +208,9 @@ public class ItemView extends Thread {
     private function show():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
 
-        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
 
         pExec.start();
         pExec.join();
@@ -253,7 +253,7 @@ public class ItemView extends Thread {
         var pExec:ParallelExecutor = new ParallelExecutor();
 
 
-        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.start();
         pExec.join();

@@ -179,8 +179,8 @@ public class LibraryView extends Thread {
 
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(_avatarView.getShowThread(_container));
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         pExec.addThread(_dataArea.getShowThread(_container, 3));
         pExec.start();
         pExec.join();
@@ -192,7 +192,7 @@ public class LibraryView extends Thread {
     private function show2():void {
 
         var pExec:ParallelExecutor = new ParallelExecutor();
-        pExec.addThread(new BeTweenAS3Thread(_dataArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_dataArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
 
         pExec.start();
         _bg.mouseEnabled = true;
@@ -299,9 +299,9 @@ public class LibraryView extends Thread {
     private function hide():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
 //            log.writeLog(log.LV_INFO, this, "hide start");
-        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_title, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_titleJ, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_container, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.start();
         pExec.join();
@@ -315,7 +315,7 @@ public class LibraryView extends Thread {
 //            log.writeLog(log.LV_INFO, this, "hide2 start");
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(_avatarView.getHideThread());
-        pExec.addThread(new BeTweenAS3Thread(_dataArea, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_dataArea, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
 
         pExec.start();
         pExec.join();

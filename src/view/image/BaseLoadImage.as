@@ -46,8 +46,8 @@ public class BaseLoadImage extends UIComponent implements IMonitor, IViewThread 
     public function BaseLoadImage(url:String) {
         _url = url;
         if (_url.match(/.swf/) != null) {
-            if (Unlight._IMAGE_MD5_IS_SET) {
-                var file_md5:String = getFilenameMD5(url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf(".")) + Unlight._IMG_HASH_KEY);
+            if (UnlightLegacy._IMAGE_MD5_IS_SET) {
+                var file_md5:String = getFilenameMD5(url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf(".")) + UnlightLegacy._IMG_HASH_KEY);
 
                 _url = _url + "." + file_md5;
                 url = _url;

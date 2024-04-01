@@ -54,15 +54,15 @@ public class Announce extends BaseScene {
     public function Announce() {
         super();
         _bg.graphics.beginFill(0xFFFFFF);
-        _bg.graphics.drawRect(0, 0, Unlight.WIDTH, 50);
+        _bg.graphics.drawRect(0, 0, UnlightLegacy.WIDTH, 50);
         _bg.graphics.endFill();
         _bg.y = 0;
         _bg.alpha = 0.5;
 //             _bg.filters = [new GlowFilter(0xEEEEEE, 1, 0, 110, 4, 1),];
 
-        _textLabel.x = Unlight.WIDTH;
+        _textLabel.x = UnlightLegacy.WIDTH;
         _textLabel.y = 5;
-        _textLabel.width = Unlight.WIDTH + 30;
+        _textLabel.width = UnlightLegacy.WIDTH + 30;
         _textLabel.height = 50;
         _textLabel.styleName = "AnnounceLabel";
         addChild(_bg);
@@ -76,7 +76,7 @@ public class Announce extends BaseScene {
         __showTimer = new Timer(10 * 1000, 0);
         __showTimer.addEventListener(TimerEvent.TIMER, showHandler);
         // log.writeLog(log.LV_FATAL, this, "Announce create++");
-        Unlight.INS.topContainer.parent.addChild(this);
+        UnlightLegacy.INS.topContainer.parent.addChild(this);
         mouseEnabled = false;
         mouseChildren = false;
 
@@ -160,7 +160,7 @@ public class Announce extends BaseScene {
         if (_textLabel.htmlText.length > 0 && (_tween == null || !(_tween.isPlaying))) {
             log.writeLog(log.LV_FATAL, this, "Announce show");
             _tween = BetweenAS3.serial(
-                    BetweenAS3.addChild(this, Unlight.INS.topContainer.parent),
+                    BetweenAS3.addChild(this, UnlightLegacy.INS.topContainer.parent),
                     BetweenAS3.tween(this,
                             {alpha: 1.0},
                             {alpha: 0.0},
@@ -168,7 +168,7 @@ public class Announce extends BaseScene {
                             Sine.easeIn),
                     BetweenAS3.tween(_textLabel,
                             {x: -_textLabel.width},
-                            {x: Unlight.WIDTH},
+                            {x: UnlightLegacy.WIDTH},
                             _textLabel.width / 80,
                             Linear.linear),
                     BetweenAS3.tween(this,

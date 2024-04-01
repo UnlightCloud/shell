@@ -339,7 +339,7 @@ public class FoeHand extends BaseHand {
                     y: dropPoint.y,
                     scaleX: dropCardsScale(),
                     scaleY: dropCardsScale()
-                }, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+                }, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
             }
             return _dropPExec;
         } else {
@@ -441,7 +441,7 @@ class HideOnceHandCardsThread extends Thread {
         _accArray.forEach(function (item:*, index:int, array:Array):void {
             _beforeY = item.y
 //                             pExec.addThread(new TweenerThread (item, {y:_beforeY-_HIDE_Y, transition:"easeOutExpo", time: 0.2}));
-            pExec.addThread(new BeTweenAS3Thread(item, {y: _beforeY - _HIDE_Y}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
+            pExec.addThread(new BeTweenAS3Thread(item, {y: _beforeY - _HIDE_Y}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
         });
         pExec.join();
         pExec.start();
@@ -459,7 +459,7 @@ class HideOnceHandCardsThread extends Thread {
         _accArray.forEach(function (item:*, index:int, array:Array):void {
             _beforeY = item.y
 //                             pExec.addThread(new TweenerThread (item, {y:_beforeY+_HIDE_Y, transition:"easeOutExpo", time: 0.2}));
-            pExec.addThread(new BeTweenAS3Thread(item, {y: _beforeY + _HIDE_Y}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
+            pExec.addThread(new BeTweenAS3Thread(item, {y: _beforeY + _HIDE_Y}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
         });
         pExec.join();
         pExec.start();

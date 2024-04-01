@@ -55,7 +55,7 @@ public class ScrollBar extends BaseScene {
         _bar.addEventListener(MouseEvent.MOUSE_DOWN, pressBarHandler);
         _bar.addEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
         parent.addEventListener(MouseEvent.MOUSE_WHEEL, wheelBarHandler);
-        Unlight.INS.addEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
+        UnlightLegacy.INS.addEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
     }
 
     // 後処理
@@ -65,7 +65,7 @@ public class ScrollBar extends BaseScene {
         _bar.removeEventListener(MouseEvent.MOUSE_DOWN, pressBarHandler);
         _bar.removeEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
         _timer.removeEventListener(TimerEvent.TIMER, timerHandler);
-        Unlight.INS.removeEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
+        UnlightLegacy.INS.removeEventListener(MouseEvent.MOUSE_UP, releaseBarHandler);
     }
 
     // 1画面に表示できるデータの限界を設定

@@ -16,9 +16,9 @@ import view.ClousureThread;
 
 public class Transition extends UIComponent {
     protected static var __instance:Transition; // シングルトン保存用
-    private var _beforeBitmapData:BitmapData = new BitmapData(Unlight.WIDTH, Unlight.HEIGHT);
+    private var _beforeBitmapData:BitmapData = new BitmapData(UnlightLegacy.WIDTH, UnlightLegacy.HEIGHT);
     private var _transitionBitMap:Bitmap;
-    private var _maskBitmapData:BitmapData = new BitmapData(Unlight.WIDTH, Unlight.HEIGHT);
+    private var _maskBitmapData:BitmapData = new BitmapData(UnlightLegacy.WIDTH, UnlightLegacy.HEIGHT);
     private var _stage:DisplayObjectContainer;
     private static const __RDM:int = Math.floor(Math.random() * 10000);
 

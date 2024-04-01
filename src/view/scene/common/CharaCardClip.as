@@ -1150,7 +1150,7 @@ public class CharaCardClip extends BaseScene implements ICardClip {
         return new BeTweenAS3Thread(_metaContainer, {
             scaleX: scale,
             scaleY: scale
-        }, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, true);
+        }, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_IN_SINE, 0.0, true);
     }
 
     // 表示用スレッドを返す
@@ -1294,11 +1294,11 @@ public class CharaCardClip extends BaseScene implements ICardClip {
     }
 
     public function getEditUpdateShowThread():Thread {
-        return new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.1 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO, 0.0, true);
+        return new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.1 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO, 0.0, true);
     }
 
     public function getEditUpdateHideThread():Thread {
-        return new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_IN_EXPO);
+        return new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_IN_EXPO);
     }
 
     public function get finished():Boolean {

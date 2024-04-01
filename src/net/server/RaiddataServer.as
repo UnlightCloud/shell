@@ -46,7 +46,7 @@ public class RaiddataServer extends Server {
         log.writeLog(log.LV_DEBUG, this, "configload", address, port);
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "", "", "", "", "", "RDS[" + address + ":" + port.toString() + "] ");
+            UnlightLegacy.INS.updateSeverInfo("", "", "", "", "", "", "RDS[" + address + ":" + port.toString() + "] ");
         }
     }
 

@@ -338,8 +338,8 @@ public class CombineResult extends BaseScene {
     public override function init():void {
         _container.addChild(_resultImage);
         allLabelInit();
-        Unlight.INS.topContainer.parent.addChild(_container);
-        Unlight.INS.topContainer.parent.addChild(_expContainer);
+        UnlightLegacy.INS.topContainer.parent.addChild(_container);
+        UnlightLegacy.INS.topContainer.parent.addChild(_expContainer);
     }
 
     private function allLabelInit():void {
@@ -736,7 +736,7 @@ public class CombineResult extends BaseScene {
         pExec.addThread(_prevClip.getShowThread(_container));
         pExec.addThread(_newClip.getShowThread(_container));
         sExec.addThread(pExec);
-        sExec.addThread(new BeTweenAS3Thread(_container, {alpha: 1.0}, {alpha: 0.0}, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+        sExec.addThread(new BeTweenAS3Thread(_container, {alpha: 1.0}, {alpha: 0.0}, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
         sExec.addThread(_resultExp.getShowThread(_expContainer));
         sExec.addThread(_resultExp.getMoveThread());
         sExec.addThread(getLevelUpThread());

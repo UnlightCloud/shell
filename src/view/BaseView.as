@@ -3,10 +3,10 @@ import org.libspark.thread.Thread;
 
 public class BaseView extends Thread {
 
-    private var _stage:Unlight;
+    private var _stage:UnlightLegacy;
 
     // コンストラクタ
-    public function BaseView(stage:Unlight) {
+    public function BaseView(stage:UnlightLegacy) {
         _stage = stage;
     }
 }

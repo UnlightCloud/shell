@@ -37,9 +37,9 @@ public class WaitingPanel extends Panel {
         __cancelArgs = args;
         __caller = caller;
 
-        Unlight.INS.topContainer.parent.addChild(__wp);
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.parent.addChild(__wp);
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         __enable = true;
     }
 
@@ -50,8 +50,8 @@ public class WaitingPanel extends Panel {
     public static function hide():void {
         log.writeLog(log.LV_FATAL, "static WatingPanel", "hide++++");
         RemoveChild.apply(__wp);
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         __enable = false;
     }
 

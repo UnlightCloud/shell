@@ -39,7 +39,7 @@ public class RmShopPanel extends BaseScene {
      */
     public function RmShopPanel() {
         BG.graphics.beginFill(0x101010);
-        BG.graphics.drawRect(0, 0, Unlight.WIDTH, 240);
+        BG.graphics.drawRect(0, 0, UnlightLegacy.WIDTH, 240);
         BG.graphics.endFill();
         BG.y = 250;
         BG.alpha = 0.9;

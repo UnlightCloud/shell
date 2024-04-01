@@ -50,11 +50,11 @@ public class LogListView extends UIComponent {
 
             // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
             BetweenAS3.serial(
-                    BetweenAS3.addChild(__logView, Unlight.INS.topContainer.parent),
+                    BetweenAS3.addChild(__logView, UnlightLegacy.INS.topContainer.parent),
                     BetweenAS3.to(__logView, {y: _Y}, 0.3, Quad.easeOut)
             ).play();
-            Unlight.INS.topContainer.mouseEnabled = false;
-            Unlight.INS.topContainer.mouseChildren = false;
+            UnlightLegacy.INS.topContainer.mouseEnabled = false;
+            UnlightLegacy.INS.topContainer.mouseChildren = false;
             __enable = true;
             updateLogInfo();
             LogListContainer.update();
@@ -80,8 +80,8 @@ public class LogListView extends UIComponent {
                 BetweenAS3.tween(__logView, {y: _START_Y}, null, 0.15, Sine.easeOut),
                 BetweenAS3.removeFromParent(__logView)
         ).play()
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         __enable = false;
     }
 

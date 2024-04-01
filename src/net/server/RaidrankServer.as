@@ -45,7 +45,7 @@ public class RaidrankServer extends Server {
         log.writeLog(log.LV_DEBUG, this, "configload", address, port);
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "", "", "", "", "", "", "RRS[" + address + ":" + port.toString() + "] ");
+            UnlightLegacy.INS.updateSeverInfo("", "", "", "", "", "", "", "RRS[" + address + ":" + port.toString() + "] ");
         }
     }
 

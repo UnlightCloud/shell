@@ -241,7 +241,7 @@ public class RequirementsView extends Thread {
         _stage.addChild(_container);
         _container.addChild(_cardsContainer);
 //            _container.addChild(_levelUpBase);
-        Unlight.INS.topContainer.parent.addChild(_levelUpBase);
+        UnlightLegacy.INS.topContainer.parent.addChild(_levelUpBase);
 
         _stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler);
         _stage.addEventListener(MouseEvent.MOUSE_UP, mouseUpHandler);
@@ -255,7 +255,7 @@ public class RequirementsView extends Thread {
 
         _levelUpEffect.forEach(function (item:*, index:int, array:Array):void {
             item.visible = false;
-            Unlight.INS.topContainer.parent.addChild(item);
+            UnlightLegacy.INS.topContainer.parent.addChild(item);
         });
         _exchangeNumLabel.x = _EXCH_NUM_X;
         _exchangeNumLabel.y = _EXCH_NUM_Y;
@@ -289,7 +289,7 @@ public class RequirementsView extends Thread {
         _ccc.alpha = 0.0;
 
         sExec.addThread(_bg.getShowThread(_container, 0));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         pExec.addThread(_ccc.getUnrotateShowThread(_cardsContainer));
         sExec.addThread(pExec);
         sExec.start();
@@ -394,9 +394,9 @@ public class RequirementsView extends Thread {
         });
 
         var pExec:ParallelExecutor = new ParallelExecutor();
-        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 1.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 1.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         _cccHigh.forEach(function (item:*, index:int, array:Array):void {
-            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 1.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true))
+            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 1.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true))
         });
         pExec.start();
         pExec.join();
@@ -447,25 +447,25 @@ public class RequirementsView extends Thread {
     // 描画オブジェクトを消去
     private function hide():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
-        pExec.addThread(new BeTweenAS3Thread(_fade, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_lockContainer, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_lockNumContainer, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_fade, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_ccc, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_lockContainer, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_lockNumContainer, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         pExec.addThread(new ClousureThread(function ():void {
             RemoveChild.apply(_exchangeNumLabel)
         }));
         _cccLow.forEach(function (item:*, index:int, array:Array):void {
-            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
+            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
         });
         _cccHigh.forEach(function (item:*, index:int, array:Array):void {
-            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
+            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
         });
         _labelLow.forEach(function (item:*, index:int, array:Array):void {
-            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
+            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
         });
         _labelHigh.forEach(function (item:*, index:int, array:Array):void {
-            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
+            pExec.addThread(new BeTweenAS3Thread(item, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false))
         });
         pExec.start();
         pExec.join();
@@ -537,8 +537,8 @@ public class RequirementsView extends Thread {
             SE.playClick();
             _lvupCard.getHideThread().start();
         }
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         _levelUpBase.visible = false;
         _state = _END;
         _growth.waiting();
@@ -807,11 +807,11 @@ public class RequirementsView extends Thread {
             sExec.addThread(new BeTweenAS3Thread(_lockContainer, {
                 alpha: 1.0,
                 x: _DETAIL_X
-            }, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+            }, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
             sExec.addThread(new BeTweenAS3Thread(_lockNumContainer, {
                 alpha: 1.0,
                 x: _DETAIL_X
-            }, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+            }, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
 
             if (suspend) {
                 _exchangeNum = 1;
@@ -865,8 +865,8 @@ public class RequirementsView extends Thread {
 
         sExec.addThread(_lvupCard.getChainShowThread(_levelUpBase));
 
-        pExec.addThread(new BeTweenAS3Thread(_lvupCard, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
-        pExec.addThread(new BeTweenAS3Thread(_levelUpBase, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+        pExec.addThread(new BeTweenAS3Thread(_lvupCard, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+        pExec.addThread(new BeTweenAS3Thread(_levelUpBase, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
 
         sExec.addThread(pExec);
         sExec.start();
@@ -906,8 +906,8 @@ public class RequirementsView extends Thread {
         _deckEditor.selectCard(_id);
 
         _levelUpBase.visible = true;
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
 
         _bg.buttonHide();
 //            RemoveChild.apply(_exchangeNumLabel);

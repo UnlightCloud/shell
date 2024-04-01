@@ -197,7 +197,7 @@ public class LobbyServer extends Server {
         port = Config.lobbyServerInfo.port;
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "LS[" + address + ":" + port.toString() + "]");
+            UnlightLegacy.INS.updateSeverInfo("", "LS[" + address + ":" + port.toString() + "]");
         }
 
     }

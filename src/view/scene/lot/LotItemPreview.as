@@ -121,7 +121,7 @@ public class LotItemPreview extends BaseScene {
                     var sExec:SerialExecutor = new SerialExecutor();
                     var container:UIComponent = new UIComponent;
                     container.visible = false;
-                    Unlight.INS.topContainer.addChild(container);
+                    UnlightLegacy.INS.topContainer.addChild(container);
                     switch (item.articleKind) {
                         case Const.LOT_ARTICLE_ITEM:
                             card = new ItemCardClip(AvatarItem.ID(item.articleID), item.num);

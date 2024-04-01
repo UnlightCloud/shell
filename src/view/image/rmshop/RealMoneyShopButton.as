@@ -118,7 +118,7 @@ public class RealMoneyShopButton extends BaseImage {
         _saleRestTimeLabel.mouseEnabled = false;
         _saleRestTimeLabel.mouseChildren = false;
         // 作ったラベルをトップビューに突っ込む
-        Unlight.INS.topContainer.parent.addChild(_saleRestTimeLabel);
+        UnlightLegacy.INS.topContainer.parent.addChild(_saleRestTimeLabel);
 
         addChild(_labelContainer);
 

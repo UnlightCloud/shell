@@ -169,7 +169,7 @@ public class LobbyView extends Thread {
 
     // レジスト画面へ
     private function regist():void {
-        Unlight.INS.loadingEnd();
+        UnlightLegacy.INS.loadingEnd();
         _registView = new RegistView(_stage);
         _registView.start();
         _registView.join();
@@ -214,7 +214,7 @@ public class LobbyView extends Thread {
     // エントランスの初期化
     private function initEntrance():void {
 //            log.writeLog(log.LV_FATAL, this, "entrant start");
-        Unlight.INS.loadingEnd();
+        UnlightLegacy.INS.loadingEnd();
         _registView = null;
         if (_player.state == Player.STATE_LOGOUT) {
             next(hide)

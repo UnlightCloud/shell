@@ -33,7 +33,7 @@ public class WatchResultScene extends BaseScene {
 
     private var _resultLabel:Label = new Label();
 
-    private static const _IMAGE_X:int = Unlight.WIDTH / 2;  // Win/Lose表示X
+    private static const _IMAGE_X:int = UnlightLegacy.WIDTH / 2;  // Win/Lose表示X
     private static const _IMAGE_Y:int = 195;              // Win/Lose表示Y
 
     private static const _POS_X:int = 0;

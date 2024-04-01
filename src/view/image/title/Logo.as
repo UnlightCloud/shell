@@ -47,7 +47,7 @@ public class Logo extends BaseImage {
 
     public function initializePos():void {
         BG1.graphics.beginFill(0xEEEEEE);
-        BG1.graphics.drawRect(0, 0, Unlight.WIDTH, 50);
+        BG1.graphics.drawRect(0, 0, UnlightLegacy.WIDTH, 50);
         BG1.graphics.endFill();
         BG1.y = 340;
         BG1.alpha = 0.0;

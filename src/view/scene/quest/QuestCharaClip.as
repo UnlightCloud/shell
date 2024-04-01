@@ -130,7 +130,7 @@ public class QuestCharaClip extends BaseScene {
                 BetweenAS3.tween(this,
                         {x: _X_SET[x], y: _Y_SET[y]},
                         null,
-                        0.9 / Unlight.SPEED,
+                        0.9 / UnlightLegacy.SPEED,
                         Sine.easeInOut
                 ),
 //                     BetweenAS3.tween(this,
@@ -145,7 +145,7 @@ public class QuestCharaClip extends BaseScene {
 //                                      Sine.easeIn
 //                         ),
 
-                BetweenAS3.delay(BetweenAS3.func(arrivePoint), 0.75 / Unlight.SPEED)
+                BetweenAS3.delay(BetweenAS3.func(arrivePoint), 0.75 / UnlightLegacy.SPEED)
         ).play();
         new WaitThread(900, TopView.enable, [true]).start();
     }

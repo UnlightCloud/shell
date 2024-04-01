@@ -300,11 +300,11 @@ public class ProfoundNoticePanel extends BaseScene {
     private function showBase():void {
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(this, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(this, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(this, {y: _useY}, 0.3, Quad.easeOut)
         ).play();
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         _enable = true;
     }
 
@@ -313,8 +313,8 @@ public class ProfoundNoticePanel extends BaseScene {
                 BetweenAS3.tween(this, {y: _START_Y}, null, 0.15, Sine.easeOut),
                 BetweenAS3.removeFromParent(this)
         ).play()
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         _enable = false;
         _isEntry = false;
     }

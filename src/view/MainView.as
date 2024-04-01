@@ -38,7 +38,7 @@ public class MainView extends Thread {
         _stage = stage;
         // 背景シェイプを作成
         _bg.graphics.beginFill(0x000000);
-        _bg.graphics.drawRect(0, 0, Unlight.WIDTH, Unlight.HEIGHT);
+        _bg.graphics.drawRect(0, 0, UnlightLegacy.WIDTH, UnlightLegacy.HEIGHT);
         _bg.graphics.endFill();
         _container.addChildAt(_bg, 0);
         _stage.addChildAt(_container, 0);
@@ -74,7 +74,7 @@ public class MainView extends Thread {
         _titleView.start();
         _raidHelpView.start();
 
-        _stage.stage.fullScreenSourceRect = new Rectangle(0, 0, Unlight.WIDTH, Unlight.HEIGHT);
+        _stage.stage.fullScreenSourceRect = new Rectangle(0, 0, UnlightLegacy.WIDTH, UnlightLegacy.HEIGHT);
         _stage.stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyDownFunc);
         // 標準のパースを設定
         _stage.root.transform.perspectiveProjection.projectionCenter = new Point(_stage.stage.stageWidth / 2, _stage.stage.stageHeight / 2);
@@ -97,11 +97,11 @@ public class MainView extends Thread {
         }
         if (event.keyCode == 113) {
             log.writeLog(log.LV_FATAL, this, "F2:強制GC");
-            Unlight.GCWCheckNow();
+            UnlightLegacy.GCWCheckNow();
         }
         if (event.keyCode == 114) {
             log.writeLog(log.LV_FATAL, this, "F3:デバッグインフォの表示切り替え");
-            Unlight.INS.debugInfoVisibleToggle();
+            UnlightLegacy.INS.debugInfoVisibleToggle();
         }
         if (event.keyCode == 115) {
             log.writeLog(log.LV_FATAL, this, "F4:デバッグコードを送る（相手に10ダメージ）");

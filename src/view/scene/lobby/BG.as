@@ -45,14 +45,14 @@ public class BG extends BaseScene {
         sExec.addThread(super.getShowThread(stage, at));
         // var pExec:ParallelExecutor = new ParallelExecutor();
         // pExec.addThread(getShowSaleMCThread());
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         //sExec.addThread(pExec);
         return sExec;
     }
 
     public override function getHideThread(type:String = ""):Thread {
         var sExec:SerialExecutor = new SerialExecutor();
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         sExec.addThread(super.getHideThread());
         return sExec;
     }

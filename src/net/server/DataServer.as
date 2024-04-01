@@ -184,7 +184,7 @@ public class DataServer extends Server {
         port = Config.dataServerInfo.port;
         CONFIG::DEBUG
         {
-            Unlight.INS.updateSeverInfo("", "", "", "DS[" + address + ":" + port.toString() + "]");
+            UnlightLegacy.INS.updateSeverInfo("", "", "", "DS[" + address + ":" + port.toString() + "]");
         }
 
     }
@@ -316,7 +316,7 @@ public class DataServer extends Server {
         log.writeLog(log.LV_DEBUG, "[DataServer] loginCert.");
         log.writeLog(log.LV_DEBUG, this, "server messeage", msg);
         ConstData.dataInit(msg);
-        Unlight.setImgHashKey(hash_key);
+        UnlightLegacy.setImgHashKey(hash_key);
     }
 
     // ログインOK

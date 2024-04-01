@@ -8,8 +8,8 @@ public class TopView extends Object {
 
 
     public static function enable(e:Boolean):void {
-        Unlight.INS.topContainer.mouseEnabled = e;
-        Unlight.INS.topContainer.mouseChildren = e;
+        UnlightLegacy.INS.topContainer.mouseEnabled = e;
+        UnlightLegacy.INS.topContainer.mouseChildren = e;
     }
 
 

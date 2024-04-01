@@ -299,7 +299,7 @@ public class BaseHand extends BaseScene {
             alpha: 1.0,
             scaleX: handCardsScale(),
             scaleY: handCardsScale()
-        }, null, 0.4 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.1 / Unlight.SPEED, true));
+        }, null, 0.4 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.1 / UnlightLegacy.SPEED, true));
         sExec.addThread(new ClousureThread(registHandlers, [acc]));
         sExec.addThread(updateHandMove());
         log.writeLog(log.LV_FATAL, this, "getAddEventACard acc end", acc);
@@ -482,9 +482,9 @@ public class BaseHand extends BaseScene {
         var pExec:ParallelExecutor = new ParallelExecutor();
         disposeHandlers(acc);
         if (acc.isRewritten()) {
-            sExec.addThread(new SleepThread(600 / Unlight.SPEED));
+            sExec.addThread(new SleepThread(600 / UnlightLegacy.SPEED));
             sExec.addThread(new ClousureThread(acc.resetCardValue));
-            sExec.addThread(new SleepThread(300 / Unlight.SPEED));
+            sExec.addThread(new SleepThread(300 / UnlightLegacy.SPEED));
         }
         pExec.addThread(SE.getThrowCardSEThread(w * 0.7));
         pExec.addThread(new BeTweenAS3Thread(acc, {
@@ -492,7 +492,7 @@ public class BaseHand extends BaseScene {
             y: distY,
             scaleX: 1.0,
             scaleY: 1.0
-        }, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO, w / Unlight.SPEED, false));
+        }, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO, w / UnlightLegacy.SPEED, false));
         sExec.addThread(pExec);
         sExec.addThread(new ClousureThread(disposeHandlers, [acc]))
         return sExec;
@@ -504,12 +504,12 @@ public class BaseHand extends BaseScene {
 //            return new TweenerThread (acc, {transition:"easeOutExpo", time: 0.1} );
         disposeHandlers(acc);
         if (acc.isRewritten()) {
-            sExec.addThread(new SleepThread(600 / Unlight.SPEED));
+            sExec.addThread(new SleepThread(600 / UnlightLegacy.SPEED));
             sExec.addThread(new ClousureThread(acc.resetCardValue));
-            sExec.addThread(new SleepThread(300 / Unlight.SPEED));
+            sExec.addThread(new SleepThread(300 / UnlightLegacy.SPEED));
         }
         var sExec:SerialExecutor = new SerialExecutor();
-        sExec.addThread(new BeTweenAS3Thread(acc, {x: acc.x}, null, 0.1 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
+        sExec.addThread(new BeTweenAS3Thread(acc, {x: acc.x}, null, 0.1 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_EXPO));
         sExec.addThread(new ClousureThread(disposeHandlers, [acc]));
         return sExec;
     }
@@ -566,7 +566,7 @@ public class BaseHand extends BaseScene {
                     y: getHandY(i),
                     scaleX: handCardsScale(),
                     scaleY: handCardsScale()
-                }, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+                }, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
                 sExec.addThread(new ClousureThread(acSet[i].clickOn));
                 _handPExec.addThread(sExec);
                 // 手元のカードはすべて非アクティブに
@@ -597,7 +597,7 @@ public class BaseHand extends BaseScene {
                     y: getDropY(i),
                     scaleX: dropCardsScale(),
                     scaleY: dropCardsScale()
-                }, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+                }, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
             }
         }
         return _dropPExec;
@@ -614,7 +614,7 @@ public class BaseHand extends BaseScene {
 
     public function getBringOffThread():Thread {
 //            return new TweenerThread(this, {alpha:0.0, transition:"easeOutSine", time: 0.5, hide:true});
-        return new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
+        return new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false);
     }
 
 }
@@ -723,13 +723,13 @@ class DealThread extends Thread {
     }
 
     private function deal():void {
-        var cardAlphaTween:Thread = new BeTweenAS3Thread(_acc, {alpha: 1.0}, null, _movedDelay / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, _wait, true);
+        var cardAlphaTween:Thread = new BeTweenAS3Thread(_acc, {alpha: 1.0}, null, _movedDelay / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, _wait, true);
         var cardMoveTween:Thread = new BeTweenAS3Thread(_acc, {
             x: _x,
             y: _y,
             scaleX: _scale,
             scaleY: _scale
-        }, null, _moveTime / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, _wait, true);
+        }, null, _moveTime / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, _wait, true);
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(SE.getThrowCardSEThread(_wait * 0.9));
         pExec.addThread(cardMoveTween);

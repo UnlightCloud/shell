@@ -45,7 +45,7 @@ public class GlobalchatServer extends Server {
         CONFIG::DEBUG
         {
             log.writeLog(log.LV_INFO, this, "configload global chat", address, port);
-            Unlight.INS.updateSeverInfo("", "", "", "", "", "", "", "", "GCS[" + address + ":" + port.toString() + "]");
+            UnlightLegacy.INS.updateSeverInfo("", "", "", "", "", "", "", "", "GCS[" + address + ":" + port.toString() + "]");
         }
 
     }

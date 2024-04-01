@@ -104,8 +104,8 @@ public class NewInvitePanel extends BaseScene {
     private var _text1:TextArea = new TextArea();
     private var _text2:TextArea = new TextArea();
 
-    private static const _START_X:int = Unlight.WIDTH / 2 - 120;
-    private static const _START_Y:int = Unlight.HEIGHT / 2 - 120;
+    private static const _START_X:int = UnlightLegacy.WIDTH / 2 - 120;
+    private static const _START_Y:int = UnlightLegacy.HEIGHT / 2 - 120;
 //        private static const _MSG:String = escapeMultiByte("ゴシックバトルカードゲームUnlight　特典付き招待コード [") +"__CODE__"+escapeMultiByte("]") ;
     private static const _MSG:String = escapeMultiByte(_TRANS_INVITE_MSG1) + "__CODE__" + escapeMultiByte("]");
     public static const SET_URL_BASE:String = "orig";
@@ -235,11 +235,11 @@ public class NewInvitePanel extends BaseScene {
     public function show():void {
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(_panel, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(_panel, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(_panel, {x: _START_X, y: _START_Y, alpha: 1.0}, 0.05, Quad.easeOut)
         ).play();
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         _panel.addEventListener(CloseEvent.CLOSE, closeButtonClickHandler)
         // _panel.setCloseFunc(hide);
     }
@@ -250,8 +250,8 @@ public class NewInvitePanel extends BaseScene {
                 BetweenAS3.tween(_panel, {alpha: 0.0}, null, 0.05, Sine.easeOut),
                 BetweenAS3.removeFromParent(_panel)
         ).play()
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
     }
 
 }

@@ -662,8 +662,8 @@ public class Entrance extends BaseScene {
     public function getShowSaleMCThread():Thread {
         var pExec:ParallelExecutor = new ParallelExecutor();
         if (Player.instance.avatar.isSaleTime) {
-            pExec.addThread(new BeTweenAS3Thread(_bgSet.sale, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-            pExec.addThread(new BeTweenAS3Thread(_labelContainer, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+            pExec.addThread(new BeTweenAS3Thread(_bgSet.sale, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+            pExec.addThread(new BeTweenAS3Thread(_labelContainer, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         } else {
             _bgSet.sale.visible = false;
             _labelContainer.visible = false;
@@ -678,14 +678,14 @@ public class Entrance extends BaseScene {
         sExec.addThread(super.getShowThread(stage, at));
         var pExec:ParallelExecutor = new ParallelExecutor();
         pExec.addThread(getShowSaleMCThread());
-        pExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(this, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         sExec.addThread(pExec);
         return sExec;
     }
 
     public override function getHideThread(type:String = ""):Thread {
         var sExec:SerialExecutor = new SerialExecutor();
-        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        sExec.addThread(new BeTweenAS3Thread(this, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         sExec.addThread(super.getHideThread());
         return sExec;
     }
@@ -693,8 +693,8 @@ public class Entrance extends BaseScene {
     public function getHideSaleMCThread():Thread {
         var pExec:ParallelExecutor = new ParallelExecutor();
         // セール表示を隠す
-        pExec.addThread(new BeTweenAS3Thread(_bgSet.sale, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_labelContainer, {alpha: 0.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_bgSet.sale, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_labelContainer, {alpha: 0.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         return pExec;
     }
 

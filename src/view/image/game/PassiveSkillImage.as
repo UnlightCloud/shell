@@ -45,7 +45,7 @@ public class PassiveSkillImage extends BaseLoadImage {
     }
 
     private function foeAnimation():void {
-        x = Unlight.WIDTH;
+        x = UnlightLegacy.WIDTH;
         scaleX = -1;
         SE.getFeatInsertSEThread(0).start();
         _root.gotoAndPlay(1);

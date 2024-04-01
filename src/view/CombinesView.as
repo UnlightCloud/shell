@@ -144,7 +144,7 @@ public class CombinesView extends Thread {
         _state = _START;
         _bg.alpha = 0.0;
         _stage.addChild(_container);
-        Unlight.INS.topContainer.parent.addChild(_levelUpBase);
+        UnlightLegacy.INS.topContainer.parent.addChild(_levelUpBase);
 
         _combine.addEventListener(CombineEvent.COMBINE_SUCCESS, combineSuccessHandler);
         _deckEditor.addEventListener(EditCardEvent.COMBINE_TO_BINDER_WEAPON, changeListHandler);
@@ -157,7 +157,7 @@ public class CombinesView extends Thread {
 
         _levelUpEffect.forEach(function (item:*, index:int, array:Array):void {
             item.visible = false;
-            Unlight.INS.topContainer.parent.addChild(item);
+            UnlightLegacy.INS.topContainer.parent.addChild(item);
         });
         _exchangeNumLabel.x = _EXCH_NUM_X;
         _exchangeNumLabel.y = _EXCH_NUM_Y;
@@ -193,10 +193,10 @@ public class CombinesView extends Thread {
         sExec.addThread(_combineSetArea.getShowThread(_container, 2));
         sExec.addThread(_combineDataArea.getShowThread(_container, 3));
         sExec.addThread(_combineResult.getShowThread(_container, 10));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_listArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_combineSetArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
-        pExec.addThread(new BeTweenAS3Thread(_combineDataArea, {alpha: 1.0}, null, 0.8 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_listArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_combineSetArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
+        pExec.addThread(new BeTweenAS3Thread(_combineDataArea, {alpha: 1.0}, null, 0.8 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, true));
         sExec.addThread(pExec);
         sExec.start();
         sExec.join();
@@ -249,11 +249,11 @@ public class CombinesView extends Thread {
     // 描画オブジェクトを消去
     private function hide():void {
         var pExec:ParallelExecutor = new ParallelExecutor();
-        pExec.addThread(new BeTweenAS3Thread(_combineResult, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_combineDataArea, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_combineSetArea, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_fade, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
-        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.2 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_combineResult, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_combineDataArea, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_combineSetArea, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_fade, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
+        pExec.addThread(new BeTweenAS3Thread(_bg, {alpha: 0.0}, null, 0.2 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE, 0.0, false));
         pExec.addThread(new ClousureThread(function ():void {
             RemoveChild.apply(_exchangeNumLabel)
         }));
@@ -306,8 +306,8 @@ public class CombinesView extends Thread {
             SE.playClick();
             _lvupCard.getHideThread().start();
         }
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         _levelUpBase.visible = false;
         _combineResult.hide();
         _combineSetArea.resetSetList();
@@ -335,8 +335,8 @@ public class CombinesView extends Thread {
             SE.playClick();
             _lvupCard.getHideThread().start();
         }
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
         _levelUpBase.visible = false;
         _combineResult.hide();
         _state = _WAIT;
@@ -375,8 +375,8 @@ public class CombinesView extends Thread {
 
         sExec.addThread(_lvupCard.getShowThread(_levelUpBase));
 
-        pExec.addThread(new BeTweenAS3Thread(_lvupCard, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
-        pExec.addThread(new BeTweenAS3Thread(_levelUpBase, {alpha: 1.0}, null, 0.5 / Unlight.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+        pExec.addThread(new BeTweenAS3Thread(_lvupCard, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
+        pExec.addThread(new BeTweenAS3Thread(_levelUpBase, {alpha: 1.0}, null, 0.5 / UnlightLegacy.SPEED, BeTweenAS3Thread.EASE_OUT_SINE));
 
         sExec.addThread(pExec);
         sExec.start();
@@ -421,8 +421,8 @@ public class CombinesView extends Thread {
 
         _levelUpBase.visible = true;
 //            _combineResult.visible = true;
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
 
         _bg.buttonHide();
         _state = _COMBINE;

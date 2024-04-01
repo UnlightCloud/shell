@@ -20,8 +20,8 @@ public class EventInfoPanel extends BaseScene {
     // 描画コンテナ
     private var _container:UIComponent = new UIComponent();
 
-    private static const _START_X:int = Unlight.WIDTH / 2;
-    private static const _START_Y:int = Unlight.HEIGHT / 2;
+    private static const _START_X:int = UnlightLegacy.WIDTH / 2;
+    private static const _START_Y:int = UnlightLegacy.HEIGHT / 2;
 
     /**
      * コンストラクタ
@@ -52,11 +52,11 @@ public class EventInfoPanel extends BaseScene {
 
         // 作ったVIEWをトップビューに突っ込んで背景はクリックできなくする
         BetweenAS3.serial(
-                BetweenAS3.addChild(_panel, Unlight.INS.topContainer.parent),
+                BetweenAS3.addChild(_panel, UnlightLegacy.INS.topContainer.parent),
                 BetweenAS3.to(_panel, {x: 0, y: 0, scaleX: 1.0, scaleY: 1.0, alpha: 1.0}, 0.15, Quad.easeOut)
         ).play();
-        Unlight.INS.topContainer.mouseEnabled = false;
-        Unlight.INS.topContainer.mouseChildren = false;
+        UnlightLegacy.INS.topContainer.mouseEnabled = false;
+        UnlightLegacy.INS.topContainer.mouseChildren = false;
         _panel.setCloseFunc(hide);
     }
 
@@ -72,8 +72,8 @@ public class EventInfoPanel extends BaseScene {
                 }, null, 0.15, Sine.easeOut),
                 BetweenAS3.removeFromParent(_panel)
         ).play()
-        Unlight.INS.topContainer.mouseEnabled = true;
-        Unlight.INS.topContainer.mouseChildren = true;
+        UnlightLegacy.INS.topContainer.mouseEnabled = true;
+        UnlightLegacy.INS.topContainer.mouseChildren = true;
     }
 
 }
