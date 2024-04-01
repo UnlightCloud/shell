@@ -59,12 +59,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: client-data
     steps:
+      - uses: actions/checkout@v4
       - name: Download Client Data
         uses: actions/download-artifact@v4
         with:
           name: client-data
           path: data/export
-      - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
