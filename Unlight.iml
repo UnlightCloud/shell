@@ -3,7 +3,7 @@
   <component name="FlexBuildConfigurationManager" active="Unlight Desktop">
     <configurations>
       <configuration name="Unlight" main-class="Unlight" output-file="Unlight.swf" output-folder="$MODULE_DIR$/bin-debug" wrapper-template-path="$MODULE_DIR$/html-template">
-        <dependencies target-player="50.2">
+        <dependencies target-player="50.2" component-set="MxOnly">
           <entries>
             <entry library-name="as3crypto" library-level="project">
               <dependency linkage="Merged" />
@@ -22,7 +22,7 @@
         <packaging-ios />
       </configuration>
       <configuration name="Unlight Desktop" target-platform="Desktop" main-class="Unlight" output-file="Unlight_Desktop.swf" output-folder="$MODULE_DIR$/bin-debug">
-        <dependencies>
+        <dependencies component-set="MxOnly">
           <entries>
             <entry library-name="as3crypto" library-level="project">
               <dependency linkage="Merged" />
@@ -35,7 +35,6 @@
             <entry key="compiler.debug.swf" value="true" />
             <entry key="compiler.locale" value="zh_TW" />
           </map>
-          <option name="resourceFilesMode" value="ResourcePatterns" />
         </compiler-options>
         <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Unlight-descriptor.xml" package-file-name="Unlight">
           <files-to-package>
@@ -47,7 +46,12 @@
         <packaging-ios />
       </configuration>
     </configurations>
-    <compiler-options />
+    <compiler-options>
+      <map>
+        <entry key="compiler.define" value="CONFIG::LOCALE_JP&#9;false" />
+      </map>
+      <option name="additionalOptions" value="-compatibility-version=3.0" />
+    </compiler-options>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
