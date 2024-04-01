@@ -4,7 +4,7 @@ require 'find'
 require 'pathname'
 
 SUPPORT_CHARACTERS = {}
-File.readlines('data/all_griph_HanWangMingHeavy.txt').each do |line|
+File.readlines('res/data/all_griph_HanWangMingHeavy.txt').each do |line|
   line.scan(/./m) { |ch| SUPPORT_CHARACTERS[ch] = 'OK' }
 end
 
