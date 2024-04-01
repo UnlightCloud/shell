@@ -19,7 +19,7 @@ import view.utils.*;
 public class LoginInfoImage extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/common/info_login.swf")]
+    [Embed(source="../../../../res/data/image/common/info_login.swf")]
     private var _Source:Class;
 
     // OKボタン

@@ -23,7 +23,7 @@ import view.image.BaseImage;
 public class ResultFrame extends BaseImage {
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/result.swf")]
+    [Embed(source="../../../../res/data/image/game/result/result.swf")]
     private var _Source:Class;
 
 

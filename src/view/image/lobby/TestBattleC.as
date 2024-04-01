@@ -13,7 +13,7 @@ import view.image.*;
 public class TestBattleC extends CachedBaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/lobby/test_battle_c.swf")]
+    [Embed(source="../../../../res/data/image/lobby/test_battle_c.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

@@ -11,7 +11,7 @@ import view.image.BaseImage;
 public class EmptyCardBaseImage extends BaseImage {
 
     // EmptyCardBaseImage表示元SWF
-    [Embed(source="../../../../data/image/game/cardempty.swf")]
+    [Embed(source="../../../../res/data/image/game/cardempty.swf")]
     private var _Source:Class;
 
 

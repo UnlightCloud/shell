@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class ActionCardFrame extends BaseImage {
 
     // ActionCardFrame表示元SWF
-    [Embed(source="../../../../data/image/game/acframe.swf")]
+    [Embed(source="../../../../res/data/image/game/acframe.swf")]
     private var _Source:Class;
 
 

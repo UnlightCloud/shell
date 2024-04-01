@@ -19,7 +19,7 @@ import view.utils.*;
 public class ItemInventoryPanelImage extends BasePanelImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/item/item_panel.swf")]
+    [Embed(source="../../../../res/data/image/item/item_panel.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

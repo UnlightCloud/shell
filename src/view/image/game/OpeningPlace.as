@@ -12,10 +12,10 @@ import view.image.BaseImage;
  */
 public class OpeningPlace extends BaseImage {
     // レーデンベルグ城中庭
-    [Embed(source="../../../../data/image/game/opening/op_place00a.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_place00a.swf")]
     private static var _castle:Class;
     // 森
-    [Embed(source="../../../../data/image/game/opening/op_place00a.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_place00a.swf")]
     private static var _forest:Class;
 
     // 条件チップの配列

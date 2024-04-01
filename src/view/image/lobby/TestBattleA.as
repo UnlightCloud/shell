@@ -12,7 +12,7 @@ import view.image.*;
 
 public class TestBattleA extends CachedBaseImage {
 
-    [Embed(source="../../../../data/image/lobby/test_battle_a.swf")]
+    [Embed(source="../../../../res/data/image/lobby/test_battle_a.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

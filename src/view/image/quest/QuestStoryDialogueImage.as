@@ -25,7 +25,7 @@ public class QuestStoryDialogueImage extends BaseImage {
     public static const END_EVENT:String = "QuestStoryDialogueImageEndEvent";
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest_story/quest_story_talk.swf")]
+    [Embed(source="../../../../res/data/image/quest_story/quest_story_talk.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

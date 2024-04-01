@@ -13,7 +13,7 @@ import view.image.*;
 
 public class MapBaseImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/map_base.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_base.swf")]
     private var _Source:Class;
     private static const MAP_BASE:String = "map_base";
     private static const X:int = 0;

@@ -16,11 +16,11 @@ public class BG extends BaseImage {
 
     // HP表示元SWF
     CONFIG::CHARA_COST_DRAW_ON {
-        [Embed(source="../../../../data/image/library/library_cost.swf")]
+        [Embed(source="../../../../res/data/image/library/library_cost.swf")]
         private var _Source:Class;
     }
     CONFIG::CHARA_COST_DRAW_OFF {
-        [Embed(source="../../../../data/image/library/library.swf")]
+        [Embed(source="../../../../res/data/image/library/library.swf")]
         private var _Source:Class;
     }
 

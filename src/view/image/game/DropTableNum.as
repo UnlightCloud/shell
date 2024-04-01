@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class DropTableNum extends BaseImage {
 
     // ドロップテーブル数字表示元SWF
-    [Embed(source="../../../../data/image/game/num_btl_p.swf")]
+    [Embed(source="../../../../res/data/image/game/num_btl_p.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

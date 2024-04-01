@@ -10,7 +10,7 @@ import view.image.BaseImage;
 public class ShopBuyParamBar extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/shop_buy.swf")]
+    [Embed(source="../../../../res/data/image/shop/shop_buy.swf")]
     private var _Source:Class;
 
     /**

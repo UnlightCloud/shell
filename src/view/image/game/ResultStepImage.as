@@ -11,7 +11,7 @@ import view.image.BaseImage;
 public class ResultStepImage extends BaseImage {
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/itemrank.swf")]
+    [Embed(source="../../../../res/data/image/game/result/itemrank.swf")]
 
     private var _Source:Class;
 

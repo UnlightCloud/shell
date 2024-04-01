@@ -24,23 +24,23 @@ import controller.QuestCtrl;
 
 public class WorldMapImage extends BaseImage {
     // MAP表示元SWF
-    [Embed(source="../../../../data/image/quest/map01.swf")]
+    [Embed(source="../../../../res/data/image/quest/map01.swf")]
     private var _Source01:Class;
-    [Embed(source="../../../../data/image/quest/map02.swf")]
+    [Embed(source="../../../../res/data/image/quest/map02.swf")]
     private var _Source02:Class;
-    [Embed(source="../../../../data/image/quest/map03.swf")]
+    [Embed(source="../../../../res/data/image/quest/map03.swf")]
     private var _Source03:Class;
-    [Embed(source="../../../../data/image/quest/map04.swf")]
+    [Embed(source="../../../../res/data/image/quest/map04.swf")]
     private var _Source04:Class;
-    [Embed(source="../../../../data/image/quest/map05.swf")]
+    [Embed(source="../../../../res/data/image/quest/map05.swf")]
     private var _Source05:Class;
-    [Embed(source="../../../../data/image/quest/map06.swf")]
+    [Embed(source="../../../../res/data/image/quest/map06.swf")]
     private var _Source06:Class;
-    [Embed(source="../../../../data/image/quest/map_e00.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_e00.swf")]
     private var _Source100:Class;
-    [Embed(source="../../../../data/image/quest/map_e07.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_e07.swf")]
     private var _Source101:Class;
-    [Embed(source="../../../../data/image/quest/map_vote.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_vote.swf")]
     private var _Source102:Class;
 
     private static const X:int = 0;

@@ -93,7 +93,7 @@ public class QuestCommandImage extends BaseImage {
 
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/btn_quest.swf")]
+    [Embed(source="../../../../res/data/image/quest/btn_quest.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

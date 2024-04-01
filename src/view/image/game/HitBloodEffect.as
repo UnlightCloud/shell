@@ -10,7 +10,7 @@ import flash.geom.*;
 
 public class HitBloodEffect extends BaseHitEffect {
     //
-    [Embed(source="../../../../data/image/game/effect_dmg_blood.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_dmg_blood.swf")]
     private static var _Source:Class;
 
     public static const CLIP_AREA:Rectangle = new Rectangle(0, 0, 100, 100);

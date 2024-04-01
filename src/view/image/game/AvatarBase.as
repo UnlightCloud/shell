@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class AvatarBase extends BaseImage {
 
 //         // H表示元SWF
-    [Embed(source="../../../../data/image/game/avatar.swf")]
+    [Embed(source="../../../../res/data/image/game/avatar.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

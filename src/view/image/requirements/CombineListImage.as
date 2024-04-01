@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class CombineListImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_stock.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_stock.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

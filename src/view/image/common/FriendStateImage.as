@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class FriendStateImage extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/friend/friendlist_state.swf")]
+    [Embed(source="../../../../res/data/image/friend/friendlist_state.swf")]
     private var _Source:Class;
 
     private var _label:Label = new Label();

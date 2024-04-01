@@ -15,7 +15,7 @@ import view.image.*;
 
 public class SelectMapWindowImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/select_map.swf")]
+    [Embed(source="../../../../res/data/image/quest/select_map.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

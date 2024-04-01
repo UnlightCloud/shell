@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class DropTableDice extends BaseImage {
 
     // ドロップテーブル数字表示元SWF
-    [Embed(source="../../../../data/image/dice_p.swf")]
+    [Embed(source="../../../../res/data/image/dice_p.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

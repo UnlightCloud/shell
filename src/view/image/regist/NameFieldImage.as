@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class NameFieldImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/regist/make_1name.swf")]
+    [Embed(source="../../../../res/data/image/regist/make_1name.swf")]
     private var _Source:Class;
 
     private static const SCALE:Number = 1.0;

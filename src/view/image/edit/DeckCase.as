@@ -20,7 +20,7 @@ import view.image.BaseImage;
 public class DeckCase extends BaseImage {
 
     // DeckCase表示元SWF
-    [Embed(source="../../../../data/image/edit/deckcase.swf")]
+    [Embed(source="../../../../res/data/image/edit/deckcase.swf")]
     private var _Source:Class;
     private static const X:int = -100;
     private static const Y:int = 0;

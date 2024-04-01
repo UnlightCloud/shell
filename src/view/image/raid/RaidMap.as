@@ -12,7 +12,7 @@ import view.image.BaseImage;
  */
 
 public class RaidMap extends BaseImage {
-    [Embed(source="../../../../data/image/raid/raid_map.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_map.swf")]
     private var _Source:Class;
 
     //  i,j,kは今は使用しない 2014/02/21

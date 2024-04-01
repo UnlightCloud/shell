@@ -14,7 +14,7 @@ import view.image.*;
 public class TestBattleD extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/lobby/test_battle_d.swf")]
+    [Embed(source="../../../../res/data/image/lobby/test_battle_d.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

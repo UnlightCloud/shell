@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class DropTableClip extends BaseImage {
 
     // ドロップテーブル表示元SWF
-    [Embed(source="../../../../data/image/game/space.swf")]
+    [Embed(source="../../../../res/data/image/game/space.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

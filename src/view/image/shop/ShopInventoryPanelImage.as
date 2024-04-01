@@ -14,7 +14,7 @@ import view.image.item.ItemInventoryPanelImage;
 public class ShopInventoryPanelImage extends ItemInventoryPanelImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/shopitem_panel.swf")]
+    [Embed(source="../../../../res/data/image/shop/shopitem_panel.swf")]
     private var _Source:Class;
 
 

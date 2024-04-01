@@ -11,7 +11,7 @@ import view.image.BaseImage;
 
 public class QuestClearPanel extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/quest_result.swf")]
+    [Embed(source="../../../../res/data/image/quest/quest_result.swf")]
     private var _Source:Class;
     private static const OK:String = "btn_ok";
     private static const CLEAR:String = "clear";

@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class PhaseImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/phase.swf")]
+    [Embed(source="../../../../res/data/image/game/phase.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

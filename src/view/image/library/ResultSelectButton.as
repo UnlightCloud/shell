@@ -14,7 +14,7 @@ import view.image.BaseImage;
 
 public class ResultSelectButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/library/btn_deco_result.swf")]
+    [Embed(source="../../../../res/data/image/library/btn_deco_result.swf")]
     private var _Source:Class;
 
     private static const BTN_A:String = "btn_deco_result_a";

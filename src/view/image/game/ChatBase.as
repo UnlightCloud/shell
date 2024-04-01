@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class ChatBase extends BaseImage {
 
     // カードの下
-    [Embed(source="../../../../data/image/game/chat_base.swf")]
+    [Embed(source="../../../../res/data/image/game/chat_base.swf")]
 //         private static var FONT_HEIGHT:int = 14;  // フォントの高さ
 //         private static var AREA_HEIGHT:int = 280;  // エリアの高さ
 

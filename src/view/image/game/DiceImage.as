@@ -12,10 +12,10 @@ import view.image.BaseImage;
 
 public class DiceImage extends BaseImage {
     // atkダイス表示元SWF
-    [Embed(source="../../../../data/image/dice_atk.swf")]
+    [Embed(source="../../../../res/data/image/dice_atk.swf")]
     private static var _atk:Class;
     // defダイス表示元SWF
-    [Embed(source="../../../../data/image/dice_def.swf")]
+    [Embed(source="../../../../res/data/image/dice_def.swf")]
     private static var _def:Class;
 
     // 条件チップの配列

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class BuffImage extends BaseImage {
     // buff表示元SWF
-    [Embed(source="../../../../data/image/buff.swf")]
+    [Embed(source="../../../../res/data/image/buff.swf")]
     private var _Source:Class;
 
     // インスタンス格納配列

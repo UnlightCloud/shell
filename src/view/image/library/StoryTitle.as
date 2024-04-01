@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class StoryTitle extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/library/story_title.swf")]
+    [Embed(source="../../../../res/data/image/library/story_title.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

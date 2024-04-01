@@ -11,7 +11,7 @@ import view.image.BaseImage;
 
 public class HitDamageStr extends BaseImage {
     // atkダイス表示元SWF
-    [Embed(source="../../../../data/image/game/text_damage.swf")]
+    [Embed(source="../../../../res/data/image/game/text_damage.swf")]
     private static var _source:Class;
 
     // ゲームのコントローラ

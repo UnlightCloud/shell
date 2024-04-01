@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class SocialLogPanel extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/log_base.swf")]
+    [Embed(source="../../../../res/data/image/common/log_base.swf")]
     private var _Source:Class;
 
     /**

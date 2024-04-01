@@ -9,7 +9,7 @@ import flash.events.Event;
 
 public class HitSlashEffect extends BaseHitEffect {
     // atkダイス表示元SWF
-    [Embed(source="../../../../data/image/game/effect_hit_slash.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_hit_slash.swf")]
     private static var _source:Class;
 
     // ゲームのコントローラ

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class CardStock extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/edit/cardstock.swf")]
+    [Embed(source="../../../../res/data/image/edit/cardstock.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

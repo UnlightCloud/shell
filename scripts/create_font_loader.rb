@@ -44,11 +44,11 @@ end
 puts "#{GAME_CHARACTERS.size} 文字を登録しました"
 
 __END__
-[Embed(source='../data/__FONT_H__', fontName='minchoB'__font_UTF_NO__)]
+[Embed(source='../res/data/__FONT_H__', fontName='minchoB'__font_UTF_NO__)]
 private static const Font:Class;
-[Embed(source='../data/__FONT_R__', fontName='mincho'__font_UTF_NO__)]
+[Embed(source='../res/data/__FONT_R__', fontName='mincho'__font_UTF_NO__)]
 private static const Font2:Class;
-[Embed(source='../data/nbr.ttf', fontName='bradley')]
+[Embed(source='../res/data/nbr.ttf', fontName='bradley')]
 private static const Font3:Class;
 
 

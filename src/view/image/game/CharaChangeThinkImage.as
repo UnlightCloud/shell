@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class CharaChangeThinkImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/think.swf")]
+    [Embed(source="../../../../res/data/image/game/think.swf")]
     private var _Source:Class;
     private static const Y:int = 250;
 

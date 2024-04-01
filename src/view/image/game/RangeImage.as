@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class RangeImage extends BaseImage {
     // Range表示元SWF
-    [Embed(source="../../../../data/image/game/range.swf")]
+    [Embed(source="../../../../res/data/image/game/range.swf")]
     private var _Source:Class;
 
     /**

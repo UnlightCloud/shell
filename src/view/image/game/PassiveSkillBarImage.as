@@ -11,7 +11,7 @@ import view.image.BaseImage;
  */
 
 public class PassiveSkillBarImage extends BaseImage {
-    [Embed(source="../../../../data/image/game/skill_passive.swf")]
+    [Embed(source="../../../../res/data/image/game/skill_passive.swf")]
     private var _Source:Class;
 
     private static const _PASSIVE:String = "passive";

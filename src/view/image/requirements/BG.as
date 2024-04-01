@@ -16,7 +16,7 @@ public class BG extends BaseImage {
     public static const TYPE_WEAPON:int = 1;
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_bg.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_bg.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

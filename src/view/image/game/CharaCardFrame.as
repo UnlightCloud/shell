@@ -77,7 +77,7 @@ public class CharaCardFrame extends BaseImage {
     private static const _TRANS_MOV:String = "เคลื่อนที่";
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/ccframe_a.swf")]
+    [Embed(source="../../../../res/data/image/ccframe_a.swf")]
     private var _Source:Class;
 
     private var _yPosition:Array = [];                    // Array of int

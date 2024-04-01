@@ -17,7 +17,7 @@ public class InfoBarImage extends BaseImage {
 
     // 元SWF
     // ターン表示・タイマー
-    [Embed(source="../../../../data/image/game/help.swf")]
+    [Embed(source="../../../../res/data/image/game/help.swf")]
     private var _Source:Class;
 
 

@@ -14,11 +14,11 @@ import view.utils.*;
 
 public class MapPassImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/map_pass_center.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_pass_center.swf")]
     private var _SourceC:Class;
-    [Embed(source="../../../../data/image/quest/map_pass_right.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_pass_right.swf")]
     private var _SourceR:Class;
-    [Embed(source="../../../../data/image/quest/map_pass_left.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_pass_left.swf")]
     private var _SourceL:Class;
 
     private var _SourceSet:Vector.<Class> = Vector.<Class>([_SourceL, _SourceC, _SourceR]);

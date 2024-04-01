@@ -11,31 +11,31 @@ import view.image.*;
 
 
 public class SearchThumbnail extends BaseImage {
-//         [Embed(source="../../../../data/image/quest/land_sl_plane")]
+//         [Embed(source="../../../../res/data/image/quest/land_sl_plane")]
 //             private var _SourceCastle:Class;
-    [Embed(source="../../../../data/image/quest/searchthum00.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum00.swf")]
     private var _SourceCastle:Class;
-    [Embed(source="../../../../data/image/quest/searchthum01.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum01.swf")]
     private var _SourceForest:Class;
-    [Embed(source="../../../../data/image/quest/searchthum02.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum02.swf")]
     private var _SourceRoad:Class;
-    [Embed(source="../../../../data/image/quest/searchthum03.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum03.swf")]
     private var _SourceLake:Class;
-    [Embed(source="../../../../data/image/quest/searchthum04.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum04.swf")]
     private var _SourceGrave:Class;
-    [Embed(source="../../../../data/image/quest/searchthum05.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum05.swf")]
     private var _SourceVillage:Class;
-    [Embed(source="../../../../data/image/quest/searchthum06.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum06.swf")]
     private var _SourceWild:Class;
-    [Embed(source="../../../../data/image/quest/searchthum07.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum07.swf")]
     private var _SourceRuin:Class;
-    [Embed(source="../../../../data/image/quest/searchthum10.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum10.swf")]
     private var _SourceMoon:Class;
-    [Embed(source="../../../../data/image/quest/searchthum11.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum11.swf")]
     private var _SourceMoor:Class;
-    [Embed(source="../../../../data/image/quest/searchthum12.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum12.swf")]
     private var _SourceStone:Class;
-    [Embed(source="../../../../data/image/quest/searchthum99.swf")]
+    [Embed(source="../../../../res/data/image/quest/searchthum99.swf")]
     private var _SourceThrone:Class;
 
     // ステージごとのサムネイル

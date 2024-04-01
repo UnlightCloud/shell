@@ -13,39 +13,39 @@ import org.libspark.thread.*;
 
 public class FarBG extends BG {
     // OKボタン 表示元SWF
-    [Embed(source="../../../../data/image/bg/bg_btl00a_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_far.swf")]
     private static var _castle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl01a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl01a.swf")]
     private static var _forest:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl00a_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_far.swf")]
     private static var _road:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl03a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl03a.swf")]
     private static var _lakeside:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl04a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl04a.swf")]
     private static var _grave:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl05a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl05a.swf")]
     private static var _village:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl06a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl06a.swf")]
     private static var _wild:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl07a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl07a.swf")]
     private static var _ruin:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl08a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl08a.swf")]
     private static var _town:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl09a_cloud.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl09a_cloud.swf")]
     private static var _mountain:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl10a_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl10a_far.swf")]
     private static var _mlCastle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl11a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl11a.swf")]
     private static var _moor:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl03b.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl03b.swf")]
     private static var _ubos:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl12a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl12a.swf")]
     private static var _stone:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl50a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl50a.swf")]
     private static var _gate:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl99a_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl99a_far.swf")]
     private static var _throne:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl99b_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl99b_far.swf")]
     private static var _throne2:Class;
 
 

@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class WeaponCardPassiveSkillIcon extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/icon_p_skill.swf")]
+    [Embed(source="../../../../res/data/image/icon_p_skill.swf")]
     private var _source:Class;
 
     private var _weaponPassiveNo:int;

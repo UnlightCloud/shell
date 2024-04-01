@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class DuelBonusMessImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/message_bonus.swf")]
+    [Embed(source="../../../../res/data/image/game/message_bonus.swf")]
     private var _Source:Class;
 
     private const CRITICAL:String = "bonus_cri";

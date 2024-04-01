@@ -9,7 +9,7 @@ import view.image.BaseImage;
  */
 public class CharaCardBase extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_cardbase.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_cardbase.swf")]
     private var _Source:Class;
 
     /**

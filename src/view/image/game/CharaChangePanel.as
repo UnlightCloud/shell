@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class CharaChangePanel extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/panel_change.swf")]
+    [Embed(source="../../../../res/data/image/game/panel_change.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class RaidInfoImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_info.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_info.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class WatchWaitImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/think_watch.swf")]
+    [Embed(source="../../../../res/data/image/game/think_watch.swf")]
     private var _Source:Class;
     private static const X:int = 380;
     private static const Y:int = 250;

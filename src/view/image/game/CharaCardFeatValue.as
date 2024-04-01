@@ -13,25 +13,25 @@ import view.image.BaseImage;
 
 public class CharaCardFeatValue extends BaseImage {
     // move条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_mov.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_mov.swf")]
     private static var _mov:Class;
     // swd条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_swd.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_swd.swf")]
     private static var _swd:Class;
     // gun条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_gun.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_gun.swf")]
     private static var _gun:Class;
     // str条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_str.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_str.swf")]
     private static var _str:Class;
     // shd条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_shd.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_shd.swf")]
     private static var _shd:Class;
     // wld条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_wld.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_wld.swf")]
     private static var _wld:Class;
     // SAD条件アイコン表示元SWF
-    [Embed(source="../../../../data/image/icon_card_wld3.swf")]
+    [Embed(source="../../../../res/data/image/icon_card_wld3.swf")]
     private static var _sad:Class;
 
     // 条件チップの配列

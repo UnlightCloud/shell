@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class TrapActionEffect extends BaseImage {
     // 表示元SWF
-    [Embed(source="../../../../data/image/game/effect_trap_act.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_trap_act.swf")]
     private static var _source:Class;
     private var _effect:MovieClip = null;
     private var _kind:String;

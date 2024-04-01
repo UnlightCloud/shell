@@ -13,13 +13,13 @@ import view.image.BaseImage;
 
 public class MoveButton extends BaseImage {
     // OKボタン 表示元SWF
-    [Embed(source="../../../../data/image/move_f.swf")]
+    [Embed(source="../../../../res/data/image/move_f.swf")]
     private static var _fb:Class;
-    [Embed(source="../../../../data/image/move_b.swf")]
+    [Embed(source="../../../../res/data/image/move_b.swf")]
     private static var _bb:Class;
-    [Embed(source="../../../../data/image/move_s.swf")]
+    [Embed(source="../../../../res/data/image/move_s.swf")]
     private static var _sb:Class;
-    [Embed(source="../../../../data/image/move_c.swf")]
+    [Embed(source="../../../../res/data/image/move_c.swf")]
     private static var _cb:Class;
 
     // 条件チップの配列

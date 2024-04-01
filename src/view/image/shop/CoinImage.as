@@ -10,7 +10,7 @@ import view.image.BaseImage;
 public class CoinImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/coin_price.swf")]
+    [Embed(source="../../../../res/data/image/shop/coin_price.swf")]
     private var _Source:Class;
 
     /**

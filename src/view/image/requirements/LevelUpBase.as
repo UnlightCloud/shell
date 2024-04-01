@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class LevelUpBase extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_lvupbase.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_lvupbase.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

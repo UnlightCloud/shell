@@ -14,7 +14,7 @@ import view.image.BaseImage;
 
 public class FavoriteMark extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/library/btn_deco.swf")]
+    [Embed(source="../../../../res/data/image/library/btn_deco.swf")]
     private var _Source:Class;
 
     private static const BTN:String = "btn_deco";

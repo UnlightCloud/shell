@@ -20,7 +20,7 @@ import view.image.BaseImage;
 public class ActionCardButton extends BaseImage {
 
     // ActionCardButton表示元SWF
-    [Embed(source="../../../../data/image/cardaction.swf")]
+    [Embed(source="../../../../res/data/image/cardaction.swf")]
     private var _Source:Class;
 
     private const _ARROW:String = "arrow";

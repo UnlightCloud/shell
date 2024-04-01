@@ -14,7 +14,7 @@ import view.image.*;
 
 public class ItemListButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/btn_item.swf")]
+    [Embed(source="../../../../res/data/image/quest/btn_item.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

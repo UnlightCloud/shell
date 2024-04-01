@@ -13,9 +13,9 @@ import view.image.BaseImage;
 public class LotInfoImage extends BaseImage {
 
 //         // Lotinfoimage表示元SWF
-//         [Embed(source="../../../../data/image/ok.swf")]
+//         [Embed(source="../../../../res/data/image/ok.swf")]
     // Lotinfoimage表示元SWF
-    [Embed(source="../../../../data/image/lot/gacha_prob.swf")]
+    [Embed(source="../../../../res/data/image/lot/gacha_prob.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

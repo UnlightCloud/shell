@@ -10,7 +10,7 @@ import view.image.BaseImage;
 public class SignImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/sign_price.swf")]
+    [Embed(source="../../../../res/data/image/shop/sign_price.swf")]
     private var _Source:Class;
     private var _type:int = 0;
 

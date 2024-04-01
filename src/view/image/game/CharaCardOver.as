@@ -19,11 +19,11 @@ import view.utils.*;
 public class CharaCardOver extends BaseImage {
 
     // CharaCardOver表示元SWF
-    [Embed(source="../../../../data/image/ccframe_a_over.swf")]
+    [Embed(source="../../../../res/data/image/ccframe_a_over.swf")]
     private var _NormalFrameSource:Class;
-    [Embed(source="../../../../data/image/ccframe_b_over.swf")]
+    [Embed(source="../../../../res/data/image/ccframe_b_over.swf")]
     private var _RebornFrameSource:Class;
-    [Embed(source="../../../../data/image/ccframe_c_over.swf")]
+    [Embed(source="../../../../res/data/image/ccframe_c_over.swf")]
     private var _EpisodeFrameSource:Class;
 
     public static const CLIP_AREA:Rectangle = new Rectangle(-0, -0, 70, 15);

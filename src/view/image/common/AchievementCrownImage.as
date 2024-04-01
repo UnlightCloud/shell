@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class AchievementCrownImage extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/achievement/trophy.swf")]
+    [Embed(source="../../../../res/data/image/achievement/trophy.swf")]
     private var _Source:Class;
 
     /**

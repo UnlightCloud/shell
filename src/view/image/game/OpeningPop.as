@@ -19,7 +19,7 @@ import view.scene.common.DialogueTextField;
  */
 public class OpeningPop extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/opening/op_hukidashi.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_hukidashi.swf")]
     private var _Source:Class;
 
     private static const _PL_DIALOGUE_X:int = 50;

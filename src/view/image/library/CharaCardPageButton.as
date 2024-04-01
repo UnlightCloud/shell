@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class CharaCardPageButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/library/library_select.swf")]
+    [Embed(source="../../../../res/data/image/library/library_select.swf")]
     private var _Source:Class;
 
     private static const UNLIGHT_BTN:String = "btn_select_u";

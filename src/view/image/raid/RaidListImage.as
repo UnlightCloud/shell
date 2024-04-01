@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class RaidListImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_list_panel.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_list_panel.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

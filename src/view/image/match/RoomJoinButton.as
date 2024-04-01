@@ -11,15 +11,15 @@ import view.image.BaseImage;
 
 public class RoomJoinButton extends BaseImage {
     // 入室ボタン表示元SWF
-    [Embed(source="../../../../data/image/match/roomin.swf")]
+    [Embed(source="../../../../res/data/image/match/roomin.swf")]
     private var _in:Class;
 
     // 退室ボタン表示元SWF
-    [Embed(source="../../../../data/image/match/roomout.swf")]
+    [Embed(source="../../../../res/data/image/match/roomout.swf")]
     private var _out:Class;
 
     // 観戦ボタン表示元SWF
-    [Embed(source="../../../../data/image/match/watch_btl.swf")]
+    [Embed(source="../../../../res/data/image/match/watch_btl.swf")]
     private var _watch:Class;
 
 

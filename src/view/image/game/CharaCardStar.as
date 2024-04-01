@@ -15,7 +15,7 @@ import view.image.BaseImage;
 public class CharaCardStar extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/common/ccframe_star.swf")]
+    [Embed(source="../../../../res/data/image/common/ccframe_star.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

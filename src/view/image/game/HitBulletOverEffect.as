@@ -9,7 +9,7 @@ import flash.events.Event;
 
 public class HitBulletOverEffect extends BaseHitEffect {
     // atkダイス表示元SWF
-    [Embed(source="../../../../data/image/game/effect_hit_bullet_p.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_hit_bullet_p.swf")]
     private static var _source:Class;
 
     // ゲームのコントローラ

@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class RoomDataStageBase extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/match/b_lobby_list_detail_stage00.swf")]
+    [Embed(source="../../../../res/data/image/match/b_lobby_list_detail_stage00.swf")]
     private static var _stg0:Class;
 
     private static var ClassArray:Array = [_stg0];

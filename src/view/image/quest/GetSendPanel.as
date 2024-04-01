@@ -218,7 +218,7 @@ public class GetSendPanel extends BaseImage {
 
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/quest_search.swf")]
+    [Embed(source="../../../../res/data/image/quest/quest_search.swf")]
     private var _Source:Class;
 
     private static const OK:String = "ok";

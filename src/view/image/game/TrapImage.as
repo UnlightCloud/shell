@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class TrapImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/effect_trap.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_trap.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 416;

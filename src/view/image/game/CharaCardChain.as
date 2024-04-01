@@ -10,7 +10,7 @@ import view.image.BaseImage;
  */
 public class CharaCardChain extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_chain.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_chain.swf")]
     private var _Source:Class;
 
     // インスタンス定数

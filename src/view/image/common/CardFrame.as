@@ -15,10 +15,10 @@ import view.image.BaseImage;
 public class CardFrame extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/item_cardframe.swf")]
+    [Embed(source="../../../../res/data/image/item_cardframe.swf")]
     private var _normalSource:Class;
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/weapon_cardframe.swf")]
+    [Embed(source="../../../../res/data/image/weapon_cardframe.swf")]
     private var _weaponSource:Class;
     private var _sourceList:Array = [_normalSource, _weaponSource];
 

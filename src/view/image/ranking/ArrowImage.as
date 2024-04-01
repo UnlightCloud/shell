@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class ArrowImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/ranking/rankarrow.swf")]
+    [Embed(source="../../../../res/data/image/ranking/rankarrow.swf")]
     private var _Source:Class;
     private var _dir:int = 0;
     private static const _DIRECTIN_FRAME:Array = [-1, 1, 3, 4, 5]; /* of int */

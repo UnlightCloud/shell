@@ -19,8 +19,8 @@ public class Logo extends BaseImage {
     private static const Y:int = 370;
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/title/logo.swf")]
-//        [Embed(source="../../../../data/image/logo.swf")]
+    [Embed(source="../../../../res/data/image/title/logo.swf")]
+//        [Embed(source="../../../../res/data/image/logo.swf")]
     private var _Source:Class;
     // ロゴの背景（大）
     public var BG1:Shape = new Shape();

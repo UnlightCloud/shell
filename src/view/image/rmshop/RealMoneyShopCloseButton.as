@@ -10,7 +10,7 @@ import view.image.BaseImage;
  */
 
 public class RealMoneyShopCloseButton extends BaseImage {
-    [Embed(source="../../../../data/image/rmshop/close_shop.swf")]
+    [Embed(source="../../../../res/data/image/rmshop/close_shop.swf")]
     private var _Source:Class;
 
     /**

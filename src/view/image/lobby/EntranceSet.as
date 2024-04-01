@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class EntranceSet extends BaseImage {
 
-    [Embed(source="../../../../data/image/lobby/entrance.swf")]
+    [Embed(source="../../../../res/data/image/lobby/entrance.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

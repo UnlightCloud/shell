@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class ResultImage extends BaseImage {
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/maincall.swf")]
+    [Embed(source="../../../../res/data/image/game/result/maincall.swf")]
     private var _Source:Class;
 
     private var _resultMC:Array = [];

@@ -15,7 +15,7 @@ import view.image.*;
 
 public class QuestBG extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/quest_base.swf")]
+    [Embed(source="../../../../res/data/image/quest/quest_base.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

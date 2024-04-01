@@ -17,9 +17,9 @@ import view.scene.game.EmptyCardBase;
 public class BaseCard extends BaseImage {
 
 //         // カードの下
-//         [Embed(source="../../../../data/image/card_base.swf")]
+//         [Embed(source="../../../../res/data/image/card_base.swf")]
     // カードの下
-    [Embed(source="../../../../data/image/game/card_base.swf")]
+    [Embed(source="../../../../res/data/image/game/card_base.swf")]
     private var _Source:Class;
 
     // 現在のMAXカード表示

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class WatchResultPanel extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/result_watch.swf")]
+    [Embed(source="../../../../res/data/image/game/result_watch.swf")]
     private var _Source:Class;
 
     /**

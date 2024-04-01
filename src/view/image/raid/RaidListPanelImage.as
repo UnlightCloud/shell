@@ -15,7 +15,7 @@ import view.utils.*;
 public class RaidListPanelImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_list.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_list.swf")]
     private var _Source:Class;
 
     private static const _STATE:String = "list_state";

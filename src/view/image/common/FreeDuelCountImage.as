@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class FreeDuelCountImage extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/star_battle.swf")]
+    [Embed(source="../../../../res/data/image/common/star_battle.swf")]
     private var _Source:Class;
 
     private var _count:int = 3;

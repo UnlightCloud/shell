@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class HeartImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/match/hart.swf")]
+    [Embed(source="../../../../res/data/image/match/hart.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

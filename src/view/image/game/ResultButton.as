@@ -11,7 +11,7 @@ import view.image.BaseImage;
 
 public class ResultButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/result/result_ok.swf")]
+    [Embed(source="../../../../res/data/image/game/result/result_ok.swf")]
     private var _Source:Class;
     private static const _X:int = 180;
     private static const _Y:int = 435;

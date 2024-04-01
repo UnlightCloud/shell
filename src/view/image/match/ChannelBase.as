@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class ChannelBase extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/match/btn_channel.swf")]
+    [Embed(source="../../../../res/data/image/match/btn_channel.swf")]
     private static var _Source:Class;
 
     public static const CROWDED:int = 4;

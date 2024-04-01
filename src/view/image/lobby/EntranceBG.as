@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class EntranceBG extends BaseImage {
 
-    [Embed(source="../../../../data/image/lobby/entrance_bg.swf")]
+    [Embed(source="../../../../res/data/image/lobby/entrance_bg.swf")]
     private var _Source:Class;
 
     /**

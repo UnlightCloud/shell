@@ -12,7 +12,7 @@ import view.image.*;
 
 public class HitHealEffect extends CachedBaseImage {
     // 表示元SWF
-    [Embed(source="../../../../data/image/game/effect_state.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_state.swf")]
     private static var _source:Class;
 
     // 定数

@@ -18,7 +18,7 @@ import view.utils.*;
 public class QuestItemImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/list.swf")]
+    [Embed(source="../../../../res/data/image/quest/list.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

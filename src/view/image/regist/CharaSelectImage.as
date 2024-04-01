@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class CharaSelectImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/regist/make_3chara.swf")]
+    [Embed(source="../../../../res/data/image/regist/make_3chara.swf")]
     private var _Source:Class;
     private static const SCALE:Number = 1.0;
     private static const X:int = 0;

@@ -23,7 +23,7 @@ import controller.*;
 
 public class HitBulletEffect extends BaseHitEffect {
     // atkダイス表示元SWF
-    [Embed(source="../../../../data/image/game/effect_hit_bullet.swf")]
+    [Embed(source="../../../../res/data/image/game/effect_hit_bullet.swf")]
     private static var _source:Class;
     // ゲームのコントローラ
     private var _over:HitBulletOverEffect = new HitBulletOverEffect();

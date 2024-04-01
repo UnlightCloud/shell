@@ -10,7 +10,7 @@ import view.image.BaseImage;
  */
 public class CautionCost extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/edit/caution_cost.swf")]
+    [Embed(source="../../../../res/data/image/edit/caution_cost.swf")]
     private var _Source:Class;
 
     // インスタンス定数

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class AvatarImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/avatar_rig.swf")]
+    [Embed(source="../../../../res/data/image/avatar_rig.swf")]
 
     private var _Source:Class;
 

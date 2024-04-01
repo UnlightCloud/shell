@@ -18,7 +18,7 @@ import view.utils.*;
 public class FriendListButton extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/friend/btn_f_list.swf")]
+    [Embed(source="../../../../res/data/image/friend/btn_f_list.swf")]
     private var _Source:Class;
 
 

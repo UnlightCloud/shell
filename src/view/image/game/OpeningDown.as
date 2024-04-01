@@ -13,7 +13,7 @@ import view.image.BaseImage;
  */
 public class OpeningDown extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/opening/op_down.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_down.swf")]
     private var _Source:Class;
 
     private const _BLD_P:String = "blood_p";

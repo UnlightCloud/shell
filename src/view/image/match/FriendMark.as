@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class FriendMark extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/friend/lobby_list_friend.swf")]
+    [Embed(source="../../../../res/data/image/friend/lobby_list_friend.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

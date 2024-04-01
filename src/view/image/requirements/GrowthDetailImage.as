@@ -14,7 +14,7 @@ public class GrowthDetailImage extends BaseImage {
     public static const TYPE_CHARA:int = 1;
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_detail.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_detail.swf")]
     private var _Source:Class;
 
 

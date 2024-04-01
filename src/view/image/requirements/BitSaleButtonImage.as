@@ -20,7 +20,7 @@ import view.image.BaseImage;
 
 public class BitSaleButtonImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_sale.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_sale.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

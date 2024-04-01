@@ -16,7 +16,7 @@ public class CombineResultMarkImage extends BaseImage {
     public static const MARK_TYPE_PLUS:int = 3;
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_result_mark.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_result_mark.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

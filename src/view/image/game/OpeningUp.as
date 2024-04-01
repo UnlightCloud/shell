@@ -14,11 +14,11 @@ import view.scene.common.DialogueTextField;
  */
 public class OpeningUp extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/opening/op_up.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_up.swf")]
     private var _Source:Class;
 
 //         // result表示元SWF
-//         [Embed(source="../../../../data/image/op_up.swf")]
+//         [Embed(source="../../../../res/data/image/op_up.swf")]
 //         private var _Source:Class;
 
     private static const _PL_DIALOGUE_X:int = 45;

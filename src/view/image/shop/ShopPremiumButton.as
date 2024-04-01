@@ -8,7 +8,7 @@ package view.image.shop {
 public class ShopPremiumButton extends ShopItemButton {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/btn_premiere.swf")]
+    [Embed(source="../../../../res/data/image/shop/btn_premiere.swf")]
     private var _Source:Class;
     private static const BUTTON:String = "btn_z";
 

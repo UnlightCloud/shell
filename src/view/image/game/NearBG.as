@@ -12,25 +12,25 @@ import view.utils.*;
 
 public class NearBG extends BG {
     // OKボタン 表示元SWF
-    [Embed(source="../../../../data/image/bg/bg_btl00a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_book.swf")]
     private static var _castle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl01a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl01a_book.swf")]
     private static var _forest:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl00a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_book.swf")]
     private static var _road:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl01a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl01a_book.swf")]
     private static var _lakeside:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl00a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_book.swf")]
     private static var _plane:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl09a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl09a_book.swf")]
     private static var _mountain:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl10a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl10a_book.swf")]
     private static var _mlCastle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl11a_book.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl11a_book.swf")]
     private static var _moor:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl03b_mist.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl03b_mist.swf")]
     private static var _ubos:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl50a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl50a.swf")]
     private static var _gate:Class;
 
     // 背景タイプの列挙配列

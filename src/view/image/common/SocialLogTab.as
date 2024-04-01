@@ -14,7 +14,7 @@ import view.image.BaseImage;
 
 public class SocialLogTab extends BaseImage {
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/log_tab.swf")]
+    [Embed(source="../../../../res/data/image/common/log_tab.swf")]
     private var _Source:Class;
 
     // テキストラベル

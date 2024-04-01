@@ -19,7 +19,7 @@ import view.image.BaseImage;
 public class StoryFrameImage extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/story/story.swf")]
+    [Embed(source="../../../../res/data/image/story/story.swf")]
     private var _Source:Class;
 
     public static const READMARK:String = "readmark"

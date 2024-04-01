@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class ShopEquipButton extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/fit_reset.swf")]
+    [Embed(source="../../../../res/data/image/shop/fit_reset.swf")]
     private var _Source:Class;
 
 

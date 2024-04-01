@@ -12,7 +12,7 @@ import view.image.*;
 
 public class MapBackButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/btn_mapback.swf")]
+    [Embed(source="../../../../res/data/image/quest/btn_mapback.swf")]
     private var _Source:Class;
 
     /**

@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class ShopMaster extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/shopmaster00.swf")]
+    [Embed(source="../../../../res/data/image/shop/shopmaster00.swf")]
     private var _Source:Class;
 
     /**

@@ -20,7 +20,7 @@ import view.image.*;
 
 public class RaidBG extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_base.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_base.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

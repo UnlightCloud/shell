@@ -15,7 +15,7 @@ import view.*;
 public class WindowItemInventoryPanelImage extends BasePanelImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/item/itemwindow.swf")]
+    [Embed(source="../../../../res/data/image/item/itemwindow.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

@@ -14,7 +14,7 @@ import view.image.item.IItemBase;
 
 public class ShopInventoryBaseImage extends BaseImage implements IItemBase {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/shopitem_base.swf")]
+    [Embed(source="../../../../res/data/image/shop/shopitem_base.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

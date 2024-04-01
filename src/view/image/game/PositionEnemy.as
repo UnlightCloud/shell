@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class PositionEnemy extends BaseImage {
 
     // PositionEnemy表示元SWF
-    [Embed(source="../../../../data/image/position_enemy.swf")]
+    [Embed(source="../../../../res/data/image/position_enemy.swf")]
     private var _Source:Class;
 
     private var _pawnEnemy:MovieClip;

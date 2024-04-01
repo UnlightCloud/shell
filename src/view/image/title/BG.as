@@ -13,8 +13,8 @@ import view.image.BaseImage;
 public class BG extends BaseImage {
 
     // HP表示元SWF
-    //[Embed(source="../../../../data/image/titel_bg.swf")]
-    [Embed(source="../../../../data/image/title/event_title.swf")]
+    //[Embed(source="../../../../res/data/image/titel_bg.swf")]
+    [Embed(source="../../../../res/data/image/title/event_title.swf")]
     private var _Source:Class;
     private static const SCALE:Number = 1.0;
     private static const X:int = 0;

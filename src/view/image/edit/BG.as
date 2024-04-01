@@ -16,11 +16,11 @@ import view.image.BaseImage;
 public class BG extends BaseImage {
     // HP表示元SWF
     CONFIG::CHARA_COST_DRAW_ON {
-        [Embed(source="../../../../data/image/edit/edit_deck_base_cost.swf")]
+        [Embed(source="../../../../res/data/image/edit/edit_deck_base_cost.swf")]
         private var _Source:Class;
     }
     CONFIG::CHARA_COST_DRAW_OFF {
-        [Embed(source="../../../../data/image/edit/edit_deck_base.swf")]
+        [Embed(source="../../../../res/data/image/edit/edit_deck_base.swf")]
         private var _Source:Class;
     }
 

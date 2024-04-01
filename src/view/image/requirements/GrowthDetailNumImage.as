@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class GrowthDetailNumImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_num.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_num.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

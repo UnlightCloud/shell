@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class ProfoundInfoImage extends BaseImage {
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_win.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_win.swf")]
     private var _Source:Class;
 
     public static const WIN_MSG:int = 1;

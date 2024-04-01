@@ -14,9 +14,9 @@ import view.image.BaseImage;
 public class DoneButton extends BaseImage {
 
 //         // OKボタン 表示元SWF
-//         [Embed(source="../../../../data/image/ok.swf")]
+//         [Embed(source="../../../../res/data/image/ok.swf")]
     // OKボタン 表示元SWF
-    [Embed(source="../../../../data/image/game/ok.swf")]
+    [Embed(source="../../../../res/data/image/game/ok.swf")]
     private var _Source:Class;
     private static const _X:int = 0;
     private static const _Y:int = 0;

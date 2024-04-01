@@ -17,7 +17,7 @@ import view.scene.common.TreasureCardClip;
 
 public class QuestTreasurePanel extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/quest_result.swf")]
+    [Embed(source="../../../../res/data/image/quest/quest_result.swf")]
     private var _Source:Class;
 
 

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class BG extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/option/config.swf")]
+    [Embed(source="../../../../res/data/image/option/config.swf")]
     private var _Source:Class;
 
 

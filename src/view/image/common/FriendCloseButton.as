@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class FriendCloseButton extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/friend/btn_delete.swf")]
+    [Embed(source="../../../../res/data/image/friend/btn_delete.swf")]
     private var _Source:Class;
 
     private var _label:Label = new Label();

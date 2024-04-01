@@ -12,37 +12,37 @@ import view.image.*;
 
 
 public class MapStageImage extends BaseImage {
-//         [Embed(source="../../../../data/image/quest/land_sl_plane")]
+//         [Embed(source="../../../../res/data/image/quest/land_sl_plane")]
 //             private var _SourceCastle:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_gate.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_gate.swf")]
     private var _SourceCastle:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_forest.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_forest.swf")]
     private var _SourceForest:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_road.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_road.swf")]
     private var _SourceRoad:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_lake.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_lake.swf")]
     private var _SourceLake:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_cemetery.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_cemetery.swf")]
     private var _SourceGrave:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_village.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_village.swf")]
     private var _SourceVillage:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_wilderness.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_wilderness.swf")]
     private var _SourceWild:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_ruin.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_ruin.swf")]
     private var _SourceRuin:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_lake.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_lake.swf")]
     private var _SourceTown:Class;
-    [Embed(source="../../../../data/image/quest/land_sl_lake.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_sl_lake.swf")]
     private var _SourcePlane:Class;
-    [Embed(source="../../../../data/image/quest/land_ml_castle.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_ml_castle.swf")]
     private var _SourceMlCastle:Class;
-    [Embed(source="../../../../data/image/quest/land_am_wasteland.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_am_wasteland.swf")]
     private var _SourceMoor:Class;
-    [Embed(source="../../../../data/image/quest/land_am_stone.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_am_stone.swf")]
     private var _SourceStone:Class;
-    [Embed(source="../../../../data/image/quest/land_al_arch.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_al_arch.swf")]
     private var _SourceGate:Class;
-    [Embed(source="../../../../data/image/quest/land_end_throne.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_end_throne.swf")]
     private var _SourceThrone:Class;
 
     // 0:城ステージ，1:森ステージ,2:街道, 3:湖畔, 4:墓場,  5:村, 6:荒野, 7:遺跡, 8:街, 9:平原

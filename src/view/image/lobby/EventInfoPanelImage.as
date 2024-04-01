@@ -14,7 +14,7 @@ import view.image.BaseImage;
 
 public class EventInfoPanelImage extends BaseImage {
 
-    [Embed(source="../../../../data/image/lobby/entrance_info.swf")]
+    [Embed(source="../../../../res/data/image/lobby/entrance_info.swf")]
     private var _Source:Class;
 
     private static const CLOSE:String = "btn_close";

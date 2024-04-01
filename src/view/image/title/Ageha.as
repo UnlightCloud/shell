@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class Ageha extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/ageha.swf")]
+    [Embed(source="../../../../res/data/image/ageha.swf")]
     private var _Source:Class;
     private static const SCALE:Number = 0.9;
     private static const X:int = 513;

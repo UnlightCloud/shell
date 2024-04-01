@@ -132,7 +132,7 @@ public class ActionPointGauge extends BaseImage {
 
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/avatar/social_ap.swf")]
+    [Embed(source="../../../../res/data/image/avatar/social_ap.swf")]
     private var _Source:Class;
     private var _frame:int;
 

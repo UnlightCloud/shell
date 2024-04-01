@@ -6,11 +6,11 @@ package view.image.raid {
  */
 
 public class ProfoundImage extends ProfoundBaseImage {
-    [Embed(source="../../../../data/image/raid/vortex_normal.swf")]
+    [Embed(source="../../../../res/data/image/raid/vortex_normal.swf")]
     private var _nSource:Class;
-    [Embed(source="../../../../data/image/raid/vortex_another.swf")]
+    [Embed(source="../../../../res/data/image/raid/vortex_another.swf")]
     private var _aSource:Class;
-    [Embed(source="../../../../data/image/raid/vortex_event.swf")]
+    [Embed(source="../../../../res/data/image/raid/vortex_event.swf")]
     private var _eSource:Class;
 
     private var _sourceArray:Array = [_nSource, _aSource, _eSource];

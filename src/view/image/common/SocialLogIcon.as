@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class SocialLogIcon extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/common/log_icon.swf")]
+    [Embed(source="../../../../res/data/image/common/log_icon.swf")]
     private var _Source:Class;
     private var _frame:int;
 

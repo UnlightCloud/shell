@@ -16,7 +16,7 @@ import view.image.BaseImage;
 public class FeatInfoPanel extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/game/skill_base.swf")]
+    [Embed(source="../../../../res/data/image/game/skill_base.swf")]
     private var _Source:Class;
 
     private static const _BASE:String = "base";

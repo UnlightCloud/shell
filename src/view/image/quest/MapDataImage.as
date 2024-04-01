@@ -15,7 +15,7 @@ import view.image.*;
 
 public class MapDataImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/map_data.swf")]
+    [Embed(source="../../../../res/data/image/quest/map_data.swf")]
     private var _Source:Class;
 //         private static const DROP_BUTTON:String  ="btn_map_drop";
 //         private static const PRESENT_BUTTON:String  ="btn_map_pres";

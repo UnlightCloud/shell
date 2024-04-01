@@ -5,7 +5,7 @@
                 creationComplete="init()"
                 backgroundColor="black">
 
-    <mx:Style source="../data/css/UL.css"/>
+    <mx:Style source="../res/data/css/UL.css"/>
     <!-- スクリプト -->
     <mx:Script source="Main.as"/>
     <mx:Script source="FontLoader.as"/>

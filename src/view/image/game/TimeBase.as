@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class TimeBase extends BaseImage {
     // 元SWF
     // ターン表示・タイマー
-    [Embed(source="../../../../data/image/game/time_base.swf")]
+    [Embed(source="../../../../res/data/image/game/time_base.swf")]
     private var _Source:Class;
 
 

@@ -12,7 +12,7 @@ import view.image.BaseImage;
 
 public class RoomDataBase extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/match/b_lobby_list_detail.swf")]
+    [Embed(source="../../../../res/data/image/match/b_lobby_list_detail.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

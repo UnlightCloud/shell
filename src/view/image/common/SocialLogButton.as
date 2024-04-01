@@ -11,7 +11,7 @@ import view.image.BaseImage;
 
 public class SocialLogButton extends BaseImage {
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/log_send.swf")]
+    [Embed(source="../../../../res/data/image/common/log_send.swf")]
     private var _Source:Class;
 
     /**

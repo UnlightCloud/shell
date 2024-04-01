@@ -11,7 +11,7 @@ import view.image.BaseImage;
 
 public class ScrollBarDown extends BaseImage {
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/scl_list_dn.swf")]
+    [Embed(source="../../../../res/data/image/common/scl_list_dn.swf")]
     private var _Source:Class;
 
     /**

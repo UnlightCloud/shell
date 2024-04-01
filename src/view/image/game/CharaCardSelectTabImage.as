@@ -14,8 +14,8 @@ import view.image.BaseImage;
 
 
 public class CharaCardSelectTabImage extends BaseImage {
-///        [Embed(source="../../../../data/image/game/tab_card.swf")]
-    [Embed(source="../../../../data/image/game/chara_status.swf")]
+///        [Embed(source="../../../../res/data/image/game/tab_card.swf")]
+    [Embed(source="../../../../res/data/image/game/chara_status.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

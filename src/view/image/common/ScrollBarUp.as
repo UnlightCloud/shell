@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class ScrollBarUp extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/common/scl_list_up.swf")]
+    [Embed(source="../../../../res/data/image/common/scl_list_up.swf")]
     private var _Source:Class;
 
     /**

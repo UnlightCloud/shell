@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class TreasureCardFrame extends BaseImage {
 
     // CharaTreasureCardFrame表示元SWF
-    [Embed(source="../../../../data/image/quest/quest_treasure.swf")]
+    [Embed(source="../../../../res/data/image/quest/quest_treasure.swf")]
 
     private var _Source:Class;
     private var _frame:int;

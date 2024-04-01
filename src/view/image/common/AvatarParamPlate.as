@@ -12,7 +12,7 @@ import view.image.BaseImage;
 public class AvatarParamPlate extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/quest/social_plate.swf")]
+    [Embed(source="../../../../res/data/image/quest/social_plate.swf")]
     private var _Source:Class;
     private var _frame:int;
 

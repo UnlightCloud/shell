@@ -12,7 +12,7 @@ import view.image.BaseImage;
  */
 public class OpeningName extends BaseImage {
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/opening/op_name.swf")]
+    [Embed(source="../../../../res/data/image/game/opening/op_name.swf")]
     private var _Source:Class;
 
     // ラベル

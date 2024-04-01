@@ -20,7 +20,7 @@ import controller.*;
 public class ResultRollImage extends BaseImage {
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/result_roll.swf")]
+    [Embed(source="../../../../res/data/image/game/result/result_roll.swf")]
     private var _Source:Class;
 
     private var _resultMC:Array = [];

@@ -16,22 +16,22 @@ import view.image.BaseImage;
 
 public class ActionCardValue extends BaseImage {
     // ActionCard近接表示元SWF
-    [Embed(source="../../../../data/image/game/acswd.swf")]
+    [Embed(source="../../../../res/data/image/game/acswd.swf")]
     private static var Swd:Class;
     // ActionCard遠距離表示元SWF
-    [Embed(source="../../../../data/image/game/acbow.swf")]
+    [Embed(source="../../../../res/data/image/game/acbow.swf")]
     private static var Arw:Class;
     // ActionCard防御表示元SWF
-    [Embed(source="../../../../data/image/game/acdef.swf")]
+    [Embed(source="../../../../res/data/image/game/acdef.swf")]
     private static var Def:Class;
     // ActionCard移動表示元SWF
-    [Embed(source="../../../../data/image/game/acmove.swf")]
+    [Embed(source="../../../../res/data/image/game/acmove.swf")]
     private static var Move:Class;
     // ActionCard特殊表示元SWF
-    [Embed(source="../../../../data/image/game/acstar.swf")]
+    [Embed(source="../../../../res/data/image/game/acstar.swf")]
     private static var Star:Class;
     // ActionCard特殊表示元SWF
-    [Embed(source="../../../../data/image/game/acchance.swf")]
+    [Embed(source="../../../../res/data/image/game/acchance.swf")]
     private static var Chance:Class;
 
     private static var ClassArray:Array = [Swd, Arw, Def, Move, Star, Chance];

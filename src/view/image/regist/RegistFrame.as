@@ -16,7 +16,7 @@ import view.image.BaseImage;
 public class RegistFrame extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/regist/make_frame.swf")]
+    [Embed(source="../../../../res/data/image/regist/make_frame.swf")]
     private var _Source:Class;
 
     public static const OK_CLICK:String = "ok_click";

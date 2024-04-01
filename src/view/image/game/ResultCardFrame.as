@@ -20,7 +20,7 @@ import controller.*;
 public class ResultCardFrame extends BaseImage {
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/frame_card.swf")]
+    [Embed(source="../../../../res/data/image/game/result/frame_card.swf")]
     private var _Source:Class;
 
 

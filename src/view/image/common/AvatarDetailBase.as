@@ -15,7 +15,7 @@ import view.image.BaseImage;
 public class AvatarDetailBase extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/common/gene.swf")]
+    [Embed(source="../../../../res/data/image/common/gene.swf")]
     private var _Source:Class;
     private var _frame:int;
 

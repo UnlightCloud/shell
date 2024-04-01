@@ -13,7 +13,7 @@ import view.image.*;
 
 public class MapEventImage extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/land_event.swf")]
+    [Embed(source="../../../../res/data/image/quest/land_event.swf")]
     private var _Source:Class;
     private static const MAP_EVENT:String = "event";
     private static const X:int = 0;

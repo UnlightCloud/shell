@@ -11,24 +11,24 @@ import view.image.BaseImage;
 
 
 public class BG extends BaseImage {
-    [Embed(source="../../../../data/image/bg/bg_btl00a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a.swf")]
     private static var _castle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl01a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl01a.swf")]
     private static var _forest:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl02a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl02a.swf")]
     private static var _road:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl01a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl01a.swf")]
     private static var _lakeside:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl00a_far.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl00a_far.swf")]
     private static var _plane:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl09a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl09a.swf")]
     private static var _mountain:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl10a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl10a.swf")]
     private static var _mlCastle:Class;
-    [Embed(source="../../../../data/image/bg/bg_btl99a.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl99a.swf")]
     private static var _throne:Class;
     // 仮です変化がわかるように]
-    [Embed(source="../../../../data/image/bg/bg_btl99b.swf")]
+    [Embed(source="../../../../res/data/image/bg/bg_btl99b.swf")]
     private static var _throne2:Class;
 
     // 背景タイプの列挙配列

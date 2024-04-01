@@ -21,7 +21,7 @@ import view.utils.*;
 public class BG extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/lot/gacha_base.swf")]
+    [Embed(source="../../../../res/data/image/lot/gacha_base.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

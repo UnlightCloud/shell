@@ -14,7 +14,7 @@ import view.image.BaseImage;
 public class AchievementListButton extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/achievement/btn_achi.swf")]
+    [Embed(source="../../../../res/data/image/achievement/btn_achi.swf")]
 
     private var _Source:Class;
 

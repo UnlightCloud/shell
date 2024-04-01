@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class AchievementIconImage extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/achievement/achievement_list.swf")]
+    [Embed(source="../../../../res/data/image/achievement/achievement_list.swf")]
     private var _Source:Class;
     private var _iconMC:MovieClip;
     private var _selectMC:MovieClip;

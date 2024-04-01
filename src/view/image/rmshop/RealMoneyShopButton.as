@@ -25,7 +25,7 @@ import view.utils.*;
  */
 
 public class RealMoneyShopButton extends BaseImage {
-    [Embed(source="../../../../data/image/rmshop/shop.swf")]
+    [Embed(source="../../../../res/data/image/rmshop/shop.swf")]
     private var _Source:Class;
     private static const SCALE:Number = 1.0;
 

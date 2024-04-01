@@ -16,7 +16,7 @@ import view.image.BaseImage;
 public class FriendButton extends BaseImage {
 
     // 表示元SWF
-    [Embed(source="../../../../data/image/friend/btn_invite.swf")]
+    [Embed(source="../../../../res/data/image/friend/btn_invite.swf")]
     private var _Source:Class;
 
     private var _label:Label = new Label();

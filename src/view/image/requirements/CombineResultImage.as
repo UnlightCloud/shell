@@ -15,7 +15,7 @@ public class CombineResultImage extends BaseImage {
     public static const SKILL_SLOT_NUM:int = 3;
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/compo/compo_result.swf")]
+    [Embed(source="../../../../res/data/image/compo/compo_result.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

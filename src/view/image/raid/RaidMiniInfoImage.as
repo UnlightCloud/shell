@@ -11,7 +11,7 @@ import view.image.BaseImage;
  */
 
 public class RaidMiniInfoImage extends BaseImage {
-    [Embed(source="../../../../data/image/raid/raid_info_mini.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_info_mini.swf")]
     private var _Source:Class;
 
     private static const MONSTER:String = "monster";

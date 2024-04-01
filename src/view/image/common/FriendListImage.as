@@ -15,7 +15,7 @@ public class FriendListImage extends BaseImage {
 
     // 表示元SWF
     {
-        [Embed(source="../../../../data/image/friend/friendlist.swf")]
+        [Embed(source="../../../../res/data/image/friend/friendlist.swf")]
         private var _Source:Class;
     }
 

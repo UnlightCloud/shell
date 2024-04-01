@@ -63,7 +63,7 @@ public class ResultAvatarLevelUpImage extends BaseImage {
     private static const _TRANS_MSG2:String = "";
 
     // result表示元SWF
-    [Embed(source="../../../../data/image/game/result/lvup_avatar.swf")]
+    [Embed(source="../../../../res/data/image/game/result/lvup_avatar.swf")]
 
     private var _Source:Class;
 //        private const LEVEL_UP_F:String = "アバターのレベルが";

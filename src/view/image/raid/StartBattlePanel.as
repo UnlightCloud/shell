@@ -17,7 +17,7 @@ import view.image.BaseImage;
  */
 public class StartBattlePanel extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/raid/raid_turn.swf")]
+    [Embed(source="../../../../res/data/image/raid/raid_turn.swf")]
     private var _Source:Class;
 
     private static const OK:String = "btn_ok";

@@ -13,7 +13,7 @@ import view.image.BaseImage;
 
 public class ChannelList extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/match/lobby_channel.swf")]
+    [Embed(source="../../../../res/data/image/match/lobby_channel.swf")]
     private static var _Source:Class;
     private var _chAButton:SimpleButton;
     private var _chBButton:SimpleButton;

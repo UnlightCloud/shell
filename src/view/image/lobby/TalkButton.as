@@ -15,7 +15,7 @@ import view.image.*;
 
 public class TalkButton extends BaseImage {
     // HP表示元SWF
-    [Embed(source="../../../../data/image/lobby/entrance_talk_icon.swf")]
+    [Embed(source="../../../../res/data/image/lobby/entrance_talk_icon.swf")]
     private var _Source:Class;
 
     private static const X:int = 0;

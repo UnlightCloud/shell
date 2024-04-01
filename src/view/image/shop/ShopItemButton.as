@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class ShopItemButton extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/shop/btn_item.swf")]
+    [Embed(source="../../../../res/data/image/shop/btn_item.swf")]
     private var _Source:Class;
     private static const X:int = 96;
     private static const Y:int = 32;

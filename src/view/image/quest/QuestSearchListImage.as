@@ -15,7 +15,7 @@ import view.utils.*;
 public class QuestSearchListImage extends BaseImage {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/quest/questsearch.swf")]
+    [Embed(source="../../../../res/data/image/quest/questsearch.swf")]
     private var _Source:Class;
     private static const CLOSE_BUTTON:String = "btn_close"
     private static const X:int = 0;

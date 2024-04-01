@@ -13,7 +13,7 @@ import view.image.BaseImage;
 public class WindowItemInventoryBaseImage extends BaseImage implements IItemBase {
 
     // HP表示元SWF
-    [Embed(source="../../../../data/image/item/itemwin_itembase.swf")]
+    [Embed(source="../../../../res/data/image/item/itemwin_itembase.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;

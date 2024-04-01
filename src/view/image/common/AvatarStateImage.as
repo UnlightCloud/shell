@@ -22,7 +22,7 @@ import view.utils.*;
 public class AvatarStateImage extends BaseImage {
 
     // CharaCardFrame表示元SWF
-    [Embed(source="../../../../data/image/avatar/avatar_state.swf")]
+    [Embed(source="../../../../res/data/image/avatar/avatar_state.swf")]
     private var _Source:Class;
 
     public static const X:int = 30;

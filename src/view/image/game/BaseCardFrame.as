@@ -22,7 +22,7 @@ public class BaseCardFrame extends BaseImage {
 
 
     // 枠表示元SWF
-    [Embed(source="../../../../data/image/game/base.swf")]
+    [Embed(source="../../../../res/data/image/game/base.swf")]
     private var _Source:Class;
     private static const X:int = 0;
     private static const Y:int = 0;
