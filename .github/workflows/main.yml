@@ -136,7 +136,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Unlight
-          path: src/
+          path: .
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
