@@ -1,5 +1,7 @@
 import com.potix2.utils.GCWatcher;
 
+import flash.ui.ContextMenu;
+import flash.events.MouseEvent;
 import flash.utils.getTimer;
 
 import mx.controls.*;
@@ -359,18 +361,3 @@ CONFIG::DEBUG
 public function debugInfoVisibleToggle():void {
     _debugLabel.visible = !_debugLabel.visible;
 }
-
-
-// 使うときには
-// Unlightg.GCWOn();
-// Unlight.GCW.watch(obj)
-
-
-// public function get currencyString():String
-// {
-//     ret = COIN_STR
-//     return
-
-// }
-
-
