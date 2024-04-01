@@ -11,15 +11,15 @@ import view.image.BaseObject;
 // ライブラリ初期化用
 // ダイスオブジェクトのクラス
 public class DiceObject extends BaseObject {
-    [Embed(source="../../../../public/image/tex/dice_red.png")]
+    [Embed(source="../../../../res/public/image/tex/dice_red.png")]
     private static var _red:Class; // 赤ダイスのテクスチャ
-    [Embed(source="../../../../public/image/tex/dice.png")]
+    [Embed(source="../../../../res/public/image/tex/dice.png")]
     private static var _black:Class; // 黒ダイスのテクスチャ
-    [Embed(source="../../../../public/image/tex/dice_f.png")]
+    [Embed(source="../../../../res/public/image/tex/dice_f.png")]
     private static var _fumble:Class; // 青ダイスのテクスチャ
-    [Embed(source="../../../../public/image/tex/dice_c.png")]
+    [Embed(source="../../../../res/public/image/tex/dice_c.png")]
     private static var _critical:Class; // 青ダイスのテクスチャ
-    [Embed(source="../../../../public/image/dice.dae", mimeType="application/octet-stream")]
+    [Embed(source="../../../../res/public/image/dice.dae", mimeType="application/octet-stream")]
     private static var _path:Class; // daeファイルパス
 
     private var _eye:int;

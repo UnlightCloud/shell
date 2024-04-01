@@ -7,9 +7,9 @@ import view.image.BaseObject;
 
 // デッキオブジェクトのクラス
 public class DeckObject extends BaseObject {
-    [Embed(source="../../../../public/image/tex/deck.png")]
+    [Embed(source="../../../../res/public/image/tex/deck.png")]
     private var _tex:Class; // テクスチャ
-    [Embed(source="../../../../public/image/deck.dae", mimeType="application/octet-stream")]
+    [Embed(source="../../../../res/public/image/deck.dae", mimeType="application/octet-stream")]
     private var _path:Class; // daeファイルパス
 
     // コンストラクタ
