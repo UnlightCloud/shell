@@ -1,61 +1,46 @@
-package view.image.quest
-{
+package view.image.quest {
 
-    import flash.display.*;
-    import flash.filters.GlowFilter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import flash.events.Event;
 
-    import mx.core.UIComponent;
-    import mx.controls.Text;
+import view.image.BaseImage;
 
-    import org.libspark.thread.*;
-    import org.libspark.thread.utils.*;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
+/**
+ * TreasureCardFrame表示クラス
+ *
+ */
 
-    import view.image.BaseImage;
+public class TreasureCardFrame extends BaseImage {
 
-    /**
-     * TreasureCardFrame表示クラス
-     *
-     */
+    // CharaTreasureCardFrame表示元SWF
+    [Embed(source="../../../../data/image/quest/quest_treasure.swf")]
 
-    public class TreasureCardFrame extends BaseImage
-    {
-
-        // CharaTreasureCardFrame表示元SWF
-        [Embed(source="../../../../data/image/quest/quest_treasure.swf")]
-
-        private var _Source:Class;
-        private var _frame:int;
+    private var _Source:Class;
+    private var _frame:int;
 
 //         public static const FRAME_RED:int = 5;
 //         public static const FRAME_BLUE:int = 0;
 //         public static const FRAME_GREEN:int = 3;
 
 
-        /**
-         * コンストラクタ
-         *
-         */
-        public function TreasureCardFrame()
-        {
+    /**
+     * コンストラクタ
+     *
+     */
+    public function TreasureCardFrame() {
 //             _frame = frame;
-            super();
-        }
+        super();
+    }
 
-        override protected function swfinit(event: Event):void
-        {
-            super.swfinit(event);
+    override protected function swfinit(event:Event):void {
+        super.swfinit(event);
 //             _root.gotoAndStop(_frame);
 //             _root.getChildByName("rare").visible = false;
-        }
-
-        override protected function get Source():Class
-        {
-            return _Source;
-        }
-
     }
+
+    override protected function get Source():Class {
+        return _Source;
+    }
+
+}
 
 }

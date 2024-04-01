@@ -1,59 +1,32 @@
+package view {
+import flash.display.*;
+import flash.events.MouseEvent;
+import flash.geom.*;
 
-package view
-{
-    import flash.filters.*;
-    import flash.display.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import flash.display.*;
-    import flash.geom.*;
-    import flash.events.*;
+import mx.core.UIComponent;
 
-    import flash.events.Event;
-    import org.libspark.thread.*;
+import org.libspark.thread.Thread;
 
-    import view.image.BaseLoadImage;
+import view.image.game.*;
 
-    import mx.containers.Panel;
-    import mx.controls.*;
-    import mx.core.UIComponent;
-    import mx.core.*;
-    import mx.managers.*;
+/**
+ * 表示テストのビュークラス
+ *
+ */
 
-    import mx.events.StateChangeEvent;
-    import mx.controls.textClasses.TextRange;
-
-    import org.libspark.thread.Thread;
-    import org.libspark.thread.utils.ParallelExecutor;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
-
-    import model.Player;
-    import controller.*;
-    import view.scene.game.*;
-    import view.image.game.*;
-
-    /**
-     * 表示テストのビュークラス
-     *
-     */
-
-   public class TestView extends Thread
-    {
+public class TestView extends Thread {
 
 
+    private var _stage:Sprite;
+    private var _container:UIComponent = new UIComponent(); // 表示コンテナ
 
-        private var _stage:Sprite;
-        private var _container:UIComponent = new UIComponent(); // 表示コンテナ
-
-        private var _bg:BG = new BG(0); // リザルト表示クラス
-        private var _perspective:PerspectiveProjection;
+    private var _bg:BG = new BG(0); // リザルト表示クラス
+    private var _perspective:PerspectiveProjection;
 
 //         private var _resultScene:ResultScene; // リザルト表示クラス
 
 //         private var _dropTable:DropTable = new DropTable(); // ドロップテーブルクラス
 //         private var _deckArea:DeckArea = new DeckArea();
-                
-
 
 
 //         private var _dice:DiceManager; // ダイスを管理するクラス
@@ -69,40 +42,31 @@ package view
 //          * @param stage 親ステージ
 //          *
 //          */
-        public function TestView(stage:Sprite)
-        {
-             _stage = stage;
-             _bg.getShowThread(stage).start();
+    public function TestView(stage:Sprite) {
+        _stage = stage;
+        _bg.getShowThread(stage).start();
 
 //              _perspective =  stage.root.transform.perspectiveProjection;
 //              stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDownHandler);
-  
-        }
+
+    }
 
 
-        // スレッドのスタート
-        override protected  function run():void
-        {
+    // スレッドのスタート
+    override protected function run():void {
 //            _diceManager.getRollDiceThread().start();
 //            next(dropTableShow);
 //            next(deckAreaShow);
 //            next(diceShow);
-        }
+    }
 
 
-        private function onMouseDownHandler(e:MouseEvent):void
-        {
-            log.writeLog(log.LV_FATAL, this, "garnd pers",_perspective,e.stageX,e.stageY);
-           _perspective.projectionCenter = new Point(e.stageX, e.stageY);
-            _perspective.fieldOfView = 75;
+    private function onMouseDownHandler(e:MouseEvent):void {
+        log.writeLog(log.LV_FATAL, this, "garnd pers", _perspective, e.stageX, e.stageY);
+        _perspective.projectionCenter = new Point(e.stageX, e.stageY);
+        _perspective.fieldOfView = 75;
 
-        }
-
-
-
-
-
-
+    }
 
 
 //         // ==============================================================
@@ -136,7 +100,6 @@ package view
 //         {
 //             _deckArea.initDeck(20).start();
 //         }
-
 
 
 //         // ==============================================================
@@ -244,5 +207,5 @@ package view
 //         {
 //              log.writeLog (log.LV_WARN,this,"test end");
 //         }
-    }
+}
 }

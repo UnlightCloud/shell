@@ -1,41 +1,31 @@
-package view.image.common
-{
+package view.image.common {
 
-    import flash.display.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import view.image.BaseLoadImage;
 
-    import mx.core.UIComponent;
+/**
+ * StoryImage表示クラス
+ *
+ */
 
-    import view.image.BaseLoadImage;
+
+public class StoryImage extends BaseLoadImage {
+
+
+    private var _obverse:Boolean = false;
 
     /**
-     * StoryImage表示クラス
+     * コンストラクタ
      *
      */
-
-
-    public class StoryImage extends BaseLoadImage
-    {
-
-
-        private var _obverse:Boolean = false;
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function StoryImage(url:String )
-        {
-            super(url);
-        }
-
-        public override function init():void
-        {
-            _root.cacheAsBitmap = true;
-        }
-
-
+    public function StoryImage(url:String) {
+        super(url);
     }
+
+    public override function init():void {
+        _root.cacheAsBitmap = true;
+    }
+
+
+}
 
 }

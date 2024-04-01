@@ -1,48 +1,35 @@
-package view.image.game
-{
+package view.image.game {
 
-    import flash.display.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import flash.events.Event;
 
-    import mx.core.UIComponent;
+import view.image.BaseImage;
 
-    import org.libspark.thread.Thread;
-    import org.libspark.thread.utils.ParallelExecutor;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
+/**
+ * ヒットエフェクト表示クラス
+ *
+ */
 
-    import view.image.BaseImage;
-    import controller.*;
+public class HitDamageStr extends BaseImage {
+    // atkダイス表示元SWF
+    [Embed(source="../../../../data/image/game/text_damage.swf")]
+    private static var _source:Class;
+
+    // ゲームのコントローラ
 
     /**
-     * ヒットエフェクト表示クラス
+     * コンストラクタ
      *
      */
-
-    public class HitDamageStr extends BaseImage
-    {
-        // atkダイス表示元SWF
-        [Embed(source="../../../../data/image/game/text_damage.swf")]
-        private static var _source:Class;
-        // ゲームのコントローラ
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function HitDamageStr()
-        {
-            super();
-        }
-
-        override protected function swfinit(event: Event): void
-        {
-            super.swfinit(event);
-        }
-
-        override protected function get Source():Class
-        {
-            return _source;
-        }
+    public function HitDamageStr() {
+        super();
     }
+
+    override protected function swfinit(event:Event):void {
+        super.swfinit(event);
+    }
+
+    override protected function get Source():Class {
+        return _source;
+    }
+}
 }

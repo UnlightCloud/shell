@@ -1,42 +1,32 @@
-package view.image.common
-{
+package view.image.common {
 
-    import flash.display.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import view.image.BaseLoadImage;
 
-    import mx.core.UIComponent;
+/**
+ * WeaponCardImage表示クラス
+ *
+ */
 
-    import view.image.BaseLoadImage;
+
+public class WeaponCardImage extends BaseLoadImage {
+    private static const URL:String = "/public/image/card_weapon/";
+    private var _frame:int;
 
     /**
-     * WeaponCardImage表示クラス
+     * コンストラクタ
      *
      */
-
-
-    public class WeaponCardImage extends BaseLoadImage
-    {
-        private static const URL:String = "/public/image/card_weapon/";
-        private var _frame:int;
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function WeaponCardImage(url:String, frame:int = 0)
-        {
-            _frame = frame;
+    public function WeaponCardImage(url:String, frame:int = 0) {
+        _frame = frame;
 //            log.writeLog(log.LV_INFO, this, "url", URL+url);
-            super(URL+url);
-        }
+        super(URL + url);
+    }
 
-        public override function init():void
-        {
+    public override function init():void {
 //            log.writeLog(log.LV_INFO, this, "item part frame", _frame);
-            _root.gotoAndStop(_frame);
-            _root.cacheAsBitmap = true;
-        }
+        _root.gotoAndStop(_frame);
+        _root.cacheAsBitmap = true;
+    }
 
 //         public function mouseOff():void
 //         {
@@ -51,5 +41,5 @@ package view.image.common
 //             _root.mouseChildren = false;
 //         }
 
-    }
+}
 }

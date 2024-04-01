@@ -1,30 +1,30 @@
-package view.image.quest
-{
+package view.image.quest {
 
-    import flash.display.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
-    import view.image.BaseLoadImage;
-    import view.utils.*;
-    import model.Dialogue;
-    import controller.TitleCtrl;
+import controller.TitleCtrl;
 
-    /**
-     * QuestListImage表示クラス
-     *
-     */
-    public class QuestStoryBGImage extends BaseLoadImage
-    {
+import flash.display.*;
+import flash.events.Event;
+import flash.events.MouseEvent;
+
+import model.Dialogue;
+
+import view.image.BaseLoadImage;
+
+/**
+ * QuestListImage表示クラス
+ *
+ */
+public class QuestStoryBGImage extends BaseLoadImage {
 
 
-        private var _obverse:Boolean = false;
-        private var  _mapNo:int = 0;
-        private static const SKIP_BUTTON:String  ="btn_skip";
-        public  static const SKIP_EVENT:String  ="skip_event_story";
-        private var _skipButton:SimpleButton;
-        private var _totalFrames:int;
+    private var _obverse:Boolean = false;
+    private var _mapNo:int = 0;
+    private static const SKIP_BUTTON:String = "btn_skip";
+    public static const SKIP_EVENT:String = "skip_event_story";
+    private var _skipButton:SimpleButton;
+    private var _totalFrames:int;
 
-        private static const BG_URL_SET:Array =
+    private static const BG_URL_SET:Array =
             [
                 "quest_story_a.swf", // プロローグ           0
                 "quest_story_b.swf", // 魔女の谷 HexRealm    1
@@ -57,79 +57,68 @@ package view.image.quest
                 "eventstory_06_c.swf", // 2017/04イベントc     28
             ]; /* of String */
 
-        private static const URL:String = "./public/image/quest_story/"
+    private static const URL:String = "./public/image/quest_story/"
 
-        /**
-         * コンストラクタ
-         *
-         */
-        public function QuestStoryBGImage(mapNo:int)
-        {
-            _mapNo = mapNo;
-            super(URL+BG_URL_SET[_mapNo]);
-            alpha = 0.0;
+    /**
+     * コンストラクタ
+     *
+     */
+    public function QuestStoryBGImage(mapNo:int) {
+        _mapNo = mapNo;
+        super(URL + BG_URL_SET[_mapNo]);
+        alpha = 0.0;
+    }
+
+    public override function init():void {
+        // _root.cacheAsBitmap = true;
+        main.addEventListener("caption_end", test);
+        _skipButton = SimpleButton(_root.getChildByName(SKIP_BUTTON));
+
+        if (_skipButton) {
+            _skipButton.addEventListener(MouseEvent.CLICK, skipButtonHandler);
         }
 
-        public override function init():void
-        {
-            // _root.cacheAsBitmap = true;
-            main.addEventListener("caption_end",test);
-            _skipButton = SimpleButton(_root.getChildByName(SKIP_BUTTON));
+        _totalFrames = this.MCRoot.totalFrames;
+    }
 
-            if (_skipButton)
-            {
-                _skipButton.addEventListener(MouseEvent.CLICK, skipButtonHandler);
-            }
-
-            _totalFrames = this.MCRoot.totalFrames;
+    override public function final():void {
+        if (_skipButton) {
+            _skipButton.removeEventListener(MouseEvent.CLICK, skipButtonHandler);
+            _skipButton = null;
         }
+    }
 
-        override public function final():void
-        {
-            if (_skipButton)
-            {
-                _skipButton.removeEventListener(MouseEvent.CLICK, skipButtonHandler);
-                _skipButton = null;
-            }
-        }
+    private function skipButtonHandler(e:Event):void {
+        _skipButton.enabled = false;
+        _skipButton.mouseEnabled = false;
+        TitleCtrl.instance.stopBGM();
+        Dialogue.instance.clearData();
+        dispatchEvent(new Event(SKIP_EVENT));
+    }
 
-        private function skipButtonHandler(e:Event):void
-        {
-            _skipButton.enabled = false;
-            _skipButton.mouseEnabled = false;
-            TitleCtrl.instance.stopBGM();
-            Dialogue.instance.clearData();
-            dispatchEvent(new Event(SKIP_EVENT));
-        }
-
-        private function test(e:Event):void
-        {
-            if (e.target.currentFrame == _totalFrames)
-            {
-                log.writeLog(log.LV_FATAL, this, "test story BG fire",e.target.currentFrame);
-                _root.removeEventListener(Event.ENTER_FRAME,test);
-                dispatchEvent(new Event("caption_end"));
-            }
-
-        }
-
-        public function play():void
-        {
-            if(_root != null)
-            {
-                // SwfNameInfo.toLog(main);
-                // SwfNameInfo.toLog(_root);
-            for(var i:int = 0; i < _root.numChildren; i++)
-            {
-                _root.getChildAt(i).addEventListener("caption_end",test);
-            }
-            _root.addEventListener(Event.ENTER_FRAME,test);
-            log.writeLog(log.LV_FATAL, this, "story bg total flame",_root.totalFlames);
-                // main.addEventListener("caption_end",test)
-                _root.play();
-            }
+    private function test(e:Event):void {
+        if (e.target.currentFrame == _totalFrames) {
+            log.writeLog(log.LV_FATAL, this, "test story BG fire", e.target.currentFrame);
+            _root.removeEventListener(Event.ENTER_FRAME, test);
+            dispatchEvent(new Event("caption_end"));
         }
 
     }
+
+    public function play():void {
+        if (_root != null) {
+            // SwfNameInfo.toLog(main);
+            // SwfNameInfo.toLog(_root);
+            for (var i:int = 0; i < _root.numChildren; i++) {
+                _root.getChildAt(i).addEventListener("caption_end", test);
+            }
+            _root.addEventListener(Event.ENTER_FRAME, test);
+            log.writeLog(log.LV_FATAL, this, "story bg total flame", _root.totalFlames);
+            // main.addEventListener("caption_end",test)
+            _root.play();
+        }
+    }
+
+}
 
 }

@@ -1,12 +1,8 @@
-package rule
-{
-    import model.Duel;
-
-    public class DuelRule
-    {
+package rule {
+public class DuelRule {
 
 
-    }
+}
 
 
 }

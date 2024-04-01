@@ -1,21 +1,20 @@
 // ShowとHideのスレッド返すメソッドのインターフェイス
 
-package view.image.shop
-{
-    import flash.display.DisplayObjectContainer;
+package view.image.shop {
+public interface IShopBase {
+    function onEquip():void;
 
-    import org.libspark.thread.*;
+    function offEquip():void;
 
-    public interface IShopBase
-    {
-        function onEquip():void;
-        function offEquip():void;
-        function onSelect():void;
-        function offSelect():void;
-        function onTitle():void;
-        function offTitle():void;
+    function onSelect():void;
 
-    }
+    function offSelect():void;
+
+    function onTitle():void;
+
+    function offTitle():void;
+
+}
 
 }
 

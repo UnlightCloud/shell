@@ -1,52 +1,37 @@
-package view.image.common
-{
+package view.image.common {
 
-    import flash.display.*;
-    import flash.filters.GlowFilter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import flash.events.Event;
 
-    import mx.core.UIComponent;
-    import mx.controls.Text;
+import view.image.BaseImage;
 
-    import org.libspark.thread.*;
-    import org.libspark.thread.utils.*;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
+/**
+ * AvatarParamPlate表示クラス
+ *
+ */
 
-    import view.image.BaseImage;
+public class AvatarParamPlate extends BaseImage {
+
+    // CharaCardFrame表示元SWF
+    [Embed(source="../../../../data/image/quest/social_plate.swf")]
+    private var _Source:Class;
+    private var _frame:int;
 
     /**
-     * AvatarParamPlate表示クラス
+     * コンストラクタ
      *
      */
-
-    public class AvatarParamPlate extends BaseImage
-    {
-
-        // CharaCardFrame表示元SWF
-        [Embed(source="../../../../data/image/quest/social_plate.swf")]
-        private var _Source:Class;
-        private var _frame:int;
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function AvatarParamPlate()
-        {
-            super();
-        }
-
-        override protected function swfinit(event: Event):void
-        {
-            super.swfinit(event);
-        }
-
-        override protected function get Source():Class
-        {
-            return _Source;
-        }
-
+    public function AvatarParamPlate() {
+        super();
     }
+
+    override protected function swfinit(event:Event):void {
+        super.swfinit(event);
+    }
+
+    override protected function get Source():Class {
+        return _Source;
+    }
+
+}
 
 }

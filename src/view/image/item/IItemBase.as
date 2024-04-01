@@ -1,19 +1,16 @@
 // ShowとHideのスレッド返すメソッドのインターフェイス
 
-package view.image.item
-{
-    import flash.display.DisplayObjectContainer;
+package view.image.item {
+public interface IItemBase {
+    function onEquip():void;
 
-    import org.libspark.thread.*;
+    function offEquip():void;
 
-    public interface IItemBase
-    {
-        function onEquip():void;
-        function offEquip():void;
-        function onSelect():void;
-        function offSelect():void;
+    function onSelect():void;
 
-    }
+    function offSelect():void;
+
+}
 
 }
 

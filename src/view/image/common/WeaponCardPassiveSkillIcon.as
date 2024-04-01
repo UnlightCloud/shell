@@ -1,67 +1,50 @@
-package view.image.common
-{
+package view.image.common {
 
-    import flash.display.*;
-    import flash.filters.GlowFilter;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+import flash.events.Event;
 
-    import mx.core.UIComponent;
-    import mx.controls.Text;
+import view.image.BaseImage;
 
-    import org.libspark.thread.*;
-    import org.libspark.thread.utils.*;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
+/**
+ * 武器パッシブアイコン表示クラス
+ *
+ */
 
-    import model.EventCard;
-    import view.image.BaseImage;
+public class WeaponCardPassiveSkillIcon extends BaseImage {
+
+    // CharaCardFrame表示元SWF
+    [Embed(source="../../../../data/image/icon_p_skill.swf")]
+    private var _source:Class;
+
+    private var _weaponPassiveNo:int;
+
 
     /**
-     * 武器パッシブアイコン表示クラス
+     * コンストラクタ
      *
      */
-
-    public class WeaponCardPassiveSkillIcon extends BaseImage
-    {
-
-        // CharaCardFrame表示元SWF
-        [Embed(source="../../../../data/image/icon_p_skill.swf")]
-        private var _source:Class;
-
-        private var _weaponPassiveNo:int;
-
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function WeaponCardPassiveSkillIcon(passiveNo:int=0)
-        {
-            _weaponPassiveNo = passiveNo;
-            super();
-        }
-
-        override protected function swfinit(event: Event):void
-        {
-            super.swfinit(event);
-            _root.gotoAndStop(_weaponPassiveNo+1);
-        }
-
-        override protected function get Source():Class
-        {
-            return _source;
-        }
-
-        public function changePassiveNo(passiveNo:int):void
-        {
-            _weaponPassiveNo = passiveNo;
-            waitComplete(changePassiveNoComplete);
-        }
-        private function changePassiveNoComplete():void
-        {
-            _root.gotoAndStop(_weaponPassiveNo+1);
-        }
-
+    public function WeaponCardPassiveSkillIcon(passiveNo:int = 0) {
+        _weaponPassiveNo = passiveNo;
+        super();
     }
+
+    override protected function swfinit(event:Event):void {
+        super.swfinit(event);
+        _root.gotoAndStop(_weaponPassiveNo + 1);
+    }
+
+    override protected function get Source():Class {
+        return _source;
+    }
+
+    public function changePassiveNo(passiveNo:int):void {
+        _weaponPassiveNo = passiveNo;
+        waitComplete(changePassiveNoComplete);
+    }
+
+    private function changePassiveNoComplete():void {
+        _root.gotoAndStop(_weaponPassiveNo + 1);
+    }
+
+}
 
 }

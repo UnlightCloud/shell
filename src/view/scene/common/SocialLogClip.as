@@ -1,70 +1,46 @@
-package view.scene.common
-{
-    import flash.display.*;
-    import flash.filters.*;
-    import flash.events.Event;
-    import flash.events.MouseEvent;
+package view.scene.common {
+import flash.display.*;
 
-    import flash.utils.Dictionary;
+import model.*;
 
-    import flash.filters.DropShadowFilter;
-    import flash.geom.*;
+import mx.controls.*;
+import mx.core.UIComponent;
 
-    import mx.core.UIComponent;
-    import mx.core.ClassFactory;
-    import mx.containers.*;
-    import mx.controls.*;
-    import mx.collections.ArrayCollection;
+import org.libspark.thread.*;
 
-    import org.libspark.thread.*;
-    import org.libspark.thread.utils.*;
-    import org.libspark.thread.threads.between.BeTweenAS3Thread;
+import view.image.common.*;
+import view.scene.BaseScene;
 
-    import model.*;
-    import model.events.AvatarItemEvent;
+/**
+ * SocialLogClipの表示クラス
+ *
+ */
 
-    import view.image.common.*;
+public class SocialLogClip extends BaseScene {
+    // 描画コンテナ
+    private var _container:UIComponent = new UIComponent();
 
-    import view.scene.BaseScene;
-    import view.scene.ModelWaitShowThread;
-    import view.*;
+    // ログの出力モード
+    private var _mode:int;
+    // ログの内容
+    private var _content:String;
 
-    import controller.LobbyCtrl;
-    import controller.*;
+    // 表示枠
+    private var _logIcon:*;
+    private var _textBase:SocialLogTextBase = new SocialLogTextBase();
+
+    // 表示内容
+    private var _label:Text = new Text();
 
     /**
-     * SocialLogClipの表示クラス
+     * コンストラクタ
      *
      */
-
-    public class SocialLogClip extends BaseScene
-    {
-        // 描画コンテナ
-        private var _container:UIComponent = new UIComponent();
-
-        // ログの出力モード
-        private var _mode:int;
-        // ログの内容
-        private var _content:String;
-
-        // 表示枠
-        private var _logIcon:*;
-        private var _textBase:SocialLogTextBase = new SocialLogTextBase();
-
-        // 表示内容
-        private var _label:Text = new Text();
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function SocialLogClip(ql:QuestLog)
-        {
-            _mode = ql.type;
-            _content = ql.body;
-            log.writeLog(log.LV_FATAL, this, "social log clip init", _mode, _content);
-            switch (_mode)
-            {
+    public function SocialLogClip(ql:QuestLog) {
+        _mode = ql.type;
+        _content = ql.body;
+        log.writeLog(log.LV_FATAL, this, "social log clip init", _mode, _content);
+        switch (_mode) {
             case Const.LOG_AVATAR:
                 _logIcon = new SocialLogIcon();
                 _logIcon.x = 5;
@@ -94,30 +70,29 @@ package view.scene.common
                 _logIcon = new SocialLogIcon();
                 _logIcon.x = 5;
                 _logIcon.y = 5;
-            }
-
-            _logIcon.getShowThread(_container).start();
-
-            _textBase.x = 45;
-            _textBase.y = 5;
-            _textBase.scaleY = 1.0;
-
-            _label.text = _content;
-            _label.x = 70;
-            _label.y = 10;
-            _label.width = 240;
-            _label.height = 60;
-            _label.styleName = "SocialLogTextLabel";
-
-            _container.addChild(_textBase);
-            _container.addChild(_label);
-
-            addChild(_container);
         }
 
-        // 初期化
-        public override function init():void
-        {
+        _logIcon.getShowThread(_container).start();
+
+        _textBase.x = 45;
+        _textBase.y = 5;
+        _textBase.scaleY = 1.0;
+
+        _label.text = _content;
+        _label.x = 70;
+        _label.y = 10;
+        _label.width = 240;
+        _label.height = 60;
+        _label.styleName = "SocialLogTextLabel";
+
+        _container.addChild(_textBase);
+        _container.addChild(_label);
+
+        addChild(_container);
+    }
+
+    // 初期化
+    public override function init():void {
 //             switch (_mode)
 //             {
 //             case Const.LOG_QUEST:
@@ -153,7 +128,7 @@ package view.scene.common
 //             _container.addChild(_label);
 
 //             addChild(_container);
-        }
+    }
 
 //         private function createCashBitmapData():void
 //         {
@@ -176,52 +151,41 @@ package view.scene.common
 //             addChild(_mainBitmap);
 //         }
 
-        // 後処理
-        public override function final():void
-        {
-            _container.removeChild(_textBase);
-            _container.removeChild(_logIcon);
-            _container.removeChild(_label);
-            removeChild(_container);
-        }
-
-
-        // モードを返す
-        public function get mode():int
-        {
-            return _mode;
-        }
-
-        // 表示用スレッドを返す
-        public override function getShowThread(stage:DisplayObjectContainer,  at:int = -1, type:String=""):Thread
-        {
-            _depthAt = at;
-            return new ShowThread(this, stage, at);
-        }
+    // 後処理
+    public override function final():void {
+        _container.removeChild(_textBase);
+        _container.removeChild(_logIcon);
+        _container.removeChild(_label);
+        removeChild(_container);
     }
+
+
+    // モードを返す
+    public function get mode():int {
+        return _mode;
+    }
+
+    // 表示用スレッドを返す
+    public override function getShowThread(stage:DisplayObjectContainer, at:int = -1, type:String = ""):Thread {
+        _depthAt = at;
+        return new ShowThread(this, stage, at);
+    }
+}
 
 }
 
 
-import flash.display.Sprite;
 import flash.display.DisplayObjectContainer;
-import org.libspark.thread.Thread;
-
-import model.BaseModel;
 
 import view.BaseShowThread;
 import view.IViewThread;
-import view.scene.common.AvatarClip;
 
-class ShowThread extends BaseShowThread
-{
-    public function ShowThread(view:IViewThread, stage:DisplayObjectContainer, at:int)
-    {
+class ShowThread extends BaseShowThread {
+    public function ShowThread(view:IViewThread, stage:DisplayObjectContainer, at:int) {
         super(view, stage);
     }
 
-    protected override function run():void
-    {
+    protected override function run():void {
         next(close);
     }
 }

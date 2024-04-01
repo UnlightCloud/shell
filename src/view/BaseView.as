@@ -1,17 +1,14 @@
-package view
-{
-    import org.libspark.thread.Thread;
+package view {
+import org.libspark.thread.Thread;
 
-    public class BaseView extends Thread
-    {
+public class BaseView extends Thread {
 
-        private var _stage:Unlight;
+    private var _stage:Unlight;
 
-        // コンストラクタ
-        public function BaseView(stage:Unlight)
-        {
-            _stage = stage;
-        }
+    // コンストラクタ
+    public function BaseView(stage:Unlight) {
+        _stage = stage;
     }
+}
 
 }

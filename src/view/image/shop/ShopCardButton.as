@@ -1,44 +1,35 @@
-package view.image.shop
-{
-    import flash.display.*;
-    import flash.events.Event;
+package view.image.shop {
+/**
+ * ShopCardButton表示クラス
+ *
+ */
 
-    import view.image.BaseImage;
+
+public class ShopCardButton extends ShopItemButton {
+
+    // HP表示元SWF
+    [Embed(source="../../../../data/image/shop/btn_card.swf")]
+    private var _Source:Class;
+    private static const BUTTON:String = "btn_e";
 
     /**
-     * ShopCardButton表示クラス
+     * コンストラクタ
      *
      */
-
-
-    public class ShopCardButton extends ShopItemButton
-    {
-
-        // HP表示元SWF
-        [Embed(source="../../../../data/image/shop/btn_card.swf")]
-        private var _Source:Class;
-        private static const BUTTON:String = "btn_e";
-
-        /**
-         * コンストラクタ
-         *
-         */
-        public function ShopCardButton(index:int = 1)
-        {
-            super(index);
-        }
-        override protected function get Source():Class
-        {
-            return _Source;
-        }
-
-
-        override protected function get buttonName():String
-        {
-            return BUTTON;
-        }
-
-
+    public function ShopCardButton(index:int = 1) {
+        super(index);
     }
+
+    override protected function get Source():Class {
+        return _Source;
+    }
+
+
+    override protected function get buttonName():String {
+        return BUTTON;
+    }
+
+
+}
 
 }
