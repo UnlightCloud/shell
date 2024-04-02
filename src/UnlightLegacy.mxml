@@ -12,27 +12,34 @@
     <mx:Script source="FontLoader.as"/>
     <mx:Script source="Constants.as"/>
     <mx:Script><![CDATA[
-        import mx.events.CloseEvent;
-
-        internal function onComplete():void {
-            loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, captureError);
+        CONFIG::LEGACY {
+            internal function onComplete():void {
+            }
         }
 
-        internal function captureError(evt:UncaughtErrorEvent):void {
-            // NOTE: Add Sentry Support
-            Alerter.showWithSize(
-                    "客戶端發生異常",
-                    "錯誤",
-                    Alert.OK,
-                    null,
-                    function (event:CloseEvent):void {
-                        if(Capabilities.playerType == "Desktop") {
-                            NativeApplication.nativeApplication.exit();
-                        } else {
-                            ExternalInterface.call("window.close");
+        CONFIG::NEXT {
+            import mx.events.CloseEvent;
+
+            internal function onComplete():void {
+                loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, captureError);
+            }
+
+            internal function captureError(evt:UncaughtErrorEvent):void {
+                // NOTE: Add Sentry Support
+                Alerter.showWithSize(
+                        "客戶端發生異常",
+                        "錯誤",
+                        Alert.OK,
+                        null,
+                        function (event:CloseEvent):void {
+                            if (Capabilities.playerType == "Desktop") {
+                                NativeApplication.nativeApplication.exit();
+                            } else {
+                                ExternalInterface.call("window.close");
+                            }
                         }
-                    }
-            );
+                );
+            }
         }
         ]]></mx:Script>
 </mx:Application>

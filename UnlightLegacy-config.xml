@@ -181,6 +181,14 @@
             <name>CONFIG::WC_COMBINE_LIST_UNCHECK</name>
             <value>false</value>
         </define>
+        <define>
+            <name>CONFIG::NEXT</name>
+            <value>false</value>
+        </define>
+        <define>
+            <name>CONFIG::LEGACY</name>
+            <value>true</value>
+        </define>
     </compiler>
     <default-background-color>0x000000</default-background-color>
     <default-size>
