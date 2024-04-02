@@ -4,24 +4,98 @@ require 'find'
 require 'pathname'
 require 'json'
 
+DATA_PATH = Pathname.new('./tmp/export')
+SEPARATOR = ','
+
+# rubocop:disable Style/Documentation
+class Serializer
+  def call(items)
+    items.map do |item|
+      "            [#{build(item)}]"
+    end.join("#{SEPARATOR}\n")
+  end
+
+  private
+
+  def build(item)
+    raise NotImplementedError
+  end
+
+  def quote?(value)
+    value.is_a?(String) || value.is_a?(Time) || value.nil?
+  end
+end
+
+class ColumnSerializer < Serializer
+  attr_reader :columns
+
+  def initialize(*columns)
+    super()
+    @columns = columns.map(&:to_s)
+  end
+
+  private
+
+  def build(item)
+    item.values_at(*columns).map do |value|
+      next "\"#{value}\"" if quote?(value)
+
+      value.to_s
+    end.join(SEPARATOR)
+  end
+end
+# rubocop:enable Style/Documentation
+
+SERIALIZERS = {
+  'chara_cards' => nil,
+  'action_cards' => ColumnSerializer.new(*%w[id u_type u_value b_type b_value event_no image caption]),
+  'weapon_cards' => nil,
+  'feats' => nil,
+  'passive_skills' => nil,
+  'avatar_items' => ColumnSerializer.new(*%w[id name item_no kind sub_kind cond image image_frame effect_image
+                                             caption]),
+  'event_cards' => ColumnSerializer.new(*%w[id name event_no card_cost color max_in_deck restriction image caption]),
+  'quests' => nil,
+  'quest_lands' => nil,
+  'quest_maps' => ColumnSerializer.new(*%w[id name caption region level ap difficulty]),
+  'rare_card_lots' => ColumnSerializer.new(*%w[id lot_kind article_kind article_id order visible description num]),
+  'real_money_items' => ColumnSerializer.new(*%w[id name price rm_item_type item_id num order state image_url tab
+                                                 description view_frame extra_id sale_type deck_image_url]),
+  'avatar_parts' => nil,
+  'shops' => nil,
+  'achievements' => nil,
+  'profound_datas' => nil,
+  'profound_treasure_datas' => ColumnSerializer.new(*%w[id level prf_trs_type rank_min rank_max treasure_type
+                                                        treasure_id slot_type value]),
+  'charactors' => nil
+}.freeze
+
+generated_data = {}
+SERIALIZERS.each do |table, serializer|
+  puts "Processing #{table}..."
+  next if serializer.nil?
+
+  dataset = JSON.parse(DATA_PATH.join("#{table}.json").read)
+  next if dataset.empty?
+
+  puts "|> Generating data for #{table}, #{dataset.size} items found..."
+  generated_data[table] = serializer.call(dataset)
+rescue StandardError => e
+  puts e
+  next
+end
+
 # TODO: Generate correct data
 cc_data = ''
-ac_data = ''
 wc_data = ''
 feat_data = ''
 passive_skill_data = ''
-ai_data = ''
-ec_data = ''
 quest_data = ''
 quest_land_data = ''
-quest_map_data = ''
-rare_card_lot_data = ''
-real_money_item_data = ''
 ap_data = ''
 shop_data = ''
 achievement_data = ''
 profound_data = ''
-prf_trs_data = ''
 chara_data = ''
 
 file = Pathname.new('./src/model/utils/ConstData.as')
@@ -62,23 +136,23 @@ file.open('w') do |f| # rubocop:disable Metrics/BlockLength
              .gsub('__profound_data_zero__', '            [0, 0,"",0,0,0,0,0,"",0,"","",0],')
              .gsub('__prf_trs_data_zero__', '            [0,0,0,0,0,0,0,0,0],')
              .gsub('__chara_zero__', '            [0, "",""],')
-             .gsub('__actioncarddata__', ac_data.dup.force_encoding('UTF-8'))
+             .gsub('__actioncarddata__', generated_data['action_cards'].dup.force_encoding('UTF-8'))
              .gsub('__featdata__', feat_data.dup.force_encoding('UTF-8'))
              .gsub('__passiveskilldata__', passive_skill_data.dup.force_encoding('UTF-8'))
              .gsub('__ccdata__', cc_data.dup.force_encoding('UTF-8'))
-             .gsub('__avatritemdata__', ai_data.dup.force_encoding('UTF-8'))
-             .gsub('__eventcarddata__', ec_data.dup.force_encoding('UTF-8'))
+             .gsub('__avatritemdata__', generated_data['avatar_items'].dup.force_encoding('UTF-8'))
+             .gsub('__eventcarddata__', generated_data['event_cards'].dup.force_encoding('UTF-8'))
              .gsub('__questdata__', quest_data.dup.force_encoding('UTF-8'))
              .gsub('__questlanddata__', quest_land_data.dup.force_encoding('UTF-8'))
-             .gsub('__questmapdata__', quest_map_data.dup.force_encoding('UTF-8'))
+             .gsub('__questmapdata__', generated_data['quest_maps'].dup.force_encoding('UTF-8'))
              .gsub('__weapondata__', wc_data.dup.force_encoding('UTF-8'))
-             .gsub('__lotdata__', rare_card_lot_data.dup.force_encoding('UTF-8'))
-             .gsub('__rmidata__', real_money_item_data.dup.force_encoding('UTF-8'))
+             .gsub('__lotdata__', generated_data['rare_card_lots'].dup.force_encoding('UTF-8'))
+             .gsub('__rmidata__', generated_data['real_money_items'].dup.force_encoding('UTF-8'))
              .gsub('__apdata__', ap_data.dup.force_encoding('UTF-8'))
              .gsub('__shopdata__', shop_data.dup.force_encoding('UTF-8'))
              .gsub('__achidata__', achievement_data.dup.force_encoding('UTF-8'))
              .gsub('__prfdata__', profound_data.dup.force_encoding('UTF-8'))
-             .gsub('__prf_trs_data__', prf_trs_data.dup.force_encoding('UTF-8'))
+             .gsub('__prf_trs_data__', generated_data['profound_treasure_datas'].dup.force_encoding('UTF-8'))
              .gsub('__charadata__', chara_data.dup.force_encoding('UTF-8'))
              .gsub('__init_func__', INLINE_FUNC.dup.force_encoding('UTF-8'))
 end
