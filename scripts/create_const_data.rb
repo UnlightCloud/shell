@@ -40,8 +40,39 @@ class ColumnSerializer < Serializer
     item.values_at(*columns).map do |value|
       next "\"#{value}\"" if quote?(value)
 
-      value.to_s
+      value
     end.join(SEPARATOR)
+  end
+end
+
+class AvatarPartSerializer < Serializer
+  private
+
+  def build(item) # rubocop:disable Metrics
+    [
+      item['id'],
+      "\"#{item['name']}\"",
+      "\"#{extract_image(item['image'])}\"",
+      item['parts_type'] || 0,
+      item['color'] || 0,
+      item['offset_x'] || 0,
+      item['offset_y'] || 0,
+      item['offset_scale'] || 0,
+      item['power_type'] || 0,
+      item['power'] || 0,
+      item['duration'] || 0,
+      "\"#{trans_caption(item['caption'], item['power'])}\""
+    ].join(SEPARATOR)
+  end
+
+  def extract_image(image)
+    image.gsub(/\+dummy_.{1,3}/, '')
+  end
+
+  def trans_caption(caption, power)
+    return '' unless caption
+
+    caption.gsub('__POW__', power.to_s)
   end
 end
 # rubocop:enable Style/Documentation
@@ -61,7 +92,7 @@ SERIALIZERS = {
   'rare_card_lots' => ColumnSerializer.new(*%w[id lot_kind article_kind article_id order visible description num]),
   'real_money_items' => ColumnSerializer.new(*%w[id name price rm_item_type item_id num order state image_url tab
                                                  description view_frame extra_id sale_type deck_image_url]),
-  'avatar_parts' => nil,
+  'avatar_parts' => AvatarPartSerializer.new,
   'shops' => nil,
   'achievements' => nil,
   'profound_datas' => nil,
@@ -92,7 +123,6 @@ feat_data = ''
 passive_skill_data = ''
 quest_data = ''
 quest_land_data = ''
-ap_data = ''
 shop_data = ''
 achievement_data = ''
 profound_data = ''
@@ -148,7 +178,7 @@ file.open('w') do |f| # rubocop:disable Metrics/BlockLength
              .gsub('__weapondata__', wc_data.dup.force_encoding('UTF-8'))
              .gsub('__lotdata__', generated_data['rare_card_lots'].dup.force_encoding('UTF-8'))
              .gsub('__rmidata__', generated_data['real_money_items'].dup.force_encoding('UTF-8'))
-             .gsub('__apdata__', ap_data.dup.force_encoding('UTF-8'))
+             .gsub('__apdata__', generated_data['avatar_parts'].dup.force_encoding('UTF-8'))
              .gsub('__shopdata__', shop_data.dup.force_encoding('UTF-8'))
              .gsub('__achidata__', achievement_data.dup.force_encoding('UTF-8'))
              .gsub('__prfdata__', profound_data.dup.force_encoding('UTF-8'))
