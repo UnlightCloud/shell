@@ -75,6 +75,25 @@ class AvatarPartSerializer < Serializer
     caption.gsub('__POW__', power.to_s)
   end
 end
+
+class PassiveSkillSerializer < Serializer
+  private
+
+  def build(item)
+    [
+      item['id'],
+      item['passive_skill_no'],
+      "\"#{item['name'] || ''}\"",
+      "\"#{format_caption(item['caption'], item['pow'], item['name'])}\"",
+      "\"#{item['effect_image'] || ''}\""
+    ].join(SEPARATOR)
+  end
+
+  def format_caption(caption, pow, name)
+    caption.gsub('__POW__', pow.to_s).gsub('__NAME__', name.delete('+'))
+  end
+end
+
 # rubocop:enable Style/Documentation
 
 SERIALIZERS = {
@@ -82,7 +101,7 @@ SERIALIZERS = {
   'action_cards' => ColumnSerializer.new(*%w[id u_type u_value b_type b_value event_no image caption]),
   'weapon_cards' => nil,
   'feats' => ColumnSerializer.new(*%w[id name effect_image caption]),
-  'passive_skills' => nil,
+  'passive_skills' => PassiveSkillSerializer.new,
   'avatar_items' => ColumnSerializer.new(*%w[id name item_no kind sub_kind cond image image_frame effect_image
                                              caption]),
   'event_cards' => ColumnSerializer.new(*%w[id name event_no card_cost color max_in_deck restriction image caption]),
@@ -119,7 +138,6 @@ end
 # TODO: Generate correct data
 cc_data = ''
 wc_data = ''
-passive_skill_data = ''
 quest_data = ''
 quest_land_data = ''
 shop_data = ''
@@ -167,7 +185,7 @@ file.open('w') do |f| # rubocop:disable Metrics/BlockLength
              .gsub('__chara_zero__', '            [0, "",""],')
              .gsub('__actioncarddata__', generated_data['action_cards'].dup.force_encoding('UTF-8'))
              .gsub('__featdata__', generated_data['feats'].dup.force_encoding('UTF-8'))
-             .gsub('__passiveskilldata__', passive_skill_data.dup.force_encoding('UTF-8'))
+             .gsub('__passiveskilldata__', generated_data['passive_skills'].dup.force_encoding('UTF-8'))
              .gsub('__ccdata__', cc_data.dup.force_encoding('UTF-8'))
              .gsub('__avatritemdata__', generated_data['avatar_items'].dup.force_encoding('UTF-8'))
              .gsub('__eventcarddata__', generated_data['event_cards'].dup.force_encoding('UTF-8'))
