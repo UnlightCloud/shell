@@ -48,12 +48,12 @@ jobs:
           MEMCACHED_HOST: "memcached:11211"
           DATABASE_URL: "mysql2://unlight:unlight@mysql:3306/unlight_db?encoding=utf8"
       - run: mkdir -p data/export
-      - run: cp -r /opt/unlight/tmp/export/* data/export
+      - run: cp -r /opt/unlight/tmp/export/* tmp/export
       - name: Upload Client Data
         uses: actions/upload-artifact@v4
         with:
           name: client-data
-          path: data/export
+          path: tmp/export
   generate:
     name: Generate
     runs-on: ubuntu-latest
@@ -64,7 +64,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: client-data
-          path: data/export
+          path: tmp/export
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
