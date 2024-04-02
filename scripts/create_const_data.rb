@@ -81,7 +81,7 @@ SERIALIZERS = {
   'chara_cards' => nil,
   'action_cards' => ColumnSerializer.new(*%w[id u_type u_value b_type b_value event_no image caption]),
   'weapon_cards' => nil,
-  'feats' => nil,
+  'feats' => ColumnSerializer.new(*%w[id name effect_image caption]),
   'passive_skills' => nil,
   'avatar_items' => ColumnSerializer.new(*%w[id name item_no kind sub_kind cond image image_frame effect_image
                                              caption]),
@@ -119,7 +119,6 @@ end
 # TODO: Generate correct data
 cc_data = ''
 wc_data = ''
-feat_data = ''
 passive_skill_data = ''
 quest_data = ''
 quest_land_data = ''
@@ -167,7 +166,7 @@ file.open('w') do |f| # rubocop:disable Metrics/BlockLength
              .gsub('__prf_trs_data_zero__', '            [0,0,0,0,0,0,0,0,0],')
              .gsub('__chara_zero__', '            [0, "",""],')
              .gsub('__actioncarddata__', generated_data['action_cards'].dup.force_encoding('UTF-8'))
-             .gsub('__featdata__', feat_data.dup.force_encoding('UTF-8'))
+             .gsub('__featdata__', generated_data['feats'].dup.force_encoding('UTF-8'))
              .gsub('__passiveskilldata__', passive_skill_data.dup.force_encoding('UTF-8'))
              .gsub('__ccdata__', cc_data.dup.force_encoding('UTF-8'))
              .gsub('__avatritemdata__', generated_data['avatar_items'].dup.force_encoding('UTF-8'))
