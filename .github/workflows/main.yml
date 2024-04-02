@@ -47,7 +47,7 @@ jobs:
         env:
           MEMCACHED_HOST: "memcached:11211"
           DATABASE_URL: "mysql2://unlight:unlight@mysql:3306/unlight_db?encoding=utf8"
-      - run: mkdir -p data/export
+      - run: mkdir -p tmp/export
       - run: cp -r /opt/unlight/tmp/export/* tmp/export
       - name: Upload Client Data
         uses: actions/upload-artifact@v4
