@@ -2,9 +2,10 @@
 
 require 'find'
 require 'pathname'
-require 'json'
+require 'csv'
 
 DATA_PATH = Pathname.new('./tmp/export')
+ARRAY_VALUE = /^\[.*\]$/.freeze
 SEPARATOR = ','
 
 # rubocop:disable Style/Documentation
@@ -18,132 +19,59 @@ class Serializer
   private
 
   def build(item)
-    raise NotImplementedError
-  end
-
-  def quote?(value)
-    value.is_a?(String) || value.is_a?(Time) || value.nil?
-  end
-end
-
-class ColumnSerializer < Serializer
-  attr_reader :columns
-
-  def initialize(*columns)
-    super()
-    @columns = columns.map(&:to_s)
-  end
-
-  private
-
-  def build(item)
-    item.values_at(*columns).map do |value|
+    item.map do |value|
       next "\"#{value}\"" if quote?(value)
 
       value
     end.join(SEPARATOR)
   end
-end
 
-class AvatarPartSerializer < Serializer
-  private
-
-  def build(item) # rubocop:disable Metrics
-    [
-      item['id'],
-      "\"#{item['name']}\"",
-      "\"#{extract_image(item['image'])}\"",
-      item['parts_type'] || 0,
-      item['color'] || 0,
-      item['offset_x'] || 0,
-      item['offset_y'] || 0,
-      item['offset_scale'] || 0,
-      item['power_type'] || 0,
-      item['power'] || 0,
-      item['duration'] || 0,
-      "\"#{trans_caption(item['caption'], item['power'])}\""
-    ].join(SEPARATOR)
-  end
-
-  def extract_image(image)
-    image.gsub(/\+dummy_.{1,3}/, '')
-  end
-
-  def trans_caption(caption, power)
-    return '' unless caption
-
-    caption.gsub('__POW__', power.to_s)
-  end
-end
-
-class PassiveSkillSerializer < Serializer
-  private
-
-  def build(item)
-    [
-      item['id'],
-      item['passive_skill_no'],
-      "\"#{item['name'] || ''}\"",
-      "\"#{format_caption(item['caption'], item['pow'], item['name'])}\"",
-      "\"#{item['effect_image'] || ''}\""
-    ].join(SEPARATOR)
-  end
-
-  def format_caption(caption, pow, name)
-    caption.gsub('__POW__', pow.to_s).gsub('__NAME__', name.delete('+'))
+  def quote?(value)
+    (value.is_a?(String) && !value.match?(ARRAY_VALUE)) || value.is_a?(Time) || value.nil?
   end
 end
 
 # rubocop:enable Style/Documentation
-
-SERIALIZERS = {
-  'chara_cards' => nil,
-  'action_cards' => ColumnSerializer.new(*%w[id u_type u_value b_type b_value event_no image caption]),
-  'weapon_cards' => nil,
-  'feats' => ColumnSerializer.new(*%w[id name effect_image caption]),
-  'passive_skills' => PassiveSkillSerializer.new,
-  'avatar_items' => ColumnSerializer.new(*%w[id name item_no kind sub_kind cond image image_frame effect_image
-                                             caption]),
-  'event_cards' => ColumnSerializer.new(*%w[id name event_no card_cost color max_in_deck restriction image caption]),
-  'quests' => nil,
-  'quest_lands' => nil,
-  'quest_maps' => ColumnSerializer.new(*%w[id name caption region level ap difficulty]),
-  'rare_card_lots' => ColumnSerializer.new(*%w[id lot_kind article_kind article_id order visible description num]),
-  'real_money_items' => ColumnSerializer.new(*%w[id name price rm_item_type item_id num order state image_url tab
-                                                 description view_frame extra_id sale_type deck_image_url]),
-  'avatar_parts' => AvatarPartSerializer.new,
-  'shops' => nil,
-  'achievements' => nil,
-  'profound_datas' => nil,
-  'profound_treasure_datas' => ColumnSerializer.new(*%w[id level prf_trs_type rank_min rank_max treasure_type
-                                                        treasure_id slot_type value]),
-  'charactors' => nil
+MAPPING = {
+  'chara_cards' => '__ccdata__',
+  'action_cards' => '__actioncarddata__',
+  'weapon_cards' => '__weapondata__',
+  'feats' => '__featdata__',
+  'passive_skills' => '__passiveskilldata__',
+  'avatar_items' => '__avatritemdata__',
+  'event_cards' => '__eventcarddata__',
+  'quests' => '__questdata__',
+  'quest_lands' => '__questlanddata__',
+  'quest_maps' => '__questmapdata__',
+  'rare_card_lots' => '__lotdata__',
+  'real_money_items' => '__rmidata__',
+  'avatar_parts' => '__apdata__',
+  'shops' => '__shopdata__',
+  'achievements' => '__achidata__',
+  'profound_datas' => '__prfdata__',
+  'profound_treasure_datas' => '__prf_trs_data__',
+  'charactors' => '__charadata__'
 }.freeze
 
-generated_data = {}
-SERIALIZERS.each do |table, serializer|
+serializer = Serializer.new
+const_data = DATA.read
+MAPPING.each do |table, target|
   puts "Processing #{table}..."
   next if serializer.nil?
 
-  dataset = JSON.parse(DATA_PATH.join("#{table}.json").read)
+  dataset = CSV.read(
+    DATA_PATH.join("#{table}.csv"),
+    headers: false,
+    converters: :all
+  )
   next if dataset.empty?
 
   puts "|> Generating data for #{table}, #{dataset.size} items found..."
-  generated_data[table] = serializer.call(dataset)
+  const_data.gsub!(target, serializer.call(dataset))
 rescue StandardError => e
   puts e
   next
 end
-
-# TODO: Generate correct data
-cc_data = ''
-wc_data = ''
-quest_data = ''
-quest_land_data = ''
-shop_data = ''
-achievement_data = ''
-profound_data = ''
-chara_data = ''
 
 file = Pathname.new('./src/model/utils/ConstData.as')
 
@@ -164,65 +92,41 @@ INLINE_AREA
 
 cc_zero_str = '[0,"","",0,0,0,0,0,0,0,"","","","","","",0,0,0, "", "",0,"",,[]],'
 
-file.open('w') do |f| # rubocop:disable Metrics/BlockLength
-  f.puts DATA.read
-             .gsub('__actioncard_zero__', '            [0,0,0,0,0,0,"",""],')
-             .gsub('__feat_zero__', '            [0,"","",""],')
-             .gsub('__passive_skill_zero__', '            [0,0,"","","",""],')
-             .gsub('__cc_zero__', "            #{cc_zero_str}")
-             .gsub('__avatritem_zero__', '            [0, "", 0, 0, "", "", "",0,"",""],')
-             .gsub('__eventcard_zero__', '            [0, "", 0, 0, 0, 0, "", "", ""],')
-             .gsub('__quest_zero__', '            [0, "", "", 0, 0, 0, 0, "", "", 0, 0],')
-             .gsub('__questland_zero__', '            [0, "",  0, 0, 0, 0, ""],')
-             .gsub('__questmap_zero__', '            [0, "", "", 0, 0, 0, 0],')
-             .gsub('__weapon_zero__', '            [0, "", 0, 0, [], "", "",0,0,0,0,0,0,[]],')
-             .gsub('__rmi_zero__', '            [0,"",0,0,0,0,0,0,"",0,"",0,0,0,""],')
-             .gsub('__lot_zero__', '            [0, 0, 0, 0, 0, 0, ""],')
-             .gsub('__ap_zero__', '            [0, "", "", 0, 0, 0, 0, 0,0,0,0,""],')
-             .gsub('__achievement_zero__', '            [0, 0,"","",0,""],')
-             .gsub('__profound_data_zero__', '            [0, 0,"",0,0,0,0,0,"",0,"","",0],')
-             .gsub('__prf_trs_data_zero__', '            [0,0,0,0,0,0,0,0,0],')
-             .gsub('__chara_zero__', '            [0, "",""],')
-             .gsub('__actioncarddata__', generated_data['action_cards'].dup.force_encoding('UTF-8'))
-             .gsub('__featdata__', generated_data['feats'].dup.force_encoding('UTF-8'))
-             .gsub('__passiveskilldata__', generated_data['passive_skills'].dup.force_encoding('UTF-8'))
-             .gsub('__ccdata__', cc_data.dup.force_encoding('UTF-8'))
-             .gsub('__avatritemdata__', generated_data['avatar_items'].dup.force_encoding('UTF-8'))
-             .gsub('__eventcarddata__', generated_data['event_cards'].dup.force_encoding('UTF-8'))
-             .gsub('__questdata__', quest_data.dup.force_encoding('UTF-8'))
-             .gsub('__questlanddata__', quest_land_data.dup.force_encoding('UTF-8'))
-             .gsub('__questmapdata__', generated_data['quest_maps'].dup.force_encoding('UTF-8'))
-             .gsub('__weapondata__', wc_data.dup.force_encoding('UTF-8'))
-             .gsub('__lotdata__', generated_data['rare_card_lots'].dup.force_encoding('UTF-8'))
-             .gsub('__rmidata__', generated_data['real_money_items'].dup.force_encoding('UTF-8'))
-             .gsub('__apdata__', generated_data['avatar_parts'].dup.force_encoding('UTF-8'))
-             .gsub('__shopdata__', shop_data.dup.force_encoding('UTF-8'))
-             .gsub('__achidata__', achievement_data.dup.force_encoding('UTF-8'))
-             .gsub('__prfdata__', profound_data.dup.force_encoding('UTF-8'))
-             .gsub('__prf_trs_data__', generated_data['profound_treasure_datas'].dup.force_encoding('UTF-8'))
-             .gsub('__charadata__', chara_data.dup.force_encoding('UTF-8'))
-             .gsub('__init_func__', INLINE_FUNC.dup.force_encoding('UTF-8'))
+file.open('w') do |f|
+  f.puts const_data
+    .gsub('__actioncard_zero__', '            [0,0,0,0,0,0,"",""],')
+    .gsub('__feat_zero__', '            [0,"","",""],')
+    .gsub('__passive_skill_zero__', '            [0,0,"","","",""],')
+    .gsub('__cc_zero__', "            #{cc_zero_str}")
+    .gsub('__avatritem_zero__', '            [0, "", 0, 0, "", "", "",0,"",""],')
+    .gsub('__eventcard_zero__', '            [0, "", 0, 0, 0, 0, "", "", ""],')
+    .gsub('__quest_zero__', '            [0, "", "", 0, 0, 0, 0, "", "", 0, 0],')
+    .gsub('__questland_zero__', '            [0, "",  0, 0, 0, 0, ""],')
+    .gsub('__questmap_zero__', '            [0, "", "", 0, 0, 0, 0],')
+    .gsub('__weapon_zero__', '            [0, "", 0, 0, [], "", "",0,0,0,0,0,0,[]],')
+    .gsub('__rmi_zero__', '            [0,"",0,0,0,0,0,0,"",0,"",0,0,0,""],')
+    .gsub('__lot_zero__', '            [0, 0, 0, 0, 0, 0, ""],')
+    .gsub('__ap_zero__', '            [0, "", "", 0, 0, 0, 0, 0,0,0,0,""],')
+    .gsub('__achievement_zero__', '            [0, 0,"","",0,""],')
+    .gsub('__profound_data_zero__', '            [0, 0,"",0,0,0,0,0,"",0,"","",0],')
+    .gsub('__prf_trs_data_zero__', '            [0,0,0,0,0,0,0,0,0],')
+    .gsub('__chara_zero__', '            [0, "",""],')
+    .gsub('__init_func__', INLINE_FUNC.dup.force_encoding('UTF-8'))
 end
 
 __END__
 package model.utils
 {
-    import flash.events.EventDispatcher;
-    import flash.events.Event;
-    import flash.utils.ByteArray;
-    import flash.net.SharedObject;
+    import com.hurlant.crypto.Crypto;
     import com.hurlant.crypto.symmetric.ICipher;
-    import com.hurlant.crypto.symmetric.IVMode;
-    import com.hurlant.crypto.symmetric.IMode;
-    import com.hurlant.crypto.symmetric.NullPad;
-    import com.hurlant.crypto.symmetric.PKCS5;
     import com.hurlant.crypto.symmetric.IPad;
-    import com.hurlant.crypto.prng.Random;
-    import com.hurlant.crypto.hash.HMAC;
+    import com.hurlant.crypto.symmetric.IVMode;
+    import com.hurlant.crypto.symmetric.PKCS5;
     import com.hurlant.util.Base64;
     import com.hurlant.util.Hex;
-    import com.hurlant.crypto.Crypto;
-    import com.hurlant.crypto.hash.IHash;
+
+    import flash.utils.ByteArray;
+
     /**
      * モデルの定義済み数値ファイル
      *
