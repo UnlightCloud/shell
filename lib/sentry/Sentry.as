@@ -26,24 +26,17 @@ public class Sentry {
             _dsn = new DSN(dsn);
             _transport = new Transport(_dsn);
         } catch (e:Error) {
-            throw new Error("Failed to initialize Sentry: " + e.message);
+            _instance = null;
+            trace("Failed to initialize Sentry: " + e.message);
         }
     }
 
     public static function get current():Sentry {
-        if (!_instance) {
-            throw new Error("Sentry has not been initialized.");
-        }
-
         return _instance;
     }
 
     public static function init(dsn: String):void {
-        try {
-            new Sentry(dsn);
-        } catch (e:Error) {
-            trace("Failed to initialize Sentry: " + e.message);
-        }
+        new Sentry(dsn);
     }
 
     public static function captureError(error:Error):void {
