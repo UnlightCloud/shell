@@ -189,6 +189,10 @@
             <name>CONFIG::LEGACY</name>
             <value>true</value>
         </define>
+        <define>
+            <name>CONFIG::SENTRY_DSN</name>
+            <value>""</value>
+        </define>
     </compiler>
     <default-background-color>0x000000</default-background-color>
     <default-size>

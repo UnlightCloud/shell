@@ -8,6 +8,8 @@ import mx.controls.Alert;
 
 import net.server.*;
 
+import sentry.Sentry;
+
 import sound.bgm.TitleBGM;
 
 import view.image.title.*;
@@ -301,6 +303,12 @@ public class TitleCtrl extends BaseCtrl {
     private function authSuccessHandler(event:Event):void {
         player.removeEventListener(Player.AUTH_FAILED, authFailHandler);
         player.removeEventListener(Player.AUTH_SUCCESS, authSuccessHandler);
+
+        CONFIG::NEXT {
+            Sentry.setUserId(player.id);
+            Sentry.setUsername(player.name);
+        }
+
         _loginPanel.panelEditable(false);
         _loginPanel.panelClear();
     }

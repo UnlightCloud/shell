@@ -19,12 +19,16 @@
 
         CONFIG::NEXT {
             import mx.events.CloseEvent;
+            import sentry.*;
 
             internal function onComplete():void {
                 loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, captureError);
+                Sentry.init(CONFIG::SENTRY_DSN);
             }
 
             internal function captureError(evt:UncaughtErrorEvent):void {
+                Sentry.captureError(evt.error);
+
                 // NOTE: Add Sentry Support
                 Alerter.showWithSize(
                         "客戶端發生異常",
