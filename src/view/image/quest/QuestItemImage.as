@@ -3,11 +3,7 @@ package view.image.quest {
 import flash.display.*;
 import flash.events.Event;
 
-import model.Quest;
-
 import view.image.BaseImage;
-import view.utils.*;
-
 
 /**
  * QuestItemImage表示クラス
@@ -31,8 +27,8 @@ public class QuestItemImage extends BaseImage {
     private static const DISABLE:String = "dis";
     private static const ENABLE:String = "en";
 
-    private static const ADVENTURE:String = "adv";
-    private static const TRESURE:String = "tre";
+    private static const ADVENTURE:String = "adventure";
+    private static const TRESURE:String = "tresure";
     private static const BOSS:String = "boss";
     private static const STATE:String = "list_state";
     private static const SELECT:String = "list_select";
@@ -107,11 +103,7 @@ public class QuestItemImage extends BaseImage {
     }
 
     private function changeTypeImage():void {
-
         _typeMC.gotoAndStop(TYPE_SET[_type])
     }
-
-
 }
-
 }
