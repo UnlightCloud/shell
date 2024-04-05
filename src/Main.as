@@ -1,3 +1,5 @@
+import caurina.transitions.properties.TextShortcuts;
+
 import com.potix2.utils.GCWatcher;
 
 import flash.ui.ContextMenu;
@@ -141,6 +143,7 @@ public static function get stageCenter():Point {
 
 CONFIG::DEBUG
 public function init():void {
+    TextShortcuts.init();
     // 画像プリローダを読み込む
 //    _preLoader = new PreLoader();
     _loading.alpha = 0.0;
