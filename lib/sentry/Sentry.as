@@ -39,8 +39,12 @@ public class Sentry {
         new Sentry(dsn);
     }
 
+    public static function get isInitialized():Boolean {
+        return _instance != null;
+    }
+
     public static function captureError(error:Error):void {
-        if (!Sentry.current) {
+        if (!Sentry.isInitialized) {
             return;
         }
 
@@ -52,10 +56,18 @@ public class Sentry {
     }
 
     public static function setUserId(userId:uint):void {
+        if(!Sentry.isInitialized) {
+            return;
+        }
+
         Sentry.current._user["id"] = userId;
     }
 
     public static function setUsername(username:String):void {
+        if(!Sentry.isInitialized) {
+            return;
+        }
+
         Sentry.current._user["username"] = username;
     }
 
