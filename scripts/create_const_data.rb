@@ -67,7 +67,9 @@ MAPPING.each do |table, target|
   next if dataset.empty?
 
   puts "|> Generating data for #{table}, #{dataset.size} items found..."
-  const_data.gsub!(target, serializer.call(dataset))
+  data = serializer.call(dataset)
+  data = "[0, [#{data}]]" if table == 'shops'
+  const_data.gsub!(target, data)
 rescue StandardError => e
   puts e
   next
