@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - desktop
     tags:
       - v*
 
 env:
+  AIRSDK_VERSION: air-50.2-with-flex-4.16
   RUBY_VERSION: 3.2.2
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -89,15 +91,34 @@ jobs:
         with:
           name: version
           path: lib/Version.as
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+  package:
+    name: Package
     needs: generate
-    container:
-      image: ghcr.io/unlightcloud/flex-sdk
-      options: --user root
+    strategy:
+      matrix:
+        os: [macos]
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+          check-latest: true
+      - id: airsdk-cache
+        name: Cache AIRSDK
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-AIRSDK-${{ env.AIRSDK_VERSION }}
+          path: AIRSDK.zip
+      - name: Download AIRSDK
+        if: ${{ steps.airsdk-cache.outputs.cache-hit != 'true' }}
+        run: |
+          curl -L ${{ secrets.AIRSDK_HOST }}/${{ matrix.os }}/${{ env.AIRSDK_VERSION }}.zip -o AIRSDK.zip
+      - name: Unzip AIRSDK
+        run: |
+          unzip AIRSDK.zip
+          echo "SDK_HOME=./${{ env.AIRSDK_VERSION }}" >> "$GITHUB_ENV"
       - name: Download Constant Data
         uses: actions/download-artifact@v4
         with:
@@ -113,54 +134,13 @@ jobs:
         with:
           name: version
           path: lib/
-      - name: Copy config
-        run: cp UnlightLegacy-config.xml src/UnlightLegacy-config.xml
       - name: Build
-        run: mxmlc -output Unlight.swf ./src/UnlightLegacy.mxml
-      - name: Upload SWF
+        run: |
+          ant -DCERTIFICATE_PASSWORD=${{ secrets.CERTIFICATE_PASSWORD }} -d package
+          mkdir dist
+          mv bin/Unlight.app dist/
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: Unlight
-          path: Unlight.swf
-  build-and-push-image:
-    name: Build and Push Docker Image
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Download SWF
-        uses: actions/download-artifact@v4
-        with:
-          name: Unlight
-          path: .
-      - name: Log in to the Container registry
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
-            type=semver,pattern={{version}}
-            type=sha,prefix=,format=short
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          name: dist
+          path: dist/
