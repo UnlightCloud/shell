@@ -407,9 +407,9 @@ public class LobbyView extends Thread {
     }
 
     private function keyDownFunc(e:KeyboardEvent):void {
-        if (e.keyCode == Keyboard.SHIFT) {
-            CONFIG::DEBUG
-            {
+        CONFIG::DEBUG
+        {
+            if (e.keyCode == Keyboard.SHIFT) {
                 _isRaidView = !_isRaidView;
                 if (_isRaidView) {
                     log.writeLog(log.LV_DEBUG, this, "Click mode Raid!");
