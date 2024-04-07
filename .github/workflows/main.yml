@@ -142,7 +142,7 @@ jobs:
           path: lib/
       - name: Build
         run: |
-          ant -DCERTIFICATE_PASSWORD=${{ secrets.CERTIFICATE_PASSWORD }} -d package
+          ant -DCERTIFICATE_PASSWORD=${{ secrets.CERTIFICATE_PASSWORD }} -DSENTRY_DSN=${{ secrets.SENTRY_DSN }} -d package
           mkdir dist
           mv bin/Unlight.app dist/
       - name: Upload
