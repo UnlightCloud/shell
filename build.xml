@@ -1,12 +1,19 @@
 <?xml version="1.0"?>
-<project name="Unlight" default="main" basedir=".">
+<project name="Unlight"
+         default="main"
+         basedir="."
+         xmlns:if="ant:if"
+         xmlns:unless="ant:unless">
     <!-- SDK configuration -->
     <property environment="env"/>
     <property name="SDK_HOME" value="${env.SDK_HOME}"/>
-    <property name="DEPLOY.dir" value="${basedir}/bin"/>
 
     <!-- Build configuration -->
+    <property name="DEPLOY.dir" value="${basedir}/bin"/>
+    <property name="BUILD.dir" value="${basedir}/build"/>
+    <property name="BUILD.file" value="Unlight.swf"/>
     <property name="DEBUG" value="false"/>
+    <property name="SERVER" value="prod.unlight.cloud"/>
     <property name="SENTRY_DSN" value=""/>
 
     <!-- Certificate configuration -->
@@ -28,16 +35,30 @@
             <arg value="-debug=${DEBUG}"/>
             <arg value="+flexlib=${SDK_HOME}/frameworks"/>
             <arg value="+configname=air"/>
-            <arg value="-load-config+=${basedir}/build/UnlightLegacy-config.xml"/>
+            <arg value="-load-config+=${basedir}/build/Unlight-config.xml"/>
             <arg value="-file-specs=${basedir}/src/UnlightLegacy.mxml"/>
             <arg value="-compatibility-version=3.0"/>
-            <arg value="-output=${DEPLOY.dir}/Unlight_Desktop.swf"/>
+            <arg value="-output=${DEPLOY.dir}/${BUILD.file}"/>
             <arg value="-define+=CONFIG::SENTRY_DSN,'${SENTRY_DSN}'"/>
+            <!-- Debug configuration -->
+            <arg value="-define+=CONFIG::DEBUG,true" if:true="${DEBUG}"/>
+            <arg value="-define+=CONFIG::DEBUG,false" unless:true="${DEBUG}"/>
+            <!-- Release configuration -->
+            <arg value="-define+=CONFIG::RELEASE,false" if:true="${DEBUG}"/>
+            <arg value="-define+=CONFIG::RELEASE,true" unless:true="${DEBUG}"/>
         </java>
     </target>
 
     <!-- Package target -->
     <target name="package" depends="main">
+        <!-- Descriptor -->
+        <copy file="${BUILD.dir}/Unlight-descriptor.xml" todir="${DEPLOY.dir}" overwrite="true"/>
+        <replace file="${DEPLOY.dir}/Unlight-descriptor.xml" token="__CONTENT__" value="${BUILD.file}"/>
+
+        <!-- Server Config -->
+        <copy file="${BUILD.dir}/config.xml" todir="${DEPLOY.dir}/public" overwrite="true"/>
+        <replace file="${DEPLOY.dir}/public/config.xml" token="__SERVER__" value="${SERVER}"/>
+
         <java jar="${SDK_HOME}/lib/adt.jar" fork="true" failonerror="true">
             <arg line="-package"/>
             <arg line="-storetype pkcs12"/>
@@ -45,10 +66,11 @@
             <arg line="-storepass ${CERTIFICATE_PASSWORD}"/>
             <arg line="-target bundle"/>
             <arg line="${DEPLOY.dir}/Unlight.app"/>
-            <arg line="${basedir}/Unlight-descriptor.xml"/>
-            <arg line="-C ${DEPLOY.dir} Unlight_Desktop.swf"/>
+            <arg line="${DEPLOY.dir}/Unlight-descriptor.xml"/>
+            <arg line="-C ${DEPLOY.dir} Unlight.swf"/>
             <arg line="-C ${basedir}/res public"/>
             <arg line="-C ${basedir}/res icons"/>
+            <arg line="-C ${DEPLOY.dir} public/config.xml"/>
         </java>
     </target>
 </project>

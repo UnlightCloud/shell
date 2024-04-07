@@ -4,14 +4,14 @@
   <host>
     <auth_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12001</port>
       </set1>
     </auth_servers>
 
     <lobby_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12002</port>
         <weight>1</weight>
       </set1>
@@ -19,7 +19,7 @@
 
     <data_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12032</port>
         <weight>1</weight>
       </set1>
@@ -27,7 +27,7 @@
 
     <quest_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12005</port>
         <weight>1</weight>
       </set1>
@@ -35,7 +35,7 @@
 
     <raid_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12050</port>
         <weight>1</weight>
       </set1>
@@ -43,7 +43,7 @@
 
     <raid_chat_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12090</port>
         <weight>1</weight>
       </set1>
@@ -51,7 +51,7 @@
 
     <raid_data_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12100</port>
         <weight>1</weight>
       </set1>
@@ -59,7 +59,7 @@
 
     <raid_rank_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12070</port>
         <weight>1</weight>
       </set1>
@@ -67,7 +67,7 @@
 
     <global_chat_servers>
       <set1>
-        <name>localhost</name>
+        <name>__SERVER__</name>
         <port>12020</port>
         <weight>1</weight>
       </set1>

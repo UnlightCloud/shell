@@ -9,14 +9,6 @@
             <path-element>../lib</path-element>
         </source-path>
         <define>
-            <name>CONFIG::DEBUG</name>
-            <value>false</value>
-        </define>
-        <define>
-            <name>CONFIG::RELEASE</name>
-            <value>true</value>
-        </define>
-        <define>
             <name>CONFIG::ACTION_CARD_CLICK</name>
             <value>true</value>
         </define>
@@ -138,11 +130,11 @@
         </define>
         <define>
             <name>CONFIG::VOICE_OFF</name>
-            <value>false</value>
+            <value>true</value>
         </define>
         <define>
             <name>CONFIG::VOICE_ON</name>
-            <value>true</value>
+            <value>false</value>
         </define>
         <define>
             <name>CONFIG::RAID_EVENT_OFF</name>
