@@ -152,7 +152,7 @@ public class GameServer extends Server {
             log.writeLog(log.LV_INFO, this, "checkMouseOperation !!");
             if (UnlightLegacy.INS.opetationCheck(DUEL_NO_OP_CLOSE_TIME)) {
                 Alerter.forceOff();
-                Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.reloadWindow, 110);
+                Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.closeWindow, 110);
                 host.close();
                 MatchCtrl.instance.exit();
             } else if (UnlightLegacy.INS.opetationCheck(DUEL_NO_OP_ALERT_TIME)) {

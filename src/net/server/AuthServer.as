@@ -406,7 +406,7 @@ public class AuthServer extends Server {
     private function reregist():void {
         log.writeLog(log.LV_WARN, this, "reregist!!");
 //LOCALE_JP <-フォント読み込みを防ぐ
-        Alerter.showWithSize("認証エラー　ブラウザをリロードしてみてください。", 'Error', 4, null, Alerter.reloadWindow, 130);
+        Alerter.showWithSize("認証エラー　ブラウザをリロードしてみてください。", 'Error', 4, null, Alerter.closeWindow, 130);
 //             _salt = srp.genSalt();
 //             Alerter.showWithSize("認証エラー　ブラウザをリロードしてみてください。（このエラーが何度も出る場合、大変お手数ですが下記お問い合わせまでご連絡下さい）", 'Error', 4, null, Alerter.reloadWindow, 130);
 //             host.sendCommand(_command.csReregister(player.name, _salt, srp.getVerifire(player.name,player.pass,_salt),SERVER_SB));
@@ -434,7 +434,7 @@ public class AuthServer extends Server {
         if (e == 7) {
             exit();
             //               Alerter.showWithSize('2重ログインです。他のブラウザやPCから同時にログインは出来ません', 'Error', 4, null, Alerter.reloadWindow, 110);
-            Alerter.showWithSize(_TRANS_DOUBLE, 'Error', 4, null, Alerter.reloadWindow, 110);
+            Alerter.showWithSize(_TRANS_DOUBLE, 'Error', 4, null, Alerter.closeWindow, 110);
             UnlightLegacy.live = false; // 二度と通信出来なくする
             LobbyServer.instance.exit();
             QuestServer.instance.exit();

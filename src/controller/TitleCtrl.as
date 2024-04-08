@@ -321,9 +321,15 @@ public class TitleCtrl extends BaseCtrl {
         connected = false;
         BaseCtrl.alarted = true;
         log.writeLog(log.LV_FATAL, this, "Alarted?", BaseCtrl.alarted);
-//            Alerter.showWithSize('サーバから切断されました。リロードをお願いします。', 'Error', 4, null, Alerter.reloadWindow, 100);
-        Alerter.showWithSize(_TRANS_MSG_CUTOUT, 'Error', 4, null, Alerter.reloadWindow, 100);
 
+        Alerter.showWithSize(
+                _TRANS_MSG_CUTOUT,
+                'Error',
+                4,
+                null,
+                Alerter.closeWindow,
+                100
+        );
     }
 
 

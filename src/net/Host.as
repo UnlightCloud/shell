@@ -270,7 +270,7 @@ public class Host extends EventDispatcher {
             //  サーバと繋がっていれば一定間隔でイベントを送る
             if (_socket.connected) {
                 if (UnlightLegacy.INS.opetationCheck()) {
-                    Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.reloadWindow, 110);
+                    Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.closeWindow, 110);
                     close();
                 } else {
                     dispatchEvent(new Event(HEART_BEAT));
@@ -284,7 +284,7 @@ public class Host extends EventDispatcher {
         //  サーバと繋がっていれば一定間隔でイベントを送る
         if (_socket.connected) {
             if (UnlightLegacy.INS.opetationCheck()) {
-                Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.reloadWindow, 110);
+                Alerter.showWithSize(_DISSCONET_NO_OPERATION, _TRANS_ALERT, 4, null, Alerter.closeWindow, 110);
                 close();
             } else {
                 dispatchEvent(new Event(GAME_HEART_BEAT));
