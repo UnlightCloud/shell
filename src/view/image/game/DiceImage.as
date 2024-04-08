@@ -11,12 +11,24 @@ import view.image.BaseImage;
  */
 
 public class DiceImage extends BaseImage {
+    public static const LABEL_NORMAL:String = "normal";
+    public static const LABEL_HIT:String = "hit";
+    public static const LABEL_CRASH:String = "peke";
+
+    public static const DICE_ATK:String = "dice_atk";
+    public static const DICE_DEF:String = "dice_def";
+
+    public static const TYPE_ATK:int = 0;
+    public static const TYPE_DEF:int = 1;
+
     // atkダイス表示元SWF
     [Embed(source="../../../../res/data/image/dice_atk.swf")]
     private static var _atk:Class;
     // defダイス表示元SWF
     [Embed(source="../../../../res/data/image/dice_def.swf")]
     private static var _def:Class;
+
+
 
     // 条件チップの配列
     private static var ClassArray:Array = [_atk, _def];
@@ -54,31 +66,24 @@ public class DiceImage extends BaseImage {
         waitComplete(hitComplete);
     }
 
+    public function isAtk(): Boolean {
+        return _type == TYPE_ATK;
+    }
+
+    public function getDice(): MovieClip {
+        return (isAtk() ? _root.getChildByName(DICE_ATK) : _root.getChildByName(DICE_DEF)) as MovieClip;
+    }
+
     public function crashComplete():void {
-        if (_type == 0) {
-            MovieClip(_root.getChildByName("dice_atk")).gotoAndPlay("pake");
-        } else {
-            MovieClip(_root.getChildByName("dice_def")).gotoAndPlay("pake");
-        }
+        getDice().gotoAndPlay(LABEL_CRASH);
     }
 
     public function normalComplete():void {
-//             if(_type == 0)
-//             {
-//                 MovieClip(_root.getChildByName("dice_atk")).gotoAndPlay("normal");
-//             }
-//             else
-//             {
-//                 MovieClip(_root.getChildByName("dice_def")).gotoAndPlay("normal");
-//             }
+        // NOTE: The normal animation is add cross symbol to the dice. No need to play the animation.
     }
 
     public function hitComplete():void {
-        if (_type == 0) {
-            MovieClip(_root.getChildByName("dice_atk")).gotoAndPlay("hit");
-        } else {
-//                 MovieClip(_root.getChildByName("dice_def")).gotoAndPlay("hit");
-        }
+        getDice().gotoAndPlay(LABEL_HIT);
     }
 }
 }
