@@ -174,4 +174,4 @@ jobs:
       - name: Upload
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*
+          files: dist/Unlight-*/*
