@@ -194,7 +194,7 @@ public class Host extends EventDispatcher {
     // セキュリティエラーハンドラ
     private function socketIOErrorHandler(e:IOErrorEvent):void {
         log.writeLog(log.LV_WARN, this, "IO Error!", e.text, "port:", _port);
-        throw e;
+        Alerter.showWithSize("無法連接伺服器", _TRANS_ALERT, 4, null, Alerter.closeWindow, 110);
     }
 
     // サーバ切断時のイベントハンドラ(サーバからの)
