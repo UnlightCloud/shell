@@ -152,7 +152,6 @@ jobs:
           mkdir dmg
           mkdir dist
           cp -r "bin/Unlight.app" dmg/
-          xattr -d com.apple.quarantine dmg/Unlight.app/Contents/MacOS/Unlight
       - name: Archive (macOS)
         if: ${{ runner.os == 'macOS' }}
         run: >
