@@ -142,11 +142,29 @@ jobs:
       - name: Build
         run: |
           ant -DCERTIFICATE_PASSWORD=${{ secrets.CERTIFICATE_PASSWORD }} -DSENTRY_DSN=${{ secrets.SENTRY_DSN }} -d package
-      - name: Archive (Unix)
-        if: ${{ runner.os != 'Windows' }}
+      - name: Install create-dmg
+        if: ${{ runner.os == 'macOS' }}
         run: |
+          brew install create-dmg
+      - name: Prepare .dmg contents
+        if: ${{ runner.os == 'macOS' }}
+        run: |
+          mkdir dmg
           mkdir dist
-          tar -czpf dist/Unlight-${{ runner.os }}.tar.gz bin/Unlight.app
+          cp -r "bin/Unlight.app" dmg/
+      - name: Archive (macOS)
+        if: ${{ runner.os == 'macOS' }}
+        run: >
+          create-dmg
+          --volname "Unlight Dekstop"
+          --volicon "bin/Unlight.app/Contents/Resources/Icon.icns"
+          --window-pos 200 100
+          --window-size 800 400
+          --icon-size 100
+          --icon "Unlight.app" 200 190
+          --hide-extension "Unlight.app"
+          --app-drop-link 600 185
+          "dist/Unlight-${{ runner.os }}.dmg" dmg/
       - name: Archive (Windows)
         if: ${{ runner.os == 'Windows' }}
         run: |
